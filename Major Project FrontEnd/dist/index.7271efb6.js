@@ -34288,7 +34288,7 @@ const LoginAdmin = ()=>{
                                 className: "mb-4",
                                 children: [
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                        htmlFor: "email",
+                                        htmlFor: "adminId",
                                         className: "block text-gray-600 mb-2",
                                         children: "Username:"
                                     }, void 0, false, {
@@ -34298,7 +34298,7 @@ const LoginAdmin = ()=>{
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
                                         type: "text",
-                                        name: "email",
+                                        name: "adminId",
                                         onChange: handleForm,
                                         className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500",
                                         placeholder: "Enter your username"

@@ -5,35 +5,56 @@ const router = express.Router();
 const Admin = require('../models/Admin');
 const Faculty = require('../models/Faculty');
 const Feedback = require('../models/Feedback');
+const authMiddleware = require('../middlewares/auth');
 
 const Course = require('../models/Course');
 
 const reqAdminAuth = (req, res, next) => {
     console.log(req.session.AdminAuthenticated);
+    console.log(req.sessionID);
     if (req.session.AdminAuthenticated) {
         next();
     } else {
         res.status(401).json({ message: "admin authentication required" })
     }
 }
+// router.post('/resgiter', async (req, res) => {
+//     try {
+//         const admin = new Admin({
+//             adminId: 'admin123',
+//             email: 'admin@gmail.com',
+//             name: 'adminA'
+//         })
+//         const token = admin.generateAuthToken();
+//         await admin.save();
+//         return res.json("admin registered")
+
+//     } catch (error) {
+//         res.status(500).json({ message: error.message });
+//     }
+
+// });
 
 // Admin Login
 router.post('/login', async (req, res) => {
-    
     try {
-        if (req.body.email == "admin@admin.com" && req.body.password == "admin123") {
-            req.session.AdminAuthenticated = true;
-            console.log(req.session.AdminAuthenticated);
-            console.log(req.session);
-            res.json({ message: 'Login successful' });
+        const admin = await Admin.findOne({ adminId: req.body.adminId })
+        // console.log(admin);
+        if (admin) {
+            const token = admin.generateAuthToken();
+
+            res.cookie("jwt", token,{
+                httpOnly:true
+            });
+            return res.status(200).json({ message: 'Login successful' });
         } else {
             return res.status(401).json({ message: 'Invalid credentials' });
         }
+
+
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
-
-    // console.log(req.session);
 
 });
 

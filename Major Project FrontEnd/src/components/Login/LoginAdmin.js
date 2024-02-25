@@ -53,10 +53,10 @@ const LoginAdmin = () => {
             <h2 className="text-2xl font-semibold mb-4 text-center"> Admin Login</h2>
             
             <div className="mb-4">
-              <label htmlFor="email" className="block text-gray-600 mb-2">Username:</label>
+              <label htmlFor="adminId" className="block text-gray-600 mb-2">Username:</label>
               <input
                 type="text"
-                name="email"
+                name="adminId"
                 onChange={handleForm}
                 className="w-full border p-2 rounded focus:outline-none focus:border-blue-500"
                 placeholder="Enter your username"
