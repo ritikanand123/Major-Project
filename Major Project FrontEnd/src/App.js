@@ -66,9 +66,9 @@ const Approuter = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <>
-        <statusprovider/>
+        
             <RouterProvider router = {Approuter} />
-        <statusprovider/>
+        
     </>
 );
 

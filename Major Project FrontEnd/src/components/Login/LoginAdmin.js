@@ -20,9 +20,24 @@ const LoginAdmin = () => {
           'Content-Type':'application/json'
         }
       }); 
-      // console.log(res);
       
+      // const json = res.json()
+      console.log(res.headers.get('Set-Cookie'))
+    
+      // Extract the Set-Cookie header from the response headers
+      // var setCookieHeader = res['SetCookie'];
+      
+      // // Split the header to get individual cookies
+      // console.log(setCookieHeader)
+      // var cookies = setCookieHeader.split(';');
+      
+      // // Iterate through cookies and set them
+      // cookies.forEach(function(cookie) {
+      //     document.cookie = cookie.trim();
+      // });
+
       if(res.status == 200){
+        // localStorage.setItem('user' , JSON.stringify(json))
         toast.success("Login Successful");
 
         setTimeout(function() {

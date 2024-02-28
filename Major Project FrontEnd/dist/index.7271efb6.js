@@ -3059,26 +3059,14 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
 ]);
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-    children: [
-        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("statusprovider", {}, void 0, false, {
-            fileName: "src/App.js",
-            lineNumber: 69,
-            columnNumber: 9
-        }, undefined),
-        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.RouterProvider), {
-            router: Approuter
-        }, void 0, false, {
-            fileName: "src/App.js",
-            lineNumber: 70,
-            columnNumber: 13
-        }, undefined),
-        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("statusprovider", {}, void 0, false, {
-            fileName: "src/App.js",
-            lineNumber: 71,
-            columnNumber: 9
-        }, undefined)
-    ]
-}, void 0, true));
+    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.RouterProvider), {
+        router: Approuter
+    }, void 0, false, {
+        fileName: "src/App.js",
+        lineNumber: 70,
+        columnNumber: 13
+    }, undefined)
+}, void 0, false));
 
   $parcel$ReactRefreshHelpers$f00f.postlude(module);
 } finally {
@@ -34250,8 +34238,19 @@ const LoginAdmin = ()=>{
                 "Content-Type": "application/json"
             }
         });
-        // console.log(res);
+        // const json = res.json()
+        console.log(res.headers.get("Set-Cookie"));
+        // Extract the Set-Cookie header from the response headers
+        // var setCookieHeader = res['SetCookie'];
+        // // Split the header to get individual cookies
+        // console.log(setCookieHeader)
+        // var cookies = setCookieHeader.split(';');
+        // // Iterate through cookies and set them
+        // cookies.forEach(function(cookie) {
+        //     document.cookie = cookie.trim();
+        // });
         if (res.status == 200) {
+            // localStorage.setItem('user' , JSON.stringify(json))
             (0, _sonner.toast).success("Login Successful");
             setTimeout(function() {
                 navigate("/admin/home");
@@ -34281,7 +34280,7 @@ const LoginAdmin = ()=>{
                                 children: " Admin Login"
                             }, void 0, false, {
                                 fileName: "src/components/Login/LoginAdmin.js",
-                                lineNumber: 53,
+                                lineNumber: 68,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34293,7 +34292,7 @@ const LoginAdmin = ()=>{
                                         children: "Username:"
                                     }, void 0, false, {
                                         fileName: "src/components/Login/LoginAdmin.js",
-                                        lineNumber: 56,
+                                        lineNumber: 71,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -34304,13 +34303,13 @@ const LoginAdmin = ()=>{
                                         placeholder: "Enter your username"
                                     }, void 0, false, {
                                         fileName: "src/components/Login/LoginAdmin.js",
-                                        lineNumber: 57,
+                                        lineNumber: 72,
                                         columnNumber: 15
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/Login/LoginAdmin.js",
-                                lineNumber: 55,
+                                lineNumber: 70,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34322,7 +34321,7 @@ const LoginAdmin = ()=>{
                                         children: "Password:"
                                     }, void 0, false, {
                                         fileName: "src/components/Login/LoginAdmin.js",
-                                        lineNumber: 67,
+                                        lineNumber: 82,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -34333,13 +34332,13 @@ const LoginAdmin = ()=>{
                                         placeholder: "Enter your password"
                                     }, void 0, false, {
                                         fileName: "src/components/Login/LoginAdmin.js",
-                                        lineNumber: 68,
+                                        lineNumber: 83,
                                         columnNumber: 15
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/Login/LoginAdmin.js",
-                                lineNumber: 66,
+                                lineNumber: 81,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -34348,7 +34347,7 @@ const LoginAdmin = ()=>{
                                 children: "Log In"
                             }, void 0, false, {
                                 fileName: "src/components/Login/LoginAdmin.js",
-                                lineNumber: 77,
+                                lineNumber: 92,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34360,7 +34359,7 @@ const LoginAdmin = ()=>{
                                         children: "Login As Teacher"
                                     }, void 0, false, {
                                         fileName: "src/components/Login/LoginAdmin.js",
-                                        lineNumber: 81,
+                                        lineNumber: 96,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -34369,29 +34368,29 @@ const LoginAdmin = ()=>{
                                         children: "Login As Student"
                                     }, void 0, false, {
                                         fileName: "src/components/Login/LoginAdmin.js",
-                                        lineNumber: 82,
+                                        lineNumber: 97,
                                         columnNumber: 15
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/Login/LoginAdmin.js",
-                                lineNumber: 80,
+                                lineNumber: 95,
                                 columnNumber: 13
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/Login/LoginAdmin.js",
-                        lineNumber: 52,
+                        lineNumber: 67,
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/Login/LoginAdmin.js",
-                    lineNumber: 51,
+                    lineNumber: 66,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Login/LoginAdmin.js",
-                lineNumber: 50,
+                lineNumber: 65,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sonner.Toaster), {
@@ -34399,7 +34398,7 @@ const LoginAdmin = ()=>{
                 richColors: true
             }, void 0, false, {
                 fileName: "src/components/Login/LoginAdmin.js",
-                lineNumber: 89,
+                lineNumber: 104,
                 columnNumber: 7
             }, undefined)
         ]

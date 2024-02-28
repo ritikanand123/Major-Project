@@ -23,7 +23,7 @@ app.use(helmet());
 app.use(morgan("common"));
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
+app.use(cors({credentials : true}));
 
 app.use('/api/admin', adminRouter);
 

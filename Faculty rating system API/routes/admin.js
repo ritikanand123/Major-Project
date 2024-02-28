@@ -39,18 +39,26 @@ const reqAdminAuth = (req, res, next) => {
 router.post('/login', async (req, res) => {
     try {
         const admin = await Admin.findOne({ adminId: req.body.adminId })
-        // console.log(admin);
-        if (admin) {
-            const token = admin.generateAuthToken();
 
-            res.cookie("jwt", token,{
-                httpOnly:true
+        if (admin) {
+            const token = await admin.generateAuthToken();
+            console.log(token);
+
+            const options = {
+                expires: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
+                httpOnly: true,
+                // sameSite: 'None',
+                domain: 'localhost:1234',
+                // secure: true
+            }
+            res.cookie("jwt", token, options);
+            return res.status(200).json({
+                success: true,
+                message: 'Login Sucessfull'
             });
-            return res.status(200).json({ message: 'Login successful' });
         } else {
             return res.status(401).json({ message: 'Invalid credentials' });
         }
-
 
     } catch (error) {
         res.status(500).json({ message: error.message });
