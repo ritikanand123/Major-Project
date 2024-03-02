@@ -15,14 +15,15 @@ const LoginAdmin = () => {
       })
       const res = await fetch('http://localhost:8998/api/admin/login' , {
         method:'POST',
-        body:JSON.stringify(form),
+        credentials: 'include',
         headers : {
           'Content-Type':'application/json'
-        }
+        },
+        body:JSON.stringify(form),
       }); 
       
       // const json = res.json()
-      console.log(res.headers.get('Set-Cookie'))
+      console.log(res.headers)
     
       // Extract the Set-Cookie header from the response headers
       // var setCookieHeader = res['SetCookie'];

@@ -1,5 +1,5 @@
 // routes/adminRoutes.js
-
+const jwt  = require('jsonwebtoken');
 const express = require('express');
 const router = express.Router();
 const Admin = require('../models/Admin');
@@ -10,8 +10,8 @@ const authMiddleware = require('../middlewares/auth');
 const Course = require('../models/Course');
 
 const reqAdminAuth = (req, res, next) => {
-    console.log(req.session.AdminAuthenticated);
-    console.log(req.sessionID);
+    // console.log(req.session.AdminAuthenticated);
+    // console.log(req.sessionID);
     if (req.session.AdminAuthenticated) {
         next();
     } else {
@@ -42,16 +42,13 @@ router.post('/login', async (req, res) => {
 
         if (admin) {
             const token = await admin.generateAuthToken();
-            console.log(token);
-
+            // console.log(admin);
+            res.header('Access-Control-Allow-Credentials', true);
             const options = {
                 expires: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
-                httpOnly: true,
-                // sameSite: 'None',
-                domain: 'localhost:1234',
-                // secure: true
+                httpOnly: true
             }
-            res.cookie("jwt", token, options);
+            res.cookie("jwtoken", token, options);
             return res.status(200).json({
                 success: true,
                 message: 'Login Sucessfull'
