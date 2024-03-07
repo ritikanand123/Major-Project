@@ -18,9 +18,6 @@ const AddFaculty = () => {
     console.log(res);
     if (res.status == 200) {
       toast.success("Register Successful");
-      setTimeout(function () {
-        navigate("/faculty/home");
-      }, 500)
     };
 
 

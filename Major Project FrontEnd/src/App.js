@@ -10,6 +10,8 @@ import Header from "./components/AdminHeader";
 import AddFaculty from "./components/AddFaculty";
 import Addcourses from "./components/Addcourse"
 import statusprovider from "./context/AdminloginContext"
+import FacultyList from "./components/FacultyList"
+import StudentList from "./components/StudentList"
 
 const Approuter = createBrowserRouter([
     
@@ -44,6 +46,10 @@ const Approuter = createBrowserRouter([
                 path : "/faculty/home/addstudent",
                 element : <AddStudent/>
             },
+            {
+                path : "/faculty/home/studentlist",
+                element : <StudentList/>
+            }
         ],
     },
     {
@@ -57,6 +63,10 @@ const Approuter = createBrowserRouter([
             {
                 path : "/admin/home/addcourse",
                 element : <Addcourses />
+            },
+            {
+                path : "/admin/home/teacherlist",
+                element : <FacultyList/>
             }
         ],
     }
@@ -67,7 +77,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <>
         
-            <RouterProvider router = {Approuter} />
+        <RouterProvider router = {Approuter} />
         
     </>
 );

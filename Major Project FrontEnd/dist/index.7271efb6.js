@@ -2971,12 +2971,16 @@ var _addcourse = require("./components/Addcourse");
 var _addcourseDefault = parcelHelpers.interopDefault(_addcourse);
 var _adminloginContext = require("./context/AdminloginContext");
 var _adminloginContextDefault = parcelHelpers.interopDefault(_adminloginContext);
+var _facultyList = require("./components/FacultyList");
+var _facultyListDefault = parcelHelpers.interopDefault(_facultyList);
+var _studentList = require("./components/StudentList");
+var _studentListDefault = parcelHelpers.interopDefault(_studentList);
 const Approuter = (0, _reactRouterDom.createBrowserRouter)([
     {
         path: "/",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginStudentDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 19,
+            lineNumber: 21,
             columnNumber: 19
         }, undefined)
     },
@@ -2984,7 +2988,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/login",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginStudentDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 23,
+            lineNumber: 25,
             columnNumber: 19
         }, undefined)
     },
@@ -2992,7 +2996,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/feedback",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _feedbackDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 28,
+            lineNumber: 30,
             columnNumber: 19
         }, undefined)
     },
@@ -3000,7 +3004,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/loginAsAdmin",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginAdminDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 33,
+            lineNumber: 35,
             columnNumber: 19
         }, undefined)
     },
@@ -3008,7 +3012,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/loginAsTeacher",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginTeacherDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 37,
+            lineNumber: 39,
             columnNumber: 19
         }, undefined)
     },
@@ -3016,7 +3020,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/faculty/home",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _facultyHeaderDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 41,
+            lineNumber: 43,
             columnNumber: 19
         }, undefined),
         children: [
@@ -3024,7 +3028,15 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/faculty/home/addstudent",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _addStudentDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 45,
+                    lineNumber: 47,
+                    columnNumber: 27
+                }, undefined)
+            },
+            {
+                path: "/faculty/home/studentlist",
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _studentListDefault.default), {}, void 0, false, {
+                    fileName: "src/App.js",
+                    lineNumber: 51,
                     columnNumber: 27
                 }, undefined)
             }
@@ -3034,7 +3046,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/admin/home",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _adminHeaderDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 51,
+            lineNumber: 57,
             columnNumber: 19
         }, undefined),
         children: [
@@ -3042,7 +3054,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/admin/home/addfaculty",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _addFacultyDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 55,
+                    lineNumber: 61,
                     columnNumber: 27
                 }, undefined)
             },
@@ -3050,7 +3062,15 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/admin/home/addcourse",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _addcourseDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 59,
+                    lineNumber: 65,
+                    columnNumber: 27
+                }, undefined)
+            },
+            {
+                path: "/admin/home/teacherlist",
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _facultyListDefault.default), {}, void 0, false, {
+                    fileName: "src/App.js",
+                    lineNumber: 69,
                     columnNumber: 27
                 }, undefined)
             }
@@ -3063,8 +3083,8 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment
         router: Approuter
     }, void 0, false, {
         fileName: "src/App.js",
-        lineNumber: 70,
-        columnNumber: 13
+        lineNumber: 80,
+        columnNumber: 9
     }, undefined)
 }, void 0, false));
 
@@ -3073,7 +3093,7 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","react-router-dom":"9xmpe","./components/Login/LoginStudent":"ellob","./components/Feedback":"2hBAZ","./components/Login/LoginAdmin":"b9IEN","./components/Login/LoginTeacher":"aqaip","./components/FacultyHeader":"2phQw","./components/AddStudent":"3QMK0","./components/AdminHeader":"jcoHB","./components/AddFaculty":"jdb5j","./components/Addcourse":"87iI7","./context/AdminloginContext":"ltJX8","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","react-router-dom":"9xmpe","./components/Login/LoginStudent":"ellob","./components/Feedback":"2hBAZ","./components/Login/LoginAdmin":"b9IEN","./components/Login/LoginTeacher":"aqaip","./components/FacultyHeader":"2phQw","./components/AddStudent":"3QMK0","./components/AdminHeader":"jcoHB","./components/AddFaculty":"jdb5j","./components/Addcourse":"87iI7","./context/AdminloginContext":"ltJX8","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/FacultyList":"dnKj3","./components/StudentList":"b5q7J"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -35085,6 +35105,7 @@ const Login = ()=>{
             setTimeout(function() {
                 navigate("/faculty/home");
             }, 500);
+            console.log(res.status);
         } else (0, _sonner.toast).error("Incorrect UserName or Password");
     };
     const handleForm = (e)=>{
@@ -35108,7 +35129,7 @@ const Login = ()=>{
                                 children: " Teacher Login"
                             }, void 0, false, {
                                 fileName: "src/components/Login/LoginTeacher.js",
-                                lineNumber: 44,
+                                lineNumber: 46,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35120,7 +35141,7 @@ const Login = ()=>{
                                         children: "Username:"
                                     }, void 0, false, {
                                         fileName: "src/components/Login/LoginTeacher.js",
-                                        lineNumber: 47,
+                                        lineNumber: 49,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -35131,13 +35152,13 @@ const Login = ()=>{
                                         placeholder: "Enter your username"
                                     }, void 0, false, {
                                         fileName: "src/components/Login/LoginTeacher.js",
-                                        lineNumber: 48,
+                                        lineNumber: 50,
                                         columnNumber: 15
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/Login/LoginTeacher.js",
-                                lineNumber: 46,
+                                lineNumber: 48,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35149,7 +35170,7 @@ const Login = ()=>{
                                         children: "Password:"
                                     }, void 0, false, {
                                         fileName: "src/components/Login/LoginTeacher.js",
-                                        lineNumber: 58,
+                                        lineNumber: 60,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -35160,13 +35181,13 @@ const Login = ()=>{
                                         placeholder: "Enter your password"
                                     }, void 0, false, {
                                         fileName: "src/components/Login/LoginTeacher.js",
-                                        lineNumber: 59,
+                                        lineNumber: 61,
                                         columnNumber: 15
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/Login/LoginTeacher.js",
-                                lineNumber: 57,
+                                lineNumber: 59,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -35175,7 +35196,7 @@ const Login = ()=>{
                                 children: "Log In"
                             }, void 0, false, {
                                 fileName: "src/components/Login/LoginTeacher.js",
-                                lineNumber: 68,
+                                lineNumber: 70,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35187,7 +35208,7 @@ const Login = ()=>{
                                         children: "Login As Student"
                                     }, void 0, false, {
                                         fileName: "src/components/Login/LoginTeacher.js",
-                                        lineNumber: 72,
+                                        lineNumber: 74,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -35196,29 +35217,29 @@ const Login = ()=>{
                                         children: "Login As Admin"
                                     }, void 0, false, {
                                         fileName: "src/components/Login/LoginTeacher.js",
-                                        lineNumber: 73,
+                                        lineNumber: 75,
                                         columnNumber: 15
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/Login/LoginTeacher.js",
-                                lineNumber: 71,
+                                lineNumber: 73,
                                 columnNumber: 13
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/Login/LoginTeacher.js",
-                        lineNumber: 43,
+                        lineNumber: 45,
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/Login/LoginTeacher.js",
-                    lineNumber: 42,
+                    lineNumber: 44,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Login/LoginTeacher.js",
-                lineNumber: 41,
+                lineNumber: 43,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sonner.Toaster), {
@@ -35226,7 +35247,7 @@ const Login = ()=>{
                 richColors: true
             }, void 0, false, {
                 fileName: "src/components/Login/LoginTeacher.js",
-                lineNumber: 78,
+                lineNumber: 80,
                 columnNumber: 7
             }, undefined)
         ]
@@ -35297,14 +35318,14 @@ const Header = ()=>{
                         className: "flex w-2/4 justify-evenly ",
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                to: "addastudent",
+                                to: "addstudent",
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                     className: "font-medium m-2",
                                     children: "Add a Student"
                                 }, void 0, false, {
                                     fileName: "src/components/FacultyHeader.js",
                                     lineNumber: 36,
-                                    columnNumber: 34
+                                    columnNumber: 33
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/FacultyHeader.js",
@@ -35314,7 +35335,7 @@ const Header = ()=>{
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                     className: "font-medium m-2",
-                                    children: "Delete a Student"
+                                    children: "Students List"
                                 }, void 0, false, {
                                     fileName: "src/components/FacultyHeader.js",
                                     lineNumber: 37,
@@ -35401,185 +35422,220 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _sonner = require("sonner");
+var _react = require("react");
+var _reactRouterDom = require("react-router-dom");
+var _s = $RefreshSig$();
 const AddStudent = ()=>{
-    const handleSubmit = (event)=>{
-        event.preventDefault();
-    // Handle form submission logic here
+    _s();
+    const [form, setForm] = (0, _react.useState)({});
+    const navigate = (0, _reactRouterDom.useNavigate)();
+    const handleSubmit = async (e)=>{
+        e.preventDefault();
+        const res = await fetch("http://localhost:8998/api/faculty/student-register", {
+            method: "POST",
+            body: JSON.stringify(form),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+        // console.log(res);
+        if (res.status == 200) (0, _sonner.toast).success("Register Successful");
     };
-    const handleForm = ()=>{
-    // Handle form input changes here
+    const handleForm = (e)=>{
+        setForm({
+            ...form,
+            [e.target.name]: e.target.value
+        });
     };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex h-auto justify-center align-middle",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "min-h-screen flex items-center justify-center",
-            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
-                onSubmit: handleSubmit,
-                className: "bg-white p-8 rounded shadow-2xl w-96",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                        className: "text-2xl font-semibold mb-4 text-center",
-                        children: " Add a Student"
-                    }, void 0, false, {
-                        fileName: "src/components/AddStudent.js",
-                        lineNumber: 16,
-                        columnNumber: 13
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "justify-evenly flex flex-col mb-4",
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "flex h-auto justify-center align-middle",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "min-h-screen flex items-center justify-center",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+                        onSubmit: handleSubmit,
+                        className: "bg-white p-8 rounded shadow-2xl w-96",
                         children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                htmlFor: "username",
-                                className: "block text-gray-600",
-                                children: "Student Id:"
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                                className: "text-2xl font-semibold mb-4 text-center",
+                                children: " Add a Student"
                             }, void 0, false, {
                                 fileName: "src/components/AddStudent.js",
-                                lineNumber: 19,
-                                columnNumber: 15
+                                lineNumber: 41,
+                                columnNumber: 13
                             }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                type: "text",
-                                name: "username",
-                                onChange: handleForm,
-                                className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
-                                placeholder: "Enter Student id"
-                            }, void 0, false, {
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "justify-evenly flex flex-col mb-4",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                        htmlFor: "studentId",
+                                        className: "block text-gray-600",
+                                        children: "Student Id:"
+                                    }, void 0, false, {
+                                        fileName: "src/components/AddStudent.js",
+                                        lineNumber: 44,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                        type: "text",
+                                        name: "studentId",
+                                        onChange: handleForm,
+                                        className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
+                                        placeholder: "Enter Student id"
+                                    }, void 0, false, {
+                                        fileName: "src/components/AddStudent.js",
+                                        lineNumber: 45,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                        htmlFor: "name",
+                                        className: "block text-gray-600",
+                                        children: "Student Name:"
+                                    }, void 0, false, {
+                                        fileName: "src/components/AddStudent.js",
+                                        lineNumber: 54,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                        type: "text",
+                                        name: "name",
+                                        onChange: handleForm,
+                                        className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
+                                        placeholder: "Enter Student Name"
+                                    }, void 0, false, {
+                                        fileName: "src/components/AddStudent.js",
+                                        lineNumber: 55,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                        htmlFor: "email",
+                                        className: "block text-gray-600",
+                                        children: "Student Email:"
+                                    }, void 0, false, {
+                                        fileName: "src/components/AddStudent.js",
+                                        lineNumber: 63,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                        type: "text",
+                                        name: "email",
+                                        onChange: handleForm,
+                                        className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
+                                        placeholder: "Enter Student Email id"
+                                    }, void 0, false, {
+                                        fileName: "src/components/AddStudent.js",
+                                        lineNumber: 64,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                        htmlFor: "branch",
+                                        className: "block text-gray-600",
+                                        children: "Branch:"
+                                    }, void 0, false, {
+                                        fileName: "src/components/AddStudent.js",
+                                        lineNumber: 72,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                        type: "text",
+                                        name: "branch",
+                                        onChange: handleForm,
+                                        className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
+                                        placeholder: "Enter Branch"
+                                    }, void 0, false, {
+                                        fileName: "src/components/AddStudent.js",
+                                        lineNumber: 73,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                        htmlFor: "semester",
+                                        className: "block text-gray-600",
+                                        children: "Semester:"
+                                    }, void 0, false, {
+                                        fileName: "src/components/AddStudent.js",
+                                        lineNumber: 80,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                        type: "text",
+                                        name: "semester",
+                                        onChange: handleForm,
+                                        className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
+                                        placeholder: "Enter Semester"
+                                    }, void 0, false, {
+                                        fileName: "src/components/AddStudent.js",
+                                        lineNumber: 81,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                        htmlFor: "password",
+                                        className: "block text-gray-600",
+                                        children: "Password:"
+                                    }, void 0, false, {
+                                        fileName: "src/components/AddStudent.js",
+                                        lineNumber: 88,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                        type: "password",
+                                        name: "password",
+                                        onChange: handleForm,
+                                        className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
+                                        placeholder: "Enter your password"
+                                    }, void 0, false, {
+                                        fileName: "src/components/AddStudent.js",
+                                        lineNumber: 89,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
                                 fileName: "src/components/AddStudent.js",
-                                lineNumber: 20,
-                                columnNumber: 15
+                                lineNumber: 43,
+                                columnNumber: 13
                             }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                htmlFor: "studentname",
-                                className: "block text-gray-600",
-                                children: "Student Name:"
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                type: "submit",
+                                className: "w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 focus:outline-none",
+                                children: "Add Student"
                             }, void 0, false, {
                                 fileName: "src/components/AddStudent.js",
-                                lineNumber: 29,
-                                columnNumber: 15
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                type: "text",
-                                name: "studentname",
-                                onChange: handleForm,
-                                className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
-                                placeholder: "Enter Student Name"
-                            }, void 0, false, {
-                                fileName: "src/components/AddStudent.js",
-                                lineNumber: 30,
-                                columnNumber: 15
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                htmlFor: "username",
-                                className: "block text-gray-600",
-                                children: "Student Email:"
-                            }, void 0, false, {
-                                fileName: "src/components/AddStudent.js",
-                                lineNumber: 38,
-                                columnNumber: 15
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                type: "text",
-                                name: "username",
-                                onChange: handleForm,
-                                className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
-                                placeholder: "Enter Student Email id"
-                            }, void 0, false, {
-                                fileName: "src/components/AddStudent.js",
-                                lineNumber: 39,
-                                columnNumber: 15
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                htmlFor: "studentbranch",
-                                className: "block text-gray-600",
-                                children: "Branch:"
-                            }, void 0, false, {
-                                fileName: "src/components/AddStudent.js",
-                                lineNumber: 47,
-                                columnNumber: 15
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                type: "text",
-                                name: "studentbranch",
-                                onChange: handleForm,
-                                className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
-                                placeholder: "Enter your password"
-                            }, void 0, false, {
-                                fileName: "src/components/AddStudent.js",
-                                lineNumber: 48,
-                                columnNumber: 15
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                htmlFor: "studentsemester",
-                                className: "block text-gray-600",
-                                children: "Semester:"
-                            }, void 0, false, {
-                                fileName: "src/components/AddStudent.js",
-                                lineNumber: 55,
-                                columnNumber: 15
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                type: "text",
-                                name: "studentsemester",
-                                onChange: handleForm,
-                                className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
-                                placeholder: "Enter your password"
-                            }, void 0, false, {
-                                fileName: "src/components/AddStudent.js",
-                                lineNumber: 56,
-                                columnNumber: 15
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                htmlFor: "password",
-                                className: "block text-gray-600",
-                                children: "Password:"
-                            }, void 0, false, {
-                                fileName: "src/components/AddStudent.js",
-                                lineNumber: 63,
-                                columnNumber: 15
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                type: "password",
-                                name: "password",
-                                onChange: handleForm,
-                                className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
-                                placeholder: "Enter your password"
-                            }, void 0, false, {
-                                fileName: "src/components/AddStudent.js",
-                                lineNumber: 64,
-                                columnNumber: 15
+                                lineNumber: 99,
+                                columnNumber: 13
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/AddStudent.js",
-                        lineNumber: 18,
-                        columnNumber: 13
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        type: "submit",
-                        className: "w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 focus:outline-none",
-                        children: "Log In"
-                    }, void 0, false, {
-                        fileName: "src/components/AddStudent.js",
-                        lineNumber: 74,
-                        columnNumber: 13
+                        lineNumber: 40,
+                        columnNumber: 11
                     }, undefined)
-                ]
-            }, void 0, true, {
+                }, void 0, false, {
+                    fileName: "src/components/AddStudent.js",
+                    lineNumber: 39,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
                 fileName: "src/components/AddStudent.js",
-                lineNumber: 15,
-                columnNumber: 11
+                lineNumber: 38,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sonner.Toaster), {
+                position: "top-right",
+                richColors: true
+            }, void 0, false, {
+                fileName: "src/components/AddStudent.js",
+                lineNumber: 105,
+                columnNumber: 7
             }, undefined)
-        }, void 0, false, {
-            fileName: "src/components/AddStudent.js",
-            lineNumber: 14,
-            columnNumber: 9
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/components/AddStudent.js",
-        lineNumber: 13,
-        columnNumber: 9
-    }, undefined);
+        ]
+    }, void 0, true);
 };
+_s(AddStudent, "PQUPng+owqEYBKKF/VmMagUZBrY=", false, function() {
+    return [
+        (0, _reactRouterDom.useNavigate)
+    ];
+});
 _c = AddStudent;
 exports.default = AddStudent;
 var _c;
@@ -35590,7 +35646,7 @@ $RefreshReg$(_c, "AddStudent");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jcoHB":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","sonner":"4wQOs","react":"21dqq","react-router-dom":"9xmpe"}],"jcoHB":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$fe54 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -35655,13 +35711,14 @@ const Header = ()=>{
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                to: "teacherlist",
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                     className: "font-medium m-2",
                                     children: "Teachers List"
                                 }, void 0, false, {
                                     fileName: "src/components/AdminHeader.js",
                                     lineNumber: 37,
-                                    columnNumber: 20
+                                    columnNumber: 38
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/AdminHeader.js",
@@ -35763,12 +35820,7 @@ const AddFaculty = ()=>{
             }
         });
         console.log(res);
-        if (res.status == 200) {
-            (0, _sonner.toast).success("Register Successful");
-            setTimeout(function() {
-                navigate("/faculty/home");
-            }, 500);
-        }
+        if (res.status == 200) (0, _sonner.toast).success("Register Successful");
     };
     const handleForm = (e)=>{
         setForm({
@@ -35791,7 +35843,7 @@ const AddFaculty = ()=>{
                                 children: " Add Faculty"
                             }, void 0, false, {
                                 fileName: "src/components/AddFaculty.js",
-                                lineNumber: 42,
+                                lineNumber: 39,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35803,7 +35855,7 @@ const AddFaculty = ()=>{
                                         children: "Faculty Id:"
                                     }, void 0, false, {
                                         fileName: "src/components/AddFaculty.js",
-                                        lineNumber: 45,
+                                        lineNumber: 42,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -35814,7 +35866,7 @@ const AddFaculty = ()=>{
                                         placeholder: "Enter Faculty Id"
                                     }, void 0, false, {
                                         fileName: "src/components/AddFaculty.js",
-                                        lineNumber: 46,
+                                        lineNumber: 43,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -35823,7 +35875,7 @@ const AddFaculty = ()=>{
                                         children: "Faculty Name:"
                                     }, void 0, false, {
                                         fileName: "src/components/AddFaculty.js",
-                                        lineNumber: 55,
+                                        lineNumber: 52,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -35834,7 +35886,7 @@ const AddFaculty = ()=>{
                                         placeholder: "Enter Faculty Name"
                                     }, void 0, false, {
                                         fileName: "src/components/AddFaculty.js",
-                                        lineNumber: 56,
+                                        lineNumber: 53,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -35843,7 +35895,7 @@ const AddFaculty = ()=>{
                                         children: "Faculty Email:"
                                     }, void 0, false, {
                                         fileName: "src/components/AddFaculty.js",
-                                        lineNumber: 64,
+                                        lineNumber: 61,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -35854,7 +35906,7 @@ const AddFaculty = ()=>{
                                         placeholder: "Enter Faculty Email"
                                     }, void 0, false, {
                                         fileName: "src/components/AddFaculty.js",
-                                        lineNumber: 65,
+                                        lineNumber: 62,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -35863,7 +35915,7 @@ const AddFaculty = ()=>{
                                         children: "Depatment:"
                                     }, void 0, false, {
                                         fileName: "src/components/AddFaculty.js",
-                                        lineNumber: 73,
+                                        lineNumber: 70,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -35874,7 +35926,7 @@ const AddFaculty = ()=>{
                                         placeholder: "Enter Faculty Depatment:"
                                     }, void 0, false, {
                                         fileName: "src/components/AddFaculty.js",
-                                        lineNumber: 74,
+                                        lineNumber: 71,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -35883,7 +35935,7 @@ const AddFaculty = ()=>{
                                         children: "Password:"
                                     }, void 0, false, {
                                         fileName: "src/components/AddFaculty.js",
-                                        lineNumber: 82,
+                                        lineNumber: 79,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -35894,13 +35946,13 @@ const AddFaculty = ()=>{
                                         placeholder: "Enter Default password"
                                     }, void 0, false, {
                                         fileName: "src/components/AddFaculty.js",
-                                        lineNumber: 83,
+                                        lineNumber: 80,
                                         columnNumber: 15
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/AddFaculty.js",
-                                lineNumber: 44,
+                                lineNumber: 41,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -35909,23 +35961,23 @@ const AddFaculty = ()=>{
                                 children: "Register Faculty"
                             }, void 0, false, {
                                 fileName: "src/components/AddFaculty.js",
-                                lineNumber: 93,
+                                lineNumber: 90,
                                 columnNumber: 13
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/AddFaculty.js",
-                        lineNumber: 41,
+                        lineNumber: 38,
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/AddFaculty.js",
-                    lineNumber: 40,
+                    lineNumber: 37,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/AddFaculty.js",
-                lineNumber: 39,
+                lineNumber: 36,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sonner.Toaster), {
@@ -35933,7 +35985,7 @@ const AddFaculty = ()=>{
                 richColors: true
             }, void 0, false, {
                 fileName: "src/components/AddFaculty.js",
-                lineNumber: 99,
+                lineNumber: 96,
                 columnNumber: 7
             }, undefined)
         ]
@@ -35954,7 +36006,7 @@ $RefreshReg$(_c, "AddFaculty");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","sonner":"4wQOs","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"87iI7":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","sonner":"4wQOs"}],"87iI7":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$caa8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -35965,19 +36017,22 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
+var _sonner = require("sonner");
 var _s = $RefreshSig$();
 const AddFaculty = ()=>{
     _s();
     const [form, setForm] = (0, _react.useState)({});
     const handleSubmit = async (e)=>{
         e.preventDefault();
-        const res = await fetch("http://localhost:8998/api/admin/register-faculty", {
+        const res = await fetch("http://localhost:8998/api/admin/addCourse", {
             method: "POST",
             body: JSON.stringify(form),
             headers: {
                 "Content-Type": "application/json"
             }
         });
+        console.log(res);
+        if (res.status == 200) (0, _sonner.toast).success("Course Added Successful");
     };
     const handleForm = (e)=>{
         setForm({
@@ -35985,176 +36040,188 @@ const AddFaculty = ()=>{
             [e.target.name]: e.target.value
         });
     };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex h-auto justify-center align-middle",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "min-h-screen flex items-center justify-center",
-            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
-                onSubmit: handleSubmit,
-                className: "bg-white p-8 rounded shadow-2xl w-96",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                        className: "text-2xl font-semibold mb-4 text-center",
-                        children: " Add Course"
-                    }, void 0, false, {
-                        fileName: "src/components/Addcourse.js",
-                        lineNumber: 32,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "justify-evenly flex flex-col mb-4",
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "flex h-auto justify-center align-middle",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "min-h-screen flex items-center justify-center",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+                        onSubmit: handleSubmit,
+                        className: "bg-white p-8 rounded shadow-2xl w-96",
                         children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                htmlFor: "CourseId",
-                                className: "block text-gray-600",
-                                children: "Course Id:"
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                                className: "text-2xl font-semibold mb-4 text-center",
+                                children: " Add Course"
                             }, void 0, false, {
                                 fileName: "src/components/Addcourse.js",
-                                lineNumber: 35,
-                                columnNumber: 13
+                                lineNumber: 38,
+                                columnNumber: 15
                             }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                type: "text",
-                                name: "CourseId",
-                                onChange: handleForm,
-                                className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
-                                placeholder: "Enter Course Id"
-                            }, void 0, false, {
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "justify-evenly flex flex-col mb-4",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                        htmlFor: "CourseId",
+                                        className: "block text-gray-600",
+                                        children: "Course Id:"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Addcourse.js",
+                                        lineNumber: 41,
+                                        columnNumber: 17
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                        type: "text",
+                                        name: "CourseId",
+                                        onChange: handleForm,
+                                        className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
+                                        placeholder: "Enter Course Id"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Addcourse.js",
+                                        lineNumber: 42,
+                                        columnNumber: 17
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                        htmlFor: "CourseName",
+                                        className: "block text-gray-600",
+                                        children: "Course Name:"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Addcourse.js",
+                                        lineNumber: 51,
+                                        columnNumber: 17
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                        type: "text",
+                                        name: "CourseName",
+                                        onChange: handleForm,
+                                        className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
+                                        placeholder: "Enter Course Name"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Addcourse.js",
+                                        lineNumber: 52,
+                                        columnNumber: 17
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                        htmlFor: "facultyId",
+                                        className: "block text-gray-600",
+                                        children: "Faculty Id:"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Addcourse.js",
+                                        lineNumber: 60,
+                                        columnNumber: 17
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                        type: "text",
+                                        name: "facultyId",
+                                        onChange: handleForm,
+                                        className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
+                                        placeholder: "Enter Faculty Id"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Addcourse.js",
+                                        lineNumber: 61,
+                                        columnNumber: 17
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                        htmlFor: "department",
+                                        className: "block text-gray-600",
+                                        children: "Depatment:"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Addcourse.js",
+                                        lineNumber: 69,
+                                        columnNumber: 17
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                        type: "text",
+                                        name: "department",
+                                        onChange: handleForm,
+                                        className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
+                                        placeholder: "Enter Depatment"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Addcourse.js",
+                                        lineNumber: 70,
+                                        columnNumber: 17
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                        htmlFor: "branch",
+                                        className: "block text-gray-600",
+                                        children: "Branch:"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Addcourse.js",
+                                        lineNumber: 78,
+                                        columnNumber: 17
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                        type: "text",
+                                        name: "branch",
+                                        onChange: handleForm,
+                                        className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
+                                        placeholder: "Enter Branch"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Addcourse.js",
+                                        lineNumber: 79,
+                                        columnNumber: 17
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                        htmlFor: "semester",
+                                        className: "block text-gray-600",
+                                        children: "Semester:"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Addcourse.js",
+                                        lineNumber: 86,
+                                        columnNumber: 17
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                        type: "text",
+                                        name: "semester",
+                                        onChange: handleForm,
+                                        className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
+                                        placeholder: "Enter Semester"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Addcourse.js",
+                                        lineNumber: 87,
+                                        columnNumber: 17
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
                                 fileName: "src/components/Addcourse.js",
-                                lineNumber: 36,
-                                columnNumber: 13
+                                lineNumber: 40,
+                                columnNumber: 15
                             }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                htmlFor: "CourseName",
-                                className: "block text-gray-600",
-                                children: "Course Name:"
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                type: "submit",
+                                className: "w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 focus:outline-none",
+                                children: "Add Course"
                             }, void 0, false, {
                                 fileName: "src/components/Addcourse.js",
-                                lineNumber: 45,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                type: "text",
-                                name: "CourseName",
-                                onChange: handleForm,
-                                className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
-                                placeholder: "Enter Course Name"
-                            }, void 0, false, {
-                                fileName: "src/components/Addcourse.js",
-                                lineNumber: 46,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                htmlFor: "Faculty Id:",
-                                className: "block text-gray-600",
-                                children: "Faculty Id:"
-                            }, void 0, false, {
-                                fileName: "src/components/Addcourse.js",
-                                lineNumber: 54,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                type: "text",
-                                name: "Faculty Id:",
-                                onChange: handleForm,
-                                className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
-                                placeholder: "Enter Faculty Id"
-                            }, void 0, false, {
-                                fileName: "src/components/Addcourse.js",
-                                lineNumber: 55,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                htmlFor: "department",
-                                className: "block text-gray-600",
-                                children: "Depatment:"
-                            }, void 0, false, {
-                                fileName: "src/components/Addcourse.js",
-                                lineNumber: 63,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                type: "text",
-                                name: "department",
-                                onChange: handleForm,
-                                className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
-                                placeholder: "Enter Depatment"
-                            }, void 0, false, {
-                                fileName: "src/components/Addcourse.js",
-                                lineNumber: 64,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                htmlFor: "branch",
-                                className: "block text-gray-600",
-                                children: "Branch:"
-                            }, void 0, false, {
-                                fileName: "src/components/Addcourse.js",
-                                lineNumber: 72,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                type: "text",
-                                name: "branch",
-                                onChange: handleForm,
-                                className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
-                                placeholder: "Enter Branch"
-                            }, void 0, false, {
-                                fileName: "src/components/Addcourse.js",
-                                lineNumber: 73,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                htmlFor: "semester",
-                                className: "block text-gray-600",
-                                children: "Semester:"
-                            }, void 0, false, {
-                                fileName: "src/components/Addcourse.js",
-                                lineNumber: 80,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                type: "text",
-                                name: "semester",
-                                onChange: handleForm,
-                                className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
-                                placeholder: "Enter Semester"
-                            }, void 0, false, {
-                                fileName: "src/components/Addcourse.js",
-                                lineNumber: 81,
-                                columnNumber: 13
+                                lineNumber: 97,
+                                columnNumber: 15
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/Addcourse.js",
-                        lineNumber: 34,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        type: "submit",
-                        className: "w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 focus:outline-none",
-                        children: "Add Course"
-                    }, void 0, false, {
-                        fileName: "src/components/Addcourse.js",
-                        lineNumber: 91,
-                        columnNumber: 11
+                        lineNumber: 37,
+                        columnNumber: 13
                     }, undefined)
-                ]
-            }, void 0, true, {
+                }, void 0, false, {
+                    fileName: "src/components/Addcourse.js",
+                    lineNumber: 36,
+                    columnNumber: 11
+                }, undefined)
+            }, void 0, false, {
                 fileName: "src/components/Addcourse.js",
-                lineNumber: 31,
+                lineNumber: 35,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sonner.Toaster), {
+                position: "top-right",
+                richColors: true
+            }, void 0, false, {
+                fileName: "src/components/Addcourse.js",
+                lineNumber: 103,
                 columnNumber: 9
             }, undefined)
-        }, void 0, false, {
-            fileName: "src/components/Addcourse.js",
-            lineNumber: 30,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/components/Addcourse.js",
-        lineNumber: 29,
-        columnNumber: 7
-    }, undefined);
+        ]
+    }, void 0, true);
 };
 _s(AddFaculty, "HmHmT1NwDHIHgdyilMy2WWewWv4=");
 _c = AddFaculty;
@@ -36167,7 +36234,7 @@ $RefreshReg$(_c, "AddFaculty");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ltJX8":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","sonner":"4wQOs"}],"ltJX8":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$47c3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -36204,6 +36271,114 @@ _s(statusprovider, "vcRs6m/+4SulWtRLS0CK7PNgLsI=");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["9A7zD","1xC6H","2kQhy"], "2kQhy", "parcelRequire6604")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dnKj3":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$6820 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$6820.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const FacultyList = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "flex justify-evenly w-full shadow-xl py-8",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    children: "Faculty Id"
+                }, void 0, false, {
+                    fileName: "src/components/FacultyList.js",
+                    lineNumber: 7,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    children: "Faculty name"
+                }, void 0, false, {
+                    fileName: "src/components/FacultyList.js",
+                    lineNumber: 8,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    children: "Faculty Email"
+                }, void 0, false, {
+                    fileName: "src/components/FacultyList.js",
+                    lineNumber: 9,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    children: "Faculty Department"
+                }, void 0, false, {
+                    fileName: "src/components/FacultyList.js",
+                    lineNumber: 10,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    children: "Faculty Password"
+                }, void 0, false, {
+                    fileName: "src/components/FacultyList.js",
+                    lineNumber: 11,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    children: "Faculty Courses"
+                }, void 0, false, {
+                    fileName: "src/components/FacultyList.js",
+                    lineNumber: 12,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/FacultyList.js",
+            lineNumber: 6,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false);
+};
+_c = FacultyList;
+exports.default = FacultyList;
+var _c;
+$RefreshReg$(_c, "FacultyList");
+
+  $parcel$ReactRefreshHelpers$6820.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"b5q7J":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$def3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$def3.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const StudentList = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+            children: "StudentList"
+        }, void 0, false, {
+            fileName: "src/components/StudentList.js",
+            lineNumber: 5,
+            columnNumber: 9
+        }, undefined)
+    }, void 0, false);
+};
+_c = StudentList;
+exports.default = StudentList;
+var _c;
+$RefreshReg$(_c, "StudentList");
+
+  $parcel$ReactRefreshHelpers$def3.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["9A7zD","1xC6H","2kQhy"], "2kQhy", "parcelRequire6604")
 
 //# sourceMappingURL=index.7271efb6.js.map

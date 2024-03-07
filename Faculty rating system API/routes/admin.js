@@ -94,7 +94,9 @@ router.post('/register-faculty', async (req, res) => {
 router.post('/addCourse', async (req, res) => {
     try {
         const newCourse = new Course(req.body);
+        
         await newCourse.save();
+        console.log("hi")
         const faculty = await Faculty.findOne({ facultyId: req.body.facultyId });
 
         if (!faculty) {

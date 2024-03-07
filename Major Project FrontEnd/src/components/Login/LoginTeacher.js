@@ -15,12 +15,14 @@ const Login = () => {
         'Content-Type':'application/json'
       }
     }); 
+
     
     if(res.status == 200){
       toast.success("Login Successful");
       setTimeout(function() {
         navigate("/faculty/home");
     }, 500);
+    console.log(res.status)
       
     }else{
       toast.error("Incorrect UserName or Password")

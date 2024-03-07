@@ -18,14 +18,12 @@ const reqFacultyAuth = (req, res, next) => {
 // Faculty Login
 router.post('/login', async (req, res) => {
     try {
-        const faculty = await Faculty.findOne({ facultyId: req.body.facultyId });
+        
         if (!faculty) {
             return res.status(404).json({ message: "Faculty memeber is not registered" })
         }
         if (req.body.password == faculty.password) {
             // When a faculty member logs in
-            req.session.facultyAuthenticated = true;
-            req.session.facultyId = faculty.facultyId;
 
             return res.status(200).json(faculty);
         } else {
@@ -52,7 +50,7 @@ router.post('/logout', async (req, res) => {
     }
 })
 
-router.post('/student-register', reqFacultyAuth, async (req, res) => {
+router.post('/student-register', async (req, res) => {
     try {
         const newStudent = new Student({
             studentId: req.body.studentId,
@@ -62,6 +60,7 @@ router.post('/student-register', reqFacultyAuth, async (req, res) => {
             semester: req.body.semester,
             password: req.body.password
         })
+        console.log("hi");
         await newStudent.save();
         return res.status(200).json(newStudent);
     } catch (error) {
