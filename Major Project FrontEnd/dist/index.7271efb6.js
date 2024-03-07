@@ -34240,7 +34240,6 @@ const LoginAdmin = ()=>{
             body: JSON.stringify(form)
         });
         // const json = res.json()
-        console.log(res.headers);
         // Extract the Set-Cookie header from the response headers
         // var setCookieHeader = res['SetCookie'];
         // // Split the header to get individual cookies
@@ -34405,7 +34404,7 @@ const LoginAdmin = ()=>{
         ]
     }, void 0, true);
 };
-_s(LoginAdmin, "jOSvTpfz8sRVmnId4pCCOKjRW94=", false, function() {
+_s(LoginAdmin, "PQUPng+owqEYBKKF/VmMagUZBrY=", false, function() {
     return [
         (0, _reactRouterDom.useNavigate)
     ];
@@ -35748,6 +35747,7 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactRouterDom = require("react-router-dom");
+var _sonner = require("sonner");
 var _s = $RefreshSig$();
 const AddFaculty = ()=>{
     _s();
@@ -35764,7 +35764,7 @@ const AddFaculty = ()=>{
         });
         console.log(res);
         if (res.status == 200) {
-            toast.success("Register Successful");
+            (0, _sonner.toast).success("Register Successful");
             setTimeout(function() {
                 navigate("/faculty/home");
             }, 500);
@@ -35776,123 +35776,140 @@ const AddFaculty = ()=>{
             [e.target.name]: e.target.value
         });
     };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex h-auto justify-center align-middle",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "min-h-screen flex items-center justify-center",
-            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
-                onSubmit: handleSubmit,
-                className: "bg-white p-8 rounded shadow-2xl w-96",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                        className: "text-2xl font-semibold mb-4 text-center",
-                        children: " Add Faculty"
-                    }, void 0, false, {
-                        fileName: "src/components/AddFaculty.js",
-                        lineNumber: 39,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "justify-evenly flex flex-col mb-4",
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "flex h-auto justify-center align-middle",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "min-h-screen flex items-center justify-center",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+                        onSubmit: handleSubmit,
+                        className: "bg-white p-8 rounded shadow-2xl w-96",
                         children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                htmlFor: "facultyId",
-                                className: "block text-gray-600",
-                                children: "Faculty Id:"
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                                className: "text-2xl font-semibold mb-4 text-center",
+                                children: " Add Faculty"
                             }, void 0, false, {
                                 fileName: "src/components/AddFaculty.js",
                                 lineNumber: 42,
                                 columnNumber: 13
                             }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                type: "text",
-                                name: "facultyId",
-                                onChange: handleForm,
-                                className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
-                                placeholder: "Enter Faculty Id"
-                            }, void 0, false, {
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "justify-evenly flex flex-col mb-4",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                        htmlFor: "facultyId",
+                                        className: "block text-gray-600",
+                                        children: "Faculty Id:"
+                                    }, void 0, false, {
+                                        fileName: "src/components/AddFaculty.js",
+                                        lineNumber: 45,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                        type: "text",
+                                        name: "facultyId",
+                                        onChange: handleForm,
+                                        className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
+                                        placeholder: "Enter Faculty Id"
+                                    }, void 0, false, {
+                                        fileName: "src/components/AddFaculty.js",
+                                        lineNumber: 46,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                        htmlFor: "name",
+                                        className: "block text-gray-600",
+                                        children: "Faculty Name:"
+                                    }, void 0, false, {
+                                        fileName: "src/components/AddFaculty.js",
+                                        lineNumber: 55,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                        type: "text",
+                                        name: "name",
+                                        onChange: handleForm,
+                                        className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
+                                        placeholder: "Enter Faculty Name"
+                                    }, void 0, false, {
+                                        fileName: "src/components/AddFaculty.js",
+                                        lineNumber: 56,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                        htmlFor: "email",
+                                        className: "block text-gray-600",
+                                        children: "Faculty Email:"
+                                    }, void 0, false, {
+                                        fileName: "src/components/AddFaculty.js",
+                                        lineNumber: 64,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                        type: "text",
+                                        name: "email",
+                                        onChange: handleForm,
+                                        className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
+                                        placeholder: "Enter Faculty Email"
+                                    }, void 0, false, {
+                                        fileName: "src/components/AddFaculty.js",
+                                        lineNumber: 65,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                        htmlFor: "department",
+                                        className: "block text-gray-600",
+                                        children: "Depatment:"
+                                    }, void 0, false, {
+                                        fileName: "src/components/AddFaculty.js",
+                                        lineNumber: 73,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                        type: "text",
+                                        name: "department",
+                                        onChange: handleForm,
+                                        className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
+                                        placeholder: "Enter Faculty Depatment:"
+                                    }, void 0, false, {
+                                        fileName: "src/components/AddFaculty.js",
+                                        lineNumber: 74,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                        htmlFor: "password",
+                                        className: "block text-gray-600",
+                                        children: "Password:"
+                                    }, void 0, false, {
+                                        fileName: "src/components/AddFaculty.js",
+                                        lineNumber: 82,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                        type: "password",
+                                        name: "password",
+                                        onChange: handleForm,
+                                        className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
+                                        placeholder: "Enter Default password"
+                                    }, void 0, false, {
+                                        fileName: "src/components/AddFaculty.js",
+                                        lineNumber: 83,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
                                 fileName: "src/components/AddFaculty.js",
-                                lineNumber: 43,
+                                lineNumber: 44,
                                 columnNumber: 13
                             }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                htmlFor: "name",
-                                className: "block text-gray-600",
-                                children: "Faculty Name:"
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                type: "submit",
+                                className: "w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 focus:outline-none",
+                                children: "Register Faculty"
                             }, void 0, false, {
                                 fileName: "src/components/AddFaculty.js",
-                                lineNumber: 52,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                type: "text",
-                                name: "name",
-                                onChange: handleForm,
-                                className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
-                                placeholder: "Enter Faculty Name"
-                            }, void 0, false, {
-                                fileName: "src/components/AddFaculty.js",
-                                lineNumber: 53,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                htmlFor: "email",
-                                className: "block text-gray-600",
-                                children: "Faculty Email:"
-                            }, void 0, false, {
-                                fileName: "src/components/AddFaculty.js",
-                                lineNumber: 61,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                type: "text",
-                                name: "email",
-                                onChange: handleForm,
-                                className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
-                                placeholder: "Enter Faculty Email"
-                            }, void 0, false, {
-                                fileName: "src/components/AddFaculty.js",
-                                lineNumber: 62,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                htmlFor: "department",
-                                className: "block text-gray-600",
-                                children: "Depatment:"
-                            }, void 0, false, {
-                                fileName: "src/components/AddFaculty.js",
-                                lineNumber: 70,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                type: "text",
-                                name: "department",
-                                onChange: handleForm,
-                                className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
-                                placeholder: "Enter Faculty Depatment:"
-                            }, void 0, false, {
-                                fileName: "src/components/AddFaculty.js",
-                                lineNumber: 71,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                htmlFor: "password",
-                                className: "block text-gray-600",
-                                children: "Password:"
-                            }, void 0, false, {
-                                fileName: "src/components/AddFaculty.js",
-                                lineNumber: 79,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                type: "password",
-                                name: "password",
-                                onChange: handleForm,
-                                className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
-                                placeholder: "Enter Default password"
-                            }, void 0, false, {
-                                fileName: "src/components/AddFaculty.js",
-                                lineNumber: 80,
+                                lineNumber: 93,
                                 columnNumber: 13
                             }, undefined)
                         ]
@@ -35900,34 +35917,29 @@ const AddFaculty = ()=>{
                         fileName: "src/components/AddFaculty.js",
                         lineNumber: 41,
                         columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        type: "submit",
-                        className: "w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 focus:outline-none",
-                        children: "Register Faculty"
-                    }, void 0, false, {
-                        fileName: "src/components/AddFaculty.js",
-                        lineNumber: 90,
-                        columnNumber: 11
                     }, undefined)
-                ]
-            }, void 0, true, {
+                }, void 0, false, {
+                    fileName: "src/components/AddFaculty.js",
+                    lineNumber: 40,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
                 fileName: "src/components/AddFaculty.js",
-                lineNumber: 38,
-                columnNumber: 9
+                lineNumber: 39,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sonner.Toaster), {
+                position: "top-right",
+                richColors: true
+            }, void 0, false, {
+                fileName: "src/components/AddFaculty.js",
+                lineNumber: 99,
+                columnNumber: 7
             }, undefined)
-        }, void 0, false, {
-            fileName: "src/components/AddFaculty.js",
-            lineNumber: 37,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/components/AddFaculty.js",
-        lineNumber: 36,
-        columnNumber: 7
-    }, undefined);
+        ]
+    }, void 0, true);
 };
-_s(AddFaculty, "jOSvTpfz8sRVmnId4pCCOKjRW94=", false, function() {
+_s(AddFaculty, "PQUPng+owqEYBKKF/VmMagUZBrY=", false, function() {
     return [
         (0, _reactRouterDom.useNavigate)
     ];
@@ -35942,7 +35954,7 @@ $RefreshReg$(_c, "AddFaculty");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"87iI7":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","sonner":"4wQOs","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"87iI7":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$caa8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

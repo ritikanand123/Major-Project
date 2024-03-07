@@ -1,23 +1,18 @@
 // routes/adminRoutes.js
-const jwt  = require('jsonwebtoken');
+const jwt = require('jsonwebtoken');
 const express = require('express');
 const router = express.Router();
 const Admin = require('../models/Admin');
 const Faculty = require('../models/Faculty');
 const Feedback = require('../models/Feedback');
 const authMiddleware = require('../middlewares/auth');
-
 const Course = require('../models/Course');
 
-const reqAdminAuth = (req, res, next) => {
-    // console.log(req.session.AdminAuthenticated);
-    // console.log(req.sessionID);
-    if (req.session.AdminAuthenticated) {
-        next();
-    } else {
-        res.status(401).json({ message: "admin authentication required" })
-    }
-}
+
+
+
+
+
 // router.post('/resgiter', async (req, res) => {
 //     try {
 //         const admin = new Admin({
@@ -42,13 +37,15 @@ router.post('/login', async (req, res) => {
 
         if (admin) {
             const token = await admin.generateAuthToken();
-            // console.log(admin);
+
             res.header('Access-Control-Allow-Credentials', true);
+
             const options = {
                 expires: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
                 httpOnly: true
             }
-            res.cookie("jwtoken", token, options);
+            res.cookie("jwt", token, options);
+
             return res.status(200).json({
                 success: true,
                 message: 'Login Sucessfull'
@@ -64,16 +61,20 @@ router.post('/login', async (req, res) => {
 });
 
 
+
+// admin logout
 router.post('/logout', async (req, res) => {
     try {
-        req.session.AdminAuthenticated = false;
-        // console.log(req.session)
+
         return res.status(200).json({ message: "User is logged out successfully" })
     } catch (error) {
         return res.status(500).josn({ message: { error } });
     }
 })
-router.post('/register-faculty', reqAdminAuth, async (req, res) => {
+
+
+
+router.post('/register-faculty', async (req, res) => {
     try {
         const newFaculty = new Faculty({
             facultyId: req.body.facultyId,
@@ -90,7 +91,7 @@ router.post('/register-faculty', reqAdminAuth, async (req, res) => {
     }
 })
 
-router.post('/addCourse', reqAdminAuth, async (req, res) => {
+router.post('/addCourse', async (req, res) => {
     try {
         const newCourse = new Course(req.body);
         await newCourse.save();
@@ -109,7 +110,7 @@ router.post('/addCourse', reqAdminAuth, async (req, res) => {
     }
 });
 
-router.get('/faculty/:facultyId/courses-and-feedbacks', reqAdminAuth, async (req, res) => {
+router.get('/faculty/:facultyId/courses-and-feedbacks', async (req, res) => {
     try {
 
 
@@ -138,7 +139,7 @@ router.get('/faculty/:facultyId/courses-and-feedbacks', reqAdminAuth, async (req
         return res.status(500).json({ message: error.message });
     }
 });
-router.get('/faculty/:facultyId/average-ratings-and-comments', reqAdminAuth, async (req, res) => {
+router.get('/faculty/:facultyId/average-ratings-and-comments', async (req, res) => {
     try {
         const faculty = await Faculty.findOne({ facultyId: req.params.facultyId }).populate('allCourses');
 
@@ -175,7 +176,7 @@ router.get('/faculty/:facultyId/average-ratings-and-comments', reqAdminAuth, asy
     }
 });
 
-router.get('/faculty/:facultyId/questionwise-average-ratings', reqAdminAuth, async (req, res) => {
+router.get('/faculty/:facultyId/questionwise-average-ratings', async (req, res) => {
     try {
         const faculty = await Faculty.findOne({ facultyId: req.params.facultyId }).populate('allCourses');
 
