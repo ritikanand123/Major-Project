@@ -94,7 +94,7 @@ router.post('/register-faculty', async (req, res) => {
 router.post('/addCourse', async (req, res) => {
     try {
         const newCourse = new Course(req.body);
-        
+
         await newCourse.save();
         console.log("hi")
         const faculty = await Faculty.findOne({ facultyId: req.body.facultyId });
@@ -228,6 +228,17 @@ router.get('/faculty/:facultyId/questionwise-average-ratings', async (req, res) 
 
     } catch (error) {
         return res.status(500).json({ message: error.message });
+    }
+});
+
+
+router.post('/get_all_faculty', async (req, res) => {
+    try {
+        // const allFaculty = await Faculty.find().select('-allCourses');
+        const allFaculty = await Faculty.find().populate('allCourses')
+        return res.status(200).json(allFaculty);
+    } catch (err) {
+        return res.status(500).json({ message: err.message });
     }
 });
 

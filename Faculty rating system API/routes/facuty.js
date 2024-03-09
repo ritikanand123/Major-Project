@@ -18,7 +18,7 @@ const reqFacultyAuth = (req, res, next) => {
 // Faculty Login
 router.post('/login', async (req, res) => {
     try {
-        
+
         if (!faculty) {
             return res.status(404).json({ message: "Faculty memeber is not registered" })
         }
@@ -100,6 +100,23 @@ router.post('/import-students/:path', reqFacultyAuth, async (req, res) => {
 
 })
 
+router.post('/getStudents', async (req, res) => {
+    try {
+        const faculty = await Faculty.findOne({ facultyId: req.body.facultyId });
+
+        if (!faculty) {
+            return res.status(204).json({ message: "Faculty not registered" });
+        } else {
+            const allStudent = await Student.findOne({ department: faculty.department })
+            return res.status(200).json(allStudent);
+
+        }
+    } catch (error) {
+        return res.status(500).json({ message: error.message });
+
+    }
+
+});
 
 
 module.exports = router;

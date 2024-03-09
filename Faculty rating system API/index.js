@@ -23,7 +23,7 @@ app.use(helmet());
 app.use(morgan("common"));
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({credentials : true}));
+app.use(cors({ credentials: true }));
 
 app.use('/api/admin', adminRouter);
 
@@ -38,5 +38,5 @@ mongoose.connect(process.env.MONGO_URI)
 
 
 app.listen(port, () => {
-    console.log("Server is running on port ${port}....")
+    console.log(`Server is running on port ${port}....`)
 })

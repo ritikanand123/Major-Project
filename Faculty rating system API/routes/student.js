@@ -5,6 +5,7 @@ const router = express.Router();
 const Student = require('../models/Student')
 const Course = require('../models/Course');
 const Feedback = require('../models/Feedback');
+const Facutly = require('../models/Faculty');
 
 const reqStudentAuth = (req, res, next) => {
     if (req.session.studentAuthenticated && req.session.studentId != null) {
@@ -80,5 +81,6 @@ router.post('/submitFeedback/:courseId/:studentId', async (req, res) => {
         return res.status(500).json({ message: error.message });
     }
 })
+
 
 module.exports = router;
