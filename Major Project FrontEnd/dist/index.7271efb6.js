@@ -2980,7 +2980,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginStudentDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 21,
+            lineNumber: 20,
             columnNumber: 19
         }, undefined)
     },
@@ -2988,7 +2988,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/login",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginStudentDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 25,
+            lineNumber: 24,
             columnNumber: 19
         }, undefined)
     },
@@ -2996,7 +2996,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/feedback",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _feedbackDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 30,
+            lineNumber: 29,
             columnNumber: 19
         }, undefined)
     },
@@ -3004,7 +3004,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/loginAsAdmin",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginAdminDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 35,
+            lineNumber: 34,
             columnNumber: 19
         }, undefined)
     },
@@ -3012,7 +3012,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/loginAsTeacher",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginTeacherDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 39,
+            lineNumber: 38,
             columnNumber: 19
         }, undefined)
     },
@@ -3020,7 +3020,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/faculty/home",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _facultyHeaderDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 43,
+            lineNumber: 42,
             columnNumber: 19
         }, undefined),
         children: [
@@ -3028,7 +3028,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/faculty/home/addstudent",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _addStudentDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 47,
+                    lineNumber: 46,
                     columnNumber: 27
                 }, undefined)
             },
@@ -3036,7 +3036,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/faculty/home/studentlist",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _studentListDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 51,
+                    lineNumber: 50,
                     columnNumber: 27
                 }, undefined)
             }
@@ -3046,7 +3046,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/admin/home",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _adminHeaderDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 57,
+            lineNumber: 56,
             columnNumber: 19
         }, undefined),
         children: [
@@ -3054,7 +3054,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/admin/home/addfaculty",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _addFacultyDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 61,
+                    lineNumber: 60,
                     columnNumber: 27
                 }, undefined)
             },
@@ -3062,7 +3062,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/admin/home/addcourse",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _addcourseDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 65,
+                    lineNumber: 64,
                     columnNumber: 27
                 }, undefined)
             },
@@ -3070,7 +3070,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/admin/home/teacherlist",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _facultyListDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 69,
+                    lineNumber: 68,
                     columnNumber: 27
                 }, undefined)
             }
@@ -3083,7 +3083,7 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment
         router: Approuter
     }, void 0, false, {
         fileName: "src/App.js",
-        lineNumber: 80,
+        lineNumber: 79,
         columnNumber: 9
     }, undefined)
 }, void 0, false));
@@ -35333,13 +35333,14 @@ const Header = ()=>{
                                 columnNumber: 9
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                to: "studentlist",
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                     className: "font-medium m-2",
                                     children: "Students List"
                                 }, void 0, false, {
                                     fileName: "src/components/FacultyHeader.js",
                                     lineNumber: 37,
-                                    columnNumber: 15
+                                    columnNumber: 34
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/FacultyHeader.js",
@@ -36283,61 +36284,182 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _s = $RefreshSig$();
 const FacultyList = ()=>{
+    _s();
+    const [teacherList, setTeacherList] = (0, _react.useState)(null);
+    (0, _react.useEffect)(()=>{
+        getTeacherList();
+    }, []);
+    const getTeacherList = async ()=>{
+        try {
+            const response = await fetch("http://localhost:8998/api/admin/get_all_faculty");
+            const data = await response.json();
+            const sortedTeacherList = data.sort((a, b)=>a.department.localeCompare(b.department));
+            setTeacherList(sortedTeacherList);
+        } catch (error) {
+            console.error("Error fetching teacher list:", error);
+        }
+    };
+    if (teacherList == null) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        children: " Loading "
+    }, void 0, false, {
+        fileName: "src/components/FacultyList.js",
+        lineNumber: 23,
+        columnNumber: 12
+    }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "flex justify-evenly w-full shadow-xl py-8",
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    children: "Faculty Id"
-                }, void 0, false, {
-                    fileName: "src/components/FacultyList.js",
-                    lineNumber: 7,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    children: "Faculty name"
-                }, void 0, false, {
-                    fileName: "src/components/FacultyList.js",
-                    lineNumber: 8,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    children: "Faculty Email"
-                }, void 0, false, {
-                    fileName: "src/components/FacultyList.js",
-                    lineNumber: 9,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    children: "Faculty Department"
-                }, void 0, false, {
-                    fileName: "src/components/FacultyList.js",
-                    lineNumber: 10,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    children: "Faculty Password"
-                }, void 0, false, {
-                    fileName: "src/components/FacultyList.js",
-                    lineNumber: 11,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    children: "Faculty Courses"
-                }, void 0, false, {
-                    fileName: "src/components/FacultyList.js",
-                    lineNumber: 12,
-                    columnNumber: 9
-                }, undefined)
-            ]
-        }, void 0, true, {
-            fileName: "src/components/FacultyList.js",
-            lineNumber: 6,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false);
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "flex justify-evenly w-full shadow-xl py-8",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "w-5",
+                        children: "Sr. No"
+                    }, void 0, false, {
+                        fileName: "src/components/FacultyList.js",
+                        lineNumber: 29,
+                        columnNumber: 7
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "w-5",
+                        children: "Faculty Id"
+                    }, void 0, false, {
+                        fileName: "src/components/FacultyList.js",
+                        lineNumber: 30,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "w-5",
+                        children: "Faculty name"
+                    }, void 0, false, {
+                        fileName: "src/components/FacultyList.js",
+                        lineNumber: 31,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "w-5",
+                        children: "Faculty Email"
+                    }, void 0, false, {
+                        fileName: "src/components/FacultyList.js",
+                        lineNumber: 32,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "w-5",
+                        children: "Faculty Department"
+                    }, void 0, false, {
+                        fileName: "src/components/FacultyList.js",
+                        lineNumber: 33,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "w-5",
+                        children: "Faculty Password"
+                    }, void 0, false, {
+                        fileName: "src/components/FacultyList.js",
+                        lineNumber: 34,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "w-5",
+                        children: "Faculty Courses"
+                    }, void 0, false, {
+                        fileName: "src/components/FacultyList.js",
+                        lineNumber: 35,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/FacultyList.js",
+                lineNumber: 28,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "justify-start mt-8",
+                children: teacherList.map((faculty, idx)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "flex align-left justify-evenly w-full py-4",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "w-5 ",
+                                children: idx + 1
+                            }, void 0, false, {
+                                fileName: "src/components/FacultyList.js",
+                                lineNumber: 43,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "w-5",
+                                children: faculty.facultyId
+                            }, void 0, false, {
+                                fileName: "src/components/FacultyList.js",
+                                lineNumber: 44,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "w-5",
+                                children: faculty.name
+                            }, void 0, false, {
+                                fileName: "src/components/FacultyList.js",
+                                lineNumber: 45,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "w-5 ",
+                                children: faculty.email
+                            }, void 0, false, {
+                                fileName: "src/components/FacultyList.js",
+                                lineNumber: 46,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "w-5",
+                                children: faculty.department
+                            }, void 0, false, {
+                                fileName: "src/components/FacultyList.js",
+                                lineNumber: 47,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "w-5",
+                                children: faculty.password
+                            }, void 0, false, {
+                                fileName: "src/components/FacultyList.js",
+                                lineNumber: 48,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "w-5",
+                                children: faculty.allCourses.map((course)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        children: [
+                                            course.CourseName,
+                                            ", "
+                                        ]
+                                    }, course._id, true, {
+                                        fileName: "src/components/FacultyList.js",
+                                        lineNumber: 51,
+                                        columnNumber: 15
+                                    }, undefined))
+                            }, void 0, false, {
+                                fileName: "src/components/FacultyList.js",
+                                lineNumber: 49,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, faculty.id, true, {
+                        fileName: "src/components/FacultyList.js",
+                        lineNumber: 42,
+                        columnNumber: 9
+                    }, undefined))
+            }, void 0, false, {
+                fileName: "src/components/FacultyList.js",
+                lineNumber: 40,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true);
 };
+_s(FacultyList, "u4lhDFB5oehAwgWfUILibmIYJ6w=");
 _c = FacultyList;
 exports.default = FacultyList;
 var _c;
@@ -36358,17 +36480,175 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _s = $RefreshSig$();
 const StudentList = ()=>{
+    _s();
+    const [studetnList, setstudetnList] = (0, _react.useState)(null);
+    (0, _react.useEffect)(()=>{
+        getstudetnList();
+    }, []);
+    const getstudetnList = async ()=>{
+        try {
+            const response = await fetch("http://localhost:8998/api/faculty/getStudents");
+            const data = await response.json();
+            const sortedstudetnList = data.sort((a, b)=>a.department.localeCompare(b.department));
+            setstudetnList(sortedstudetnList);
+        } catch (error) {
+            console.error("Error fetching teacher list:", error);
+        }
+    };
+    if (studetnList == null) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        children: " Loading "
+    }, void 0, false, {
+        fileName: "src/components/StudentList.js",
+        lineNumber: 24,
+        columnNumber: 14
+    }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-            children: "StudentList"
-        }, void 0, false, {
-            fileName: "src/components/StudentList.js",
-            lineNumber: 5,
-            columnNumber: 9
-        }, undefined)
-    }, void 0, false);
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "flex justify-evenly w-full shadow-xl py-8",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "w-5",
+                        children: "Sr. No"
+                    }, void 0, false, {
+                        fileName: "src/components/StudentList.js",
+                        lineNumber: 30,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "w-5",
+                        children: "Student Id"
+                    }, void 0, false, {
+                        fileName: "src/components/StudentList.js",
+                        lineNumber: 31,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "w-5",
+                        children: "Student Name"
+                    }, void 0, false, {
+                        fileName: "src/components/StudentList.js",
+                        lineNumber: 32,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "w-5",
+                        children: "Student Email"
+                    }, void 0, false, {
+                        fileName: "src/components/StudentList.js",
+                        lineNumber: 33,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "w-5",
+                        children: "Student Branch"
+                    }, void 0, false, {
+                        fileName: "src/components/StudentList.js",
+                        lineNumber: 34,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "w-5",
+                        children: "Student Semester"
+                    }, void 0, false, {
+                        fileName: "src/components/StudentList.js",
+                        lineNumber: 35,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "w-5",
+                        children: "Student Password"
+                    }, void 0, false, {
+                        fileName: "src/components/StudentList.js",
+                        lineNumber: 36,
+                        columnNumber: 11
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/StudentList.js",
+                lineNumber: 29,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "justify-start mt-8",
+                children: studetnList.map((student, idx)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "flex align-left justify-evenly w-full py-4",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "w-5 ",
+                                children: idx + 1
+                            }, void 0, false, {
+                                fileName: "src/components/StudentList.js",
+                                lineNumber: 44,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "w-5",
+                                children: student.studentId
+                            }, void 0, false, {
+                                fileName: "src/components/StudentList.js",
+                                lineNumber: 45,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "w-5",
+                                children: student.name
+                            }, void 0, false, {
+                                fileName: "src/components/StudentList.js",
+                                lineNumber: 46,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "w-5 ",
+                                children: student.email
+                            }, void 0, false, {
+                                fileName: "src/components/StudentList.js",
+                                lineNumber: 47,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "w-5",
+                                children: student.branch
+                            }, void 0, false, {
+                                fileName: "src/components/StudentList.js",
+                                lineNumber: 48,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "w-5",
+                                children: student.semester
+                            }, void 0, false, {
+                                fileName: "src/components/StudentList.js",
+                                lineNumber: 49,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "w-5",
+                                children: student.password
+                            }, void 0, false, {
+                                fileName: "src/components/StudentList.js",
+                                lineNumber: 50,
+                                columnNumber: 13
+                            }, undefined)
+                        ]
+                    }, student.id, true, {
+                        fileName: "src/components/StudentList.js",
+                        lineNumber: 43,
+                        columnNumber: 11
+                    }, undefined))
+            }, void 0, false, {
+                fileName: "src/components/StudentList.js",
+                lineNumber: 41,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true);
 };
+_s(StudentList, "Z8d4Ydah/OkhgRDOMtJeleuvY1A=");
 _c = StudentList;
 exports.default = StudentList;
 var _c;
@@ -36379,6 +36659,6 @@ $RefreshReg$(_c, "StudentList");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["9A7zD","1xC6H","2kQhy"], "2kQhy", "parcelRequire6604")
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq"}]},["9A7zD","1xC6H","2kQhy"], "2kQhy", "parcelRequire6604")
 
 //# sourceMappingURL=index.7271efb6.js.map

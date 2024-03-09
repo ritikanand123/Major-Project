@@ -232,7 +232,7 @@ router.get('/faculty/:facultyId/questionwise-average-ratings', async (req, res) 
 });
 
 
-router.post('/get_all_faculty', async (req, res) => {
+router.get('/get_all_faculty', async (req, res) => {
     try {
         // const allFaculty = await Faculty.find().select('-allCourses');
         const allFaculty = await Faculty.find().populate('allCourses')

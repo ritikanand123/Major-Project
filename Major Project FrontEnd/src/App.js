@@ -15,7 +15,6 @@ import StudentList from "./components/StudentList"
 
 const Approuter = createBrowserRouter([
     
-   
     {
         path : "/",
         element : <Login/>
