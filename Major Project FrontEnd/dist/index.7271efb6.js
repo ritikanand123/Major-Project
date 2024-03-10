@@ -3103,7 +3103,7 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","react-router-dom":"9xmpe","./components/Login/LoginStudent":"ellob","./components/Feedback":"2hBAZ","./components/Login/LoginAdmin":"b9IEN","./components/Login/LoginTeacher":"aqaip","./components/FacultyHeader":"2phQw","./components/AddStudent":"3QMK0","./components/AdminHeader":"jcoHB","./components/AddFaculty":"jdb5j","./components/Addcourse":"87iI7","./context/AdminloginContext":"ltJX8","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/FacultyList":"dnKj3","./components/StudentList":"b5q7J","./components/AddMultipleStudent":"23rpZ"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","react-router-dom":"9xmpe","./components/Login/LoginStudent":"ellob","./components/Feedback":"2hBAZ","./components/Login/LoginAdmin":"b9IEN","./components/Login/LoginTeacher":"aqaip","./components/FacultyHeader":"2phQw","./components/AddStudent":"3QMK0","./components/AdminHeader":"jcoHB","./components/AddFaculty":"jdb5j","./components/Addcourse":"87iI7","./context/AdminloginContext":"ltJX8","./components/FacultyList":"dnKj3","./components/StudentList":"b5q7J","./components/AddMultipleStudent":"23rpZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -34263,11 +34263,11 @@ const LoginAdmin = ()=>{
         });
         const res = await fetch("http://localhost:8998/api/admin/login", {
             method: "POST",
-            credentials: "include",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(form)
+            body: JSON.stringify(form),
+            withCredentials: true
         });
         // const json = res.json()
         // Extract the Set-Cookie header from the response headers
@@ -34310,7 +34310,7 @@ const LoginAdmin = ()=>{
                                 children: " Admin Login"
                             }, void 0, false, {
                                 fileName: "src/components/Login/LoginAdmin.js",
-                                lineNumber: 69,
+                                lineNumber: 70,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34322,7 +34322,7 @@ const LoginAdmin = ()=>{
                                         children: "Username:"
                                     }, void 0, false, {
                                         fileName: "src/components/Login/LoginAdmin.js",
-                                        lineNumber: 72,
+                                        lineNumber: 73,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -34333,13 +34333,13 @@ const LoginAdmin = ()=>{
                                         placeholder: "Enter your username"
                                     }, void 0, false, {
                                         fileName: "src/components/Login/LoginAdmin.js",
-                                        lineNumber: 73,
+                                        lineNumber: 74,
                                         columnNumber: 15
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/Login/LoginAdmin.js",
-                                lineNumber: 71,
+                                lineNumber: 72,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34351,7 +34351,7 @@ const LoginAdmin = ()=>{
                                         children: "Password:"
                                     }, void 0, false, {
                                         fileName: "src/components/Login/LoginAdmin.js",
-                                        lineNumber: 83,
+                                        lineNumber: 84,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -34362,13 +34362,13 @@ const LoginAdmin = ()=>{
                                         placeholder: "Enter your password"
                                     }, void 0, false, {
                                         fileName: "src/components/Login/LoginAdmin.js",
-                                        lineNumber: 84,
+                                        lineNumber: 85,
                                         columnNumber: 15
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/Login/LoginAdmin.js",
-                                lineNumber: 82,
+                                lineNumber: 83,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -34377,7 +34377,7 @@ const LoginAdmin = ()=>{
                                 children: "Log In"
                             }, void 0, false, {
                                 fileName: "src/components/Login/LoginAdmin.js",
-                                lineNumber: 93,
+                                lineNumber: 94,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34389,7 +34389,7 @@ const LoginAdmin = ()=>{
                                         children: "Login As Teacher"
                                     }, void 0, false, {
                                         fileName: "src/components/Login/LoginAdmin.js",
-                                        lineNumber: 97,
+                                        lineNumber: 98,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -34398,29 +34398,29 @@ const LoginAdmin = ()=>{
                                         children: "Login As Student"
                                     }, void 0, false, {
                                         fileName: "src/components/Login/LoginAdmin.js",
-                                        lineNumber: 98,
+                                        lineNumber: 99,
                                         columnNumber: 15
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/Login/LoginAdmin.js",
-                                lineNumber: 96,
+                                lineNumber: 97,
                                 columnNumber: 13
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/Login/LoginAdmin.js",
-                        lineNumber: 68,
+                        lineNumber: 69,
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/Login/LoginAdmin.js",
-                    lineNumber: 67,
+                    lineNumber: 68,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Login/LoginAdmin.js",
-                lineNumber: 66,
+                lineNumber: 67,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sonner.Toaster), {
@@ -34428,7 +34428,7 @@ const LoginAdmin = ()=>{
                 richColors: true
             }, void 0, false, {
                 fileName: "src/components/Login/LoginAdmin.js",
-                lineNumber: 105,
+                lineNumber: 106,
                 columnNumber: 7
             }, undefined)
         ]
@@ -35938,7 +35938,7 @@ $RefreshReg$(_c, "AddStudent");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","sonner":"4wQOs","react":"21dqq","react-router-dom":"9xmpe"}],"jcoHB":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","sonner":"4wQOs","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jcoHB":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$fe54 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -36609,7 +36609,7 @@ $RefreshReg$(_c, "AddFaculty");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","sonner":"4wQOs"}],"87iI7":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","sonner":"4wQOs","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"87iI7":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$caa8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -37104,7 +37104,7 @@ const AddFaculty = ()=>{
         ]
     }, void 0, true);
 };
-_s(AddFaculty, "6xzLz0Z2v6jXY1ATaYpe9bWOSQ0=");
+_s(AddFaculty, "pyFwq97rsZwyahLE19f+cx469ko=");
 _c = AddFaculty;
 exports.default = AddFaculty;
 var _c;
@@ -37115,7 +37115,7 @@ $RefreshReg$(_c, "AddFaculty");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","sonner":"4wQOs"}],"ltJX8":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","sonner":"4wQOs","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ltJX8":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$47c3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -37539,7 +37539,7 @@ $RefreshReg$(_c, "StudentList");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq"}],"23rpZ":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"23rpZ":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$f8e8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

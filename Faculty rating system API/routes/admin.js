@@ -13,14 +13,14 @@ const Course = require('../models/Course');
 
 
 
-// router.post('/resgiter', async (req, res) => {
+// router.post('/register', async (req, res) => {
 //     try {
 //         const admin = new Admin({
 //             adminId: 'admin123',
 //             email: 'admin@gmail.com',
 //             name: 'adminA'
 //         })
-//         const token = admin.generateAuthToken();
+//         await admin.generateAuthToken();
 //         await admin.save();
 //         return res.json("admin registered")
 
@@ -39,16 +39,23 @@ router.post('/login', async (req, res) => {
         if (admin) {
             const token = await admin.generateAuthToken();
 
-            // res.header('Access-Control-Allow-Credentials', true);
+
 
             const options = {
                 expires: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
-                httpOnly: true
-            }
+                mode: 'cors',
+                httpOnly: true,
+                sameSite: 'None'
+            };
+
             res.cookie("jwt", token, options);
 
+            res.set('Access-Control-Allow-Credentials', true);
+            res.set('Access-Control-Allow-Origin', req.headers.origin);
+
+
+
             return res.status(200).json({
-                success: true,
                 message: 'Login Sucessfull'
             });
         } else {
@@ -75,7 +82,7 @@ router.post('/logout', async (req, res) => {
 
 
 
-router.post('/register-faculty', async (req, res) => {
+router.post('/register-faculty', authMiddleware, async (req, res) => {
     try {
         const newFaculty = new Faculty({
             facultyId: req.body.facultyId,
@@ -83,7 +90,8 @@ router.post('/register-faculty', async (req, res) => {
             email: req.body.email,
             department: req.body.department,
             password: req.body.password,
-            branch: req.body.branch
+            branch: req.body.branch,
+            semester: req.body.semester
         })
         await newFaculty.save();
         return res.status(200).json(newFaculty);

@@ -15,19 +15,17 @@ const AdminSchema = new mongoose.Schema({
         required: true,
         max: 15
     },
-    tokens: [{
-        token: {
-            type: String,
-            required: true
-        }
-    }]
+    token: {
+        type: String,
+        required: true
+    }
 });
 
 AdminSchema.methods.generateAuthToken = async function () {
     try {
         let token = jwt.sign({ _id: this._id }, process.env.SECRET_KEY);
-        this.tokens = this.tokens.concat({ token: token });
-        console.log(token);
+        this.token = token
+        // console.log(token);
         await this.save();
         return token;
     } catch (error) {

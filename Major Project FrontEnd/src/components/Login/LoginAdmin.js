@@ -15,11 +15,12 @@ const LoginAdmin = () => {
     })
     const res = await fetch('http://localhost:8998/api/admin/login', {
       method: 'POST',
-      credentials: 'include',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(form),
+      withCredentials: true
+
     });
 
     // const json = res.json()
