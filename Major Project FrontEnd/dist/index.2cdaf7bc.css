@@ -290,12 +290,12 @@ img, video {
   margin-top: 1rem;
 }
 
-.mt-auto {
-  margin-top: auto;
-}
-
 .mt-8 {
   margin-top: 2rem;
+}
+
+.mt-auto {
+  margin-top: auto;
 }
 
 .block {
@@ -330,6 +330,10 @@ img, video {
   width: 5rem;
 }
 
+.w-5 {
+  width: 1.25rem;
+}
+
 .w-96 {
   width: 24rem;
 }
@@ -338,20 +342,8 @@ img, video {
   width: 100%;
 }
 
-.w-5 {
-  width: 1.25rem;
-}
-
-.w-8 {
-  width: 2rem;
-}
-
 .max-w-md {
   max-width: 28rem;
-}
-
-.scroll-m-2 {
-  scroll-margin: .5rem;
 }
 
 .flex-col {
@@ -376,26 +368,6 @@ img, video {
 
 .justify-evenly {
   justify-content: space-evenly;
-}
-
-.overflow-auto {
-  overflow: auto;
-}
-
-.overflow-clip {
-  overflow: clip;
-}
-
-.overflow-visible {
-  overflow: visible;
-}
-
-.overflow-scroll {
-  overflow: scroll;
-}
-
-.overflow-x-auto {
-  overflow-x: auto;
 }
 
 .rounded {
@@ -451,14 +423,14 @@ img, video {
   padding-bottom: .5rem;
 }
 
-.py-8 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .text-center {

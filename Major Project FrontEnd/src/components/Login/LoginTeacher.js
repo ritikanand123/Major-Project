@@ -46,13 +46,13 @@ const Login = () => {
             <h2 className="text-2xl font-semibold mb-4 text-center"> Teacher Login</h2>
             
             <div className="mb-4">
-              <label htmlFor="facultyId" className="block text-gray-600 mb-2">Username:</label>
+              <label htmlFor="facultyId" className="block text-gray-600 mb-2">Faculty Id:</label>
               <input
                 type="text"
                 name="facultyId"
                 onChange={handleForm}
                 className="w-full border p-2 rounded focus:outline-none focus:border-blue-500"
-                placeholder="Enter your username"
+                placeholder="Enter FacultyID"
               />
             </div>
 
