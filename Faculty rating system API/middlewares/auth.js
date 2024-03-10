@@ -1,15 +1,21 @@
-const jwt = require("jsonwebtoken");
+const jwt = require('jsonwebtoken');
+const cookieParser = require('cookie-parser');
 
-const auth = async (req, res, next) => {
+const auth = (req, res, next) => {
     try {
+        console.log(req);
+        const jwtCookie = req.cookies.jwt;
 
-        console.log(req.cookies);
-        const { jwt: token } = req.cookies;
+        if (!jwtCookie) {
+            throw new Error('Authentication required');
+        }
 
-        const verifyUser = jwt.verify(jwt, process.env.SECRET_KEY);
+        const verifyUser = jwt.verify(jwtCookie, process.env.SECRET_KEY);
+
         next();
     } catch (error) {
-        return res.status(401).json("authentication required")
+        return res.status(401).json({ error: 'Authentication required' });
     }
-}
+};
+
 module.exports = auth;

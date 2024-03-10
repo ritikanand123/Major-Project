@@ -7,13 +7,7 @@ const Course = require('../models/Course');
 const Feedback = require('../models/Feedback');
 const Facutly = require('../models/Faculty');
 
-const reqStudentAuth = (req, res, next) => {
-    if (req.session.studentAuthenticated && req.session.studentId != null) {
-        next();
-    } else {
-        res.status(401).json({ message: "student authentication required" })
-    }
-}
+
 
 router.post('/login', async (req, res) => {
     try {
@@ -24,9 +18,8 @@ router.post('/login', async (req, res) => {
             return res.status(404).json({ message: "Student is not found" });
         } else {
             console.log(req.body);
-            if (req.body.password === student.password) {
-                req.session.studentAuthenticated = true;
-                req.session.studentId = student.studentId;
+            if (req.body.password == student.password) {
+
                 return res.status(200).json({ message: "Student is logged in successfully" });
             } else {
                 return res.status(401).json({ message: "Incorrect password" });
@@ -48,10 +41,10 @@ router.post('/logout', async (req, res) => {
     }
 })
 
-router.get('/getCourses/:id', reqStudentAuth, async (req, res) => {
+router.get('/getCourses/', async (req, res) => {
     try {
 
-        const student = await Student.findOne({ _id: req.params.id });
+        const student = await Student.findOne({ studentId: req.body.id });
         console.log(student);
         if (!student) {
             return res.status(404).json({ message: "Student not found" });

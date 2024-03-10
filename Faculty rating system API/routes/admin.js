@@ -30,6 +30,7 @@ const Course = require('../models/Course');
 
 // });
 
+
 // Admin Login
 router.post('/login', async (req, res) => {
     try {
@@ -38,7 +39,7 @@ router.post('/login', async (req, res) => {
         if (admin) {
             const token = await admin.generateAuthToken();
 
-            res.header('Access-Control-Allow-Credentials', true);
+            // res.header('Access-Control-Allow-Credentials', true);
 
             const options = {
                 expires: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
@@ -81,7 +82,8 @@ router.post('/register-faculty', async (req, res) => {
             name: req.body.name,
             email: req.body.email,
             department: req.body.department,
-            password: req.body.password
+            password: req.body.password,
+            branch: req.body.branch
         })
         await newFaculty.save();
         return res.status(200).json(newFaculty);
@@ -96,7 +98,7 @@ router.post('/addCourse', async (req, res) => {
         const newCourse = new Course(req.body);
 
         await newCourse.save();
-        console.log("hi")
+
         const faculty = await Faculty.findOne({ facultyId: req.body.facultyId });
 
         if (!faculty) {
@@ -112,19 +114,19 @@ router.post('/addCourse', async (req, res) => {
     }
 });
 
-router.get('/faculty/:facultyId/courses-and-feedbacks', async (req, res) => {
+router.get('/faculty/courses-and-feedbacks', async (req, res) => {
     try {
 
 
 
-        const faculty = await Faculty.findOne({ facultyId: req.params.facultyId }).populate('allCourses')
+        const faculty = await Faculty.findOne({ facultyId: req.body.facultyId }).populate('allCourses')
 
         if (!faculty) {
             return res.status(404).json({ message: "Faculty not found" });
         }
 
 
-        // console.log(faculty);
+
 
 
         const courses = faculty.allCourses;

@@ -3093,7 +3093,7 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","react-router-dom":"9xmpe","./components/Login/LoginStudent":"ellob","./components/Feedback":"2hBAZ","./components/Login/LoginAdmin":"b9IEN","./components/Login/LoginTeacher":"aqaip","./components/FacultyHeader":"2phQw","./components/AddStudent":"3QMK0","./components/AdminHeader":"jcoHB","./components/AddFaculty":"jdb5j","./components/Addcourse":"87iI7","./context/AdminloginContext":"ltJX8","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/FacultyList":"dnKj3","./components/StudentList":"b5q7J"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","react-router-dom":"9xmpe","./components/Login/LoginStudent":"ellob","./components/Feedback":"2hBAZ","./components/Login/LoginAdmin":"b9IEN","./components/Login/LoginTeacher":"aqaip","./components/FacultyHeader":"2phQw","./components/AddStudent":"3QMK0","./components/AdminHeader":"jcoHB","./components/AddFaculty":"jdb5j","./components/Addcourse":"87iI7","./context/AdminloginContext":"ltJX8","./components/FacultyList":"dnKj3","./components/StudentList":"b5q7J","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -35647,7 +35647,7 @@ $RefreshReg$(_c, "AddStudent");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","sonner":"4wQOs","react":"21dqq","react-router-dom":"9xmpe"}],"jcoHB":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","sonner":"4wQOs","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jcoHB":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$fe54 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -36007,7 +36007,7 @@ $RefreshReg$(_c, "AddFaculty");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","sonner":"4wQOs"}],"87iI7":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","sonner":"4wQOs","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"87iI7":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$caa8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -36235,7 +36235,7 @@ $RefreshReg$(_c, "AddFaculty");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","sonner":"4wQOs"}],"ltJX8":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","sonner":"4wQOs","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ltJX8":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$47c3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -36659,6 +36659,6 @@ $RefreshReg$(_c, "StudentList");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq"}]},["9A7zD","1xC6H","2kQhy"], "2kQhy", "parcelRequire6604")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["9A7zD","1xC6H","2kQhy"], "2kQhy", "parcelRequire6604")
 
 //# sourceMappingURL=index.7271efb6.js.map
