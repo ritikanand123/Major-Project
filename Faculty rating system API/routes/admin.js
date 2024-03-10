@@ -151,78 +151,135 @@ router.get('/faculty/courses-and-feedbacks', async (req, res) => {
         return res.status(500).json({ message: error.message });
     }
 });
-router.get('/faculty/:facultyId/average-ratings-and-comments', async (req, res) => {
+// router.get('/faculty/:facultyId/average-ratings-and-comments', async (req, res) => {
+//     try {
+//         const faculty = await Faculty.findOne({ facultyId: req.params.facultyId }).populate('allCourses');
+
+//         if (!faculty) {
+//             return res.status(404).json({ message: "Faculty not found" });
+//         }
+
+//         // console.log(faculty);
+
+//         const courses = faculty.allCourses;
+
+//         const ratingsAndComments = await Promise.all(courses.map(async (course) => {
+//             const feedbacks = await Feedback.find({ courseId: course.CourseId });
+
+
+//             const totalRatings = feedbacks.reduce((total, feedback) => {
+//                 const feedbackValues = Object.values(feedback.ratings);
+//                 return total + feedbackValues.reduce((sum, value) => sum + value, 0);
+//             }, 0);
+
+//             const averageRating = feedbacks.length > 0 ? totalRatings / (feedbacks.length * 15) : 0;
+
+
+//             const comments = feedbacks.map(feedback => feedback.comments)
+//                 .filter(comment => comment !== undefined && comment !== null && comment.trim() !== '');
+
+//             return { course, averageRating, comments };
+//         }));
+
+//         return res.status(200).json(ratingsAndComments);
+
+//     } catch (error) {
+//         return res.status(500).json({ message: error.message });
+//     }
+// });
+
+// router.get('/faculty/:facultyId/questionwise-average-ratings', async (req, res) => {
+//     try {
+//         const faculty = await Faculty.findOne({ facultyId: req.params.facultyId }).populate('allCourses');
+
+//         if (!faculty) {
+//             return res.status(404).json({ message: "Faculty not found" });
+//         }
+
+//         // console.log(faculty);
+
+//         const courses = faculty.allCourses;
+
+//         const questionwiseAverageRatings = {};
+
+//         // Iterate over each course
+//         for (const course of courses) {
+//             const feedbacks = await Feedback.find({ courseId: course.CourseId });
+
+//             // Iterate over each feedback
+//             for (const feedback of feedbacks) {
+//                 const questionKeys = Object.keys(feedback.ratings);
+
+//                 // Iterate over each question in the feedback
+//                 for (const questionKey of questionKeys) {
+//                     const rating = feedback.ratings[questionKey];
+
+//                     // Initialize the question in the questionwiseAverageRatings object if not exists
+//                     if (!questionwiseAverageRatings[questionKey]) {
+//                         questionwiseAverageRatings[questionKey] = { totalRating: 0, count: 0 };
+//                     }
+
+//                     // Update the totalRating and count for the question
+//                     questionwiseAverageRatings[questionKey].totalRating += rating;
+//                     questionwiseAverageRatings[questionKey].count++;
+//                 }
+//             }
+//         }
+
+//         // Calculate the average rating for each question
+//         const result = {};
+//         const questionKeys = Object.keys(questionwiseAverageRatings);
+//         for (const questionKey of questionKeys) {
+//             const averageRating = questionwiseAverageRatings[questionKey].totalRating / questionwiseAverageRatings[questionKey].count;
+//             result[questionKey] = averageRating;
+//         }
+
+//         return res.status(200).json(result);
+
+//     } catch (error) {
+//         return res.status(500).json({ message: error.message });
+//     }
+// });
+
+
+
+// Add this route at the end of your existing routes
+router.get('/faculty/:facultyId/course/:courseId/average-ratings', async (req, res) => {
     try {
-        const faculty = await Faculty.findOne({ facultyId: req.params.facultyId }).populate('allCourses');
+        const { facultyId, courseId } = req.params;
+
+        const faculty = await Faculty.findOne({ facultyId }).populate('allCourses');
 
         if (!faculty) {
             return res.status(404).json({ message: "Faculty not found" });
         }
 
-        // console.log(faculty);
+        const course = faculty.allCourses.find(course => String(course.CourseId) === courseId);
 
-        const courses = faculty.allCourses;
-
-        const ratingsAndComments = await Promise.all(courses.map(async (course) => {
-            const feedbacks = await Feedback.find({ courseId: course.CourseId });
-
-
-            const totalRatings = feedbacks.reduce((total, feedback) => {
-                const feedbackValues = Object.values(feedback.ratings);
-                return total + feedbackValues.reduce((sum, value) => sum + value, 0);
-            }, 0);
-
-            const averageRating = feedbacks.length > 0 ? totalRatings / (feedbacks.length * 15) : 0;
-
-
-            const comments = feedbacks.map(feedback => feedback.comments)
-                .filter(comment => comment !== undefined && comment !== null && comment.trim() !== '');
-
-            return { course, averageRating, comments };
-        }));
-
-        return res.status(200).json(ratingsAndComments);
-
-    } catch (error) {
-        return res.status(500).json({ message: error.message });
-    }
-});
-
-router.get('/faculty/:facultyId/questionwise-average-ratings', async (req, res) => {
-    try {
-        const faculty = await Faculty.findOne({ facultyId: req.params.facultyId }).populate('allCourses');
-
-        if (!faculty) {
-            return res.status(404).json({ message: "Faculty not found" });
+        if (!course) {
+            return res.status(404).json({ message: "Course not found for the given faculty" });
         }
 
-        // console.log(faculty);
-
-        const courses = faculty.allCourses;
+        const feedbacks = await Feedback.find({ courseId });
 
         const questionwiseAverageRatings = {};
 
-        // Iterate over each course
-        for (const course of courses) {
-            const feedbacks = await Feedback.find({ courseId: course.CourseId });
+        // Iterate over each feedback
+        for (const feedback of feedbacks) {
+            const questionKeys = Object.keys(feedback.ratings);
 
-            // Iterate over each feedback
-            for (const feedback of feedbacks) {
-                const questionKeys = Object.keys(feedback.ratings);
+            // Iterate over each question in the feedback
+            for (const questionKey of questionKeys) {
+                const rating = feedback.ratings[questionKey];
 
-                // Iterate over each question in the feedback
-                for (const questionKey of questionKeys) {
-                    const rating = feedback.ratings[questionKey];
-
-                    // Initialize the question in the questionwiseAverageRatings object if not exists
-                    if (!questionwiseAverageRatings[questionKey]) {
-                        questionwiseAverageRatings[questionKey] = { totalRating: 0, count: 0 };
-                    }
-
-                    // Update the totalRating and count for the question
-                    questionwiseAverageRatings[questionKey].totalRating += rating;
-                    questionwiseAverageRatings[questionKey].count++;
+                // Initialize the question in the questionwiseAverageRatings object if not exists
+                if (!questionwiseAverageRatings[questionKey]) {
+                    questionwiseAverageRatings[questionKey] = { totalRating: 0, count: 0 };
                 }
+
+                // Update the totalRating and count for the question
+                questionwiseAverageRatings[questionKey].totalRating += rating;
+                questionwiseAverageRatings[questionKey].count++;
             }
         }
 
@@ -230,16 +287,20 @@ router.get('/faculty/:facultyId/questionwise-average-ratings', async (req, res) 
         const result = {};
         const questionKeys = Object.keys(questionwiseAverageRatings);
         for (const questionKey of questionKeys) {
-            const averageRating = questionwiseAverageRatings[questionKey].totalRating / questionwiseAverageRatings[questionKey].count;
+            const averageRating = questionwiseAverageRatings[questionKey].count > 0 ?
+                questionwiseAverageRatings[questionKey].totalRating / questionwiseAverageRatings[questionKey].count :
+                0;
             result[questionKey] = averageRating;
         }
 
-        return res.status(200).json(result);
+        return res.status(200).json({ facultyId, courseId, questionwiseAverageRatings: result });
 
     } catch (error) {
         return res.status(500).json({ message: error.message });
     }
 });
+
+
 
 
 router.get('/get_all_faculty', async (req, res) => {
