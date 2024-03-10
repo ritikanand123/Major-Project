@@ -35,7 +35,7 @@ const Header = () =>{
 
         <Link to = "addstudent"><li className="font-medium m-2">Add a Student</li></Link>
         <Link to = "studentlist"><li className="font-medium m-2">Students List</li></Link>
-        <Link><li className="font-medium m-2">Add Multiple Students</li></Link>
+        <Link to="addmultiplestudent"><li className="font-medium m-2">Add Multiple Students</li></Link>
         
         <button className="bg-blue-500 text-white font-bold py-2 px-4 rounded " onClick={handelLogout}>Sign Out</button>
 

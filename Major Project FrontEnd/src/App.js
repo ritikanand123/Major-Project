@@ -12,7 +12,7 @@ import Addcourses from "./components/Addcourse"
 import statusprovider from "./context/AdminloginContext"
 import FacultyList from "./components/FacultyList"
 import StudentList from "./components/StudentList"
-
+import AddMultipleStudent from "./components/AddMultipleStudent"
 const Approuter = createBrowserRouter([
     
     {
@@ -48,6 +48,10 @@ const Approuter = createBrowserRouter([
             {
                 path : "/faculty/home/studentlist",
                 element : <StudentList/>
+            },
+            {
+                path : "/faculty/home/addmultiplestudent",
+                element : <AddMultipleStudent/>
             }
         ],
     },

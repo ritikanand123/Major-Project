@@ -2975,6 +2975,8 @@ var _facultyList = require("./components/FacultyList");
 var _facultyListDefault = parcelHelpers.interopDefault(_facultyList);
 var _studentList = require("./components/StudentList");
 var _studentListDefault = parcelHelpers.interopDefault(_studentList);
+var _addMultipleStudent = require("./components/AddMultipleStudent");
+var _addMultipleStudentDefault = parcelHelpers.interopDefault(_addMultipleStudent);
 const Approuter = (0, _reactRouterDom.createBrowserRouter)([
     {
         path: "/",
@@ -3039,6 +3041,14 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
                     lineNumber: 50,
                     columnNumber: 27
                 }, undefined)
+            },
+            {
+                path: "/faculty/home/addmultiplestudent",
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _addMultipleStudentDefault.default), {}, void 0, false, {
+                    fileName: "src/App.js",
+                    lineNumber: 54,
+                    columnNumber: 27
+                }, undefined)
             }
         ]
     },
@@ -3046,7 +3056,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/admin/home",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _adminHeaderDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 56,
+            lineNumber: 60,
             columnNumber: 19
         }, undefined),
         children: [
@@ -3054,7 +3064,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/admin/home/addfaculty",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _addFacultyDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 60,
+                    lineNumber: 64,
                     columnNumber: 27
                 }, undefined)
             },
@@ -3062,7 +3072,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/admin/home/addcourse",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _addcourseDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 64,
+                    lineNumber: 68,
                     columnNumber: 27
                 }, undefined)
             },
@@ -3070,7 +3080,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/admin/home/teacherlist",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _facultyListDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 68,
+                    lineNumber: 72,
                     columnNumber: 27
                 }, undefined)
             }
@@ -3083,7 +3093,7 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment
         router: Approuter
     }, void 0, false, {
         fileName: "src/App.js",
-        lineNumber: 79,
+        lineNumber: 83,
         columnNumber: 9
     }, undefined)
 }, void 0, false));
@@ -3093,7 +3103,7 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","react-router-dom":"9xmpe","./components/Login/LoginStudent":"ellob","./components/Feedback":"2hBAZ","./components/Login/LoginAdmin":"b9IEN","./components/Login/LoginTeacher":"aqaip","./components/FacultyHeader":"2phQw","./components/AddStudent":"3QMK0","./components/AdminHeader":"jcoHB","./components/AddFaculty":"jdb5j","./components/Addcourse":"87iI7","./context/AdminloginContext":"ltJX8","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/FacultyList":"dnKj3","./components/StudentList":"b5q7J"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","react-router-dom":"9xmpe","./components/Login/LoginStudent":"ellob","./components/Feedback":"2hBAZ","./components/Login/LoginAdmin":"b9IEN","./components/Login/LoginTeacher":"aqaip","./components/FacultyHeader":"2phQw","./components/AddStudent":"3QMK0","./components/AdminHeader":"jcoHB","./components/AddFaculty":"jdb5j","./components/Addcourse":"87iI7","./context/AdminloginContext":"ltJX8","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/FacultyList":"dnKj3","./components/StudentList":"b5q7J","./components/AddMultipleStudent":"23rpZ"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -35348,13 +35358,14 @@ const Header = ()=>{
                                 columnNumber: 9
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                to: "addmultiplestudent",
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                     className: "font-medium m-2",
                                     children: "Add Multiple Students"
                                 }, void 0, false, {
                                     fileName: "src/components/FacultyHeader.js",
                                     lineNumber: 38,
-                                    columnNumber: 15
+                                    columnNumber: 39
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/FacultyHeader.js",
@@ -35531,52 +35542,332 @@ const AddStudent = ()=>{
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                        htmlFor: "branch",
+                                        htmlFor: "department",
                                         className: "block text-gray-600",
-                                        children: "Branch:"
+                                        children: "Department:"
                                     }, void 0, false, {
                                         fileName: "src/components/AddStudent.js",
                                         lineNumber: 72,
                                         columnNumber: 15
                                     }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                        type: "text",
-                                        name: "branch",
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("select", {
+                                        name: "department",
                                         onChange: handleForm,
                                         className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
-                                        placeholder: "Enter Branch"
-                                    }, void 0, false, {
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                                                value: "",
+                                                children: "Select Department"
+                                            }, void 0, false, {
+                                                fileName: "src/components/AddStudent.js",
+                                                lineNumber: 78,
+                                                columnNumber: 17
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                                                value: "Computer Application",
+                                                children: "Computer Application"
+                                            }, void 0, false, {
+                                                fileName: "src/components/AddStudent.js",
+                                                lineNumber: 79,
+                                                columnNumber: 17
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                                                value: "Btech",
+                                                children: "Btech"
+                                            }, void 0, false, {
+                                                fileName: "src/components/AddStudent.js",
+                                                lineNumber: 80,
+                                                columnNumber: 17
+                                            }, undefined)
+                                        ]
+                                    }, void 0, true, {
                                         fileName: "src/components/AddStudent.js",
                                         lineNumber: 73,
                                         columnNumber: 15
                                     }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                        htmlFor: "semester",
-                                        className: "block text-gray-600",
-                                        children: "Semester:"
-                                    }, void 0, false, {
-                                        fileName: "src/components/AddStudent.js",
-                                        lineNumber: 80,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                        type: "text",
-                                        name: "semester",
-                                        onChange: handleForm,
-                                        className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
-                                        placeholder: "Enter Semester"
-                                    }, void 0, false, {
-                                        fileName: "src/components/AddStudent.js",
-                                        lineNumber: 81,
-                                        columnNumber: 15
-                                    }, undefined),
+                                    form.department === "Btech" && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                                htmlFor: "branch",
+                                                className: "block text-gray-600",
+                                                children: "Branch:"
+                                            }, void 0, false, {
+                                                fileName: "src/components/AddStudent.js",
+                                                lineNumber: 86,
+                                                columnNumber: 17
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("select", {
+                                                name: "branch",
+                                                onChange: handleForm,
+                                                className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                                                        value: "",
+                                                        children: "Select Branch"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/AddStudent.js",
+                                                        lineNumber: 94,
+                                                        columnNumber: 19
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                                                        value: "CSE",
+                                                        children: "CSE"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/AddStudent.js",
+                                                        lineNumber: 95,
+                                                        columnNumber: 19
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                                                        value: "ECE",
+                                                        children: "ECE"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/AddStudent.js",
+                                                        lineNumber: 96,
+                                                        columnNumber: 19
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                                                        value: "AI/ML",
+                                                        children: "AI/ML"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/AddStudent.js",
+                                                        lineNumber: 97,
+                                                        columnNumber: 19
+                                                    }, undefined)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "src/components/AddStudent.js",
+                                                lineNumber: 89,
+                                                columnNumber: 17
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                                htmlFor: "semester",
+                                                className: "block text-gray-600",
+                                                children: "Semester:"
+                                            }, void 0, false, {
+                                                fileName: "src/components/AddStudent.js",
+                                                lineNumber: 100,
+                                                columnNumber: 17
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("select", {
+                                                name: "semester",
+                                                onChange: handleForm,
+                                                className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                                                        value: "",
+                                                        children: "Select Semester"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/AddStudent.js",
+                                                        lineNumber: 108,
+                                                        columnNumber: 19
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                                                        value: "1",
+                                                        children: "1"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/AddStudent.js",
+                                                        lineNumber: 109,
+                                                        columnNumber: 19
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                                                        value: "2",
+                                                        children: "2"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/AddStudent.js",
+                                                        lineNumber: 110,
+                                                        columnNumber: 19
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                                                        value: "3",
+                                                        children: "3"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/AddStudent.js",
+                                                        lineNumber: 111,
+                                                        columnNumber: 19
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                                                        value: "4",
+                                                        children: "4"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/AddStudent.js",
+                                                        lineNumber: 112,
+                                                        columnNumber: 19
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                                                        value: "5",
+                                                        children: "5"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/AddStudent.js",
+                                                        lineNumber: 113,
+                                                        columnNumber: 19
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                                                        value: "6",
+                                                        children: "6"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/AddStudent.js",
+                                                        lineNumber: 114,
+                                                        columnNumber: 19
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                                                        value: "7",
+                                                        children: "7"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/AddStudent.js",
+                                                        lineNumber: 115,
+                                                        columnNumber: 19
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                                                        value: "8",
+                                                        children: "8"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/AddStudent.js",
+                                                        lineNumber: 116,
+                                                        columnNumber: 19
+                                                    }, undefined)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "src/components/AddStudent.js",
+                                                lineNumber: 103,
+                                                columnNumber: 17
+                                            }, undefined)
+                                        ]
+                                    }, void 0, true),
+                                    form.department === "Computer Application" && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                                htmlFor: "branch",
+                                                className: "block text-gray-600",
+                                                children: "Branch:"
+                                            }, void 0, false, {
+                                                fileName: "src/components/AddStudent.js",
+                                                lineNumber: 123,
+                                                columnNumber: 17
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("select", {
+                                                name: "branch",
+                                                onChange: handleForm,
+                                                className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                                                        value: "",
+                                                        children: "Select Branch"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/AddStudent.js",
+                                                        lineNumber: 131,
+                                                        columnNumber: 19
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                                                        value: "BCA",
+                                                        children: "BCA"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/AddStudent.js",
+                                                        lineNumber: 132,
+                                                        columnNumber: 19
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                                                        value: "MCA",
+                                                        children: "MCA"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/AddStudent.js",
+                                                        lineNumber: 133,
+                                                        columnNumber: 19
+                                                    }, undefined)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "src/components/AddStudent.js",
+                                                lineNumber: 126,
+                                                columnNumber: 17
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                                htmlFor: "semester",
+                                                className: "block text-gray-600",
+                                                children: "Semester:"
+                                            }, void 0, false, {
+                                                fileName: "src/components/AddStudent.js",
+                                                lineNumber: 137,
+                                                columnNumber: 17
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("select", {
+                                                name: "semester",
+                                                onChange: handleForm,
+                                                className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                                                        value: "",
+                                                        children: "Select Semester"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/AddStudent.js",
+                                                        lineNumber: 145,
+                                                        columnNumber: 19
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                                                        value: "1",
+                                                        children: "1"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/AddStudent.js",
+                                                        lineNumber: 146,
+                                                        columnNumber: 19
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                                                        value: "2",
+                                                        children: "2"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/AddStudent.js",
+                                                        lineNumber: 147,
+                                                        columnNumber: 19
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                                                        value: "3",
+                                                        children: "3"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/AddStudent.js",
+                                                        lineNumber: 148,
+                                                        columnNumber: 19
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                                                        value: "4",
+                                                        children: "4"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/AddStudent.js",
+                                                        lineNumber: 149,
+                                                        columnNumber: 19
+                                                    }, undefined),
+                                                    form.branch === "BCA" && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                                                                value: "5",
+                                                                children: "5"
+                                                            }, void 0, false, {
+                                                                fileName: "src/components/AddStudent.js",
+                                                                lineNumber: 153,
+                                                                columnNumber: 23
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                                                                value: "6",
+                                                                children: "6"
+                                                            }, void 0, false, {
+                                                                fileName: "src/components/AddStudent.js",
+                                                                lineNumber: 154,
+                                                                columnNumber: 23
+                                                            }, undefined)
+                                                        ]
+                                                    }, void 0, true)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "src/components/AddStudent.js",
+                                                lineNumber: 140,
+                                                columnNumber: 17
+                                            }, undefined)
+                                        ]
+                                    }, void 0, true),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
                                         htmlFor: "password",
                                         className: "block text-gray-600",
                                         children: "Password:"
                                     }, void 0, false, {
                                         fileName: "src/components/AddStudent.js",
-                                        lineNumber: 88,
+                                        lineNumber: 160,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -35587,7 +35878,7 @@ const AddStudent = ()=>{
                                         placeholder: "Enter your password"
                                     }, void 0, false, {
                                         fileName: "src/components/AddStudent.js",
-                                        lineNumber: 89,
+                                        lineNumber: 161,
                                         columnNumber: 15
                                     }, undefined)
                                 ]
@@ -35602,7 +35893,7 @@ const AddStudent = ()=>{
                                 children: "Add Student"
                             }, void 0, false, {
                                 fileName: "src/components/AddStudent.js",
-                                lineNumber: 99,
+                                lineNumber: 171,
                                 columnNumber: 13
                             }, undefined)
                         ]
@@ -35626,7 +35917,7 @@ const AddStudent = ()=>{
                 richColors: true
             }, void 0, false, {
                 fileName: "src/components/AddStudent.js",
-                lineNumber: 105,
+                lineNumber: 177,
                 columnNumber: 7
             }, undefined)
         ]
@@ -37248,6 +37539,64 @@ $RefreshReg$(_c, "StudentList");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq"}]},["9A7zD","1xC6H","2kQhy"], "2kQhy", "parcelRequire6604")
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq"}],"23rpZ":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$f8e8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$f8e8.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const AddMultipleStudent = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                    htmlFor: "excelFile",
+                    children: "Select an Excel file:"
+                }, void 0, false, {
+                    fileName: "src/components/AddMultipleStudent.js",
+                    lineNumber: 7,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                    type: "file",
+                    id: "excelFile"
+                }, void 0, false, {
+                    fileName: "src/components/AddMultipleStudent.js",
+                    lineNumber: 8,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                    type: "submit",
+                    children: "Upload"
+                }, void 0, false, {
+                    fileName: "src/components/AddMultipleStudent.js",
+                    lineNumber: 9,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/AddMultipleStudent.js",
+            lineNumber: 6,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false);
+};
+_c = AddMultipleStudent;
+exports.default = AddMultipleStudent;
+var _c;
+$RefreshReg$(_c, "AddMultipleStudent");
+
+  $parcel$ReactRefreshHelpers$f8e8.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["9A7zD","1xC6H","2kQhy"], "2kQhy", "parcelRequire6604")
 
 //# sourceMappingURL=index.7271efb6.js.map

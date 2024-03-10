@@ -86,7 +86,7 @@ const AddFaculty = () => {
                 <option value="">Select Department</option>
                 <option value="Computer Application">Computer Application</option>
                 <option value="Btech">Btech</option>
-                {/* Add more options as needed */}
+                
               </select>
 
               {form.department === "Btech" && (

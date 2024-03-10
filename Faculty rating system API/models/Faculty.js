@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const FacultySchema = new mongoose.Schema({
     facultyId: {
-        type: String,
+        type: Number,
         required: true,
         unique: true
     },
@@ -19,10 +19,18 @@ const FacultySchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    semester: {
+        type: String,
+        required: true
+    },
     password: {
         type: String,
         required: true,
         minlength: 4
+    },
+    branch: {
+        type: String,
+        required: true,
     },
     allCourses: [{
         type: mongoose.Schema.Types.ObjectId,

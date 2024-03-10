@@ -7,23 +7,18 @@ const Student = require('../models/Student');
 const XLSX = require('xlsx');
 
 
-const reqFacultyAuth = (req, res, next) => {
-    if (req.session.facultyAuthenticated && req.session.facultyId != null) {
-        next();
-    } else {
-        res.status(401).json({ message: "faculty authentication required" })
-    }
-}
+
 
 // Faculty Login
 router.post('/login', async (req, res) => {
     try {
 
+        const faculty = await Faculty.findOne({ facultyId: req.body.facultyId });
         if (!faculty) {
             return res.status(404).json({ message: "Faculty memeber is not registered" })
         }
+
         if (req.body.password == faculty.password) {
-            // When a faculty member logs in
 
             return res.status(200).json(faculty);
         } else {
@@ -69,7 +64,7 @@ router.post('/student-register', async (req, res) => {
 })
 
 
-router.post('/import-students/:path', reqFacultyAuth, async (req, res) => {
+router.post('/import-students/:path', async (req, res) => {
     try {
         const excelFilePath = req.params.path;
         const workBook = XLSX.readFile(excelFilePath);
@@ -107,7 +102,7 @@ router.post('/getStudents', async (req, res) => {
         if (!faculty) {
             return res.status(204).json({ message: "Faculty not registered" });
         } else {
-            const allStudent = await Student.findOne({ department: faculty.department })
+            const allStudent = await Student.find({ branch: faculty.branch })
             return res.status(200).json(allStudent);
 
         }
