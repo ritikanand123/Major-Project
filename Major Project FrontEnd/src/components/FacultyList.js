@@ -11,7 +11,7 @@ const FacultyList = () => {
   const getTeacherList = async () => {
     try {
       const response = await fetch("http://localhost:8998/api/admin/get_all_faculty", {
-        method: 'POST',
+        method: 'GET',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`

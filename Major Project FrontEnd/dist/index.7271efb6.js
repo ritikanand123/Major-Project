@@ -33823,6 +33823,7 @@ const Login = ()=>{
             }
         });
         const data = await res.json();
+        console.log(data);
         localStorage.setItem("token", data.token);
     };
     const handleForm = (e)=>{
@@ -33844,7 +33845,7 @@ const Login = ()=>{
                         children: " Student Login"
                     }, void 0, false, {
                         fileName: "src/components/Login/LoginStudent.js",
-                        lineNumber: 36,
+                        lineNumber: 37,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -33856,7 +33857,7 @@ const Login = ()=>{
                                 children: "Username:"
                             }, void 0, false, {
                                 fileName: "src/components/Login/LoginStudent.js",
-                                lineNumber: 39,
+                                lineNumber: 40,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -33867,13 +33868,13 @@ const Login = ()=>{
                                 placeholder: "Enter your username"
                             }, void 0, false, {
                                 fileName: "src/components/Login/LoginStudent.js",
-                                lineNumber: 40,
+                                lineNumber: 41,
                                 columnNumber: 13
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/Login/LoginStudent.js",
-                        lineNumber: 38,
+                        lineNumber: 39,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -33885,7 +33886,7 @@ const Login = ()=>{
                                 children: "Password:"
                             }, void 0, false, {
                                 fileName: "src/components/Login/LoginStudent.js",
-                                lineNumber: 50,
+                                lineNumber: 51,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -33896,13 +33897,13 @@ const Login = ()=>{
                                 placeholder: "Enter your password"
                             }, void 0, false, {
                                 fileName: "src/components/Login/LoginStudent.js",
-                                lineNumber: 51,
+                                lineNumber: 52,
                                 columnNumber: 13
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/Login/LoginStudent.js",
-                        lineNumber: 49,
+                        lineNumber: 50,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -33911,7 +33912,7 @@ const Login = ()=>{
                         children: "Log In"
                     }, void 0, false, {
                         fileName: "src/components/Login/LoginStudent.js",
-                        lineNumber: 60,
+                        lineNumber: 61,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -33923,7 +33924,7 @@ const Login = ()=>{
                                 children: "Login As Teacher"
                             }, void 0, false, {
                                 fileName: "src/components/Login/LoginStudent.js",
-                                lineNumber: 64,
+                                lineNumber: 65,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -33932,29 +33933,29 @@ const Login = ()=>{
                                 children: "Login As Admin"
                             }, void 0, false, {
                                 fileName: "src/components/Login/LoginStudent.js",
-                                lineNumber: 65,
+                                lineNumber: 66,
                                 columnNumber: 13
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/Login/LoginStudent.js",
-                        lineNumber: 63,
+                        lineNumber: 64,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Login/LoginStudent.js",
-                lineNumber: 35,
+                lineNumber: 36,
                 columnNumber: 9
             }, undefined)
         }, void 0, false, {
             fileName: "src/components/Login/LoginStudent.js",
-            lineNumber: 34,
+            lineNumber: 35,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/Login/LoginStudent.js",
-        lineNumber: 33,
+        lineNumber: 34,
         columnNumber: 5
     }, undefined);
 };
@@ -37177,7 +37178,7 @@ const FacultyList = ()=>{
     const getTeacherList = async ()=>{
         try {
             const response = await fetch("http://localhost:8998/api/admin/get_all_faculty", {
-                method: "POST",
+                method: "GET",
                 headers: {
                     "Content-Type": "application/json",
                     "Authorization": `Bearer ${token}`
