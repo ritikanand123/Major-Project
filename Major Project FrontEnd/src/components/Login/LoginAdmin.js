@@ -18,28 +18,16 @@ const LoginAdmin = () => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(form),
-      withCredentials: true
+      body: JSON.stringify(form)
+
 
     });
 
-    // const json = res.json()
-
-
-    // Extract the Set-Cookie header from the response headers
-    // var setCookieHeader = res['SetCookie'];
-
-    // // Split the header to get individual cookies
-    // console.log(setCookieHeader)
-    // var cookies = setCookieHeader.split(';');
-
-    // // Iterate through cookies and set them
-    // cookies.forEach(function(cookie) {
-    //     document.cookie = cookie.trim();
-    // });
+    const data = await res.json();
+    localStorage.setItem('token', data.token);
 
     if (res.status == 200) {
-      // localStorage.setItem('user' , JSON.stringify(json))
+
       toast.success("Login Successful");
 
       setTimeout(function () {

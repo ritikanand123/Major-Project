@@ -5,7 +5,53 @@ const router = express.Router();
 const Faculty = require('../models/Faculty');
 const Student = require('../models/Student');
 const XLSX = require('xlsx');
+const jwt = require("jsonwebtoken");
 
+const deleteToken = async (req, res, next) => {
+    try {
+
+        const token = req.headers.authorization && req.headers.authorization.split(' ')[1];
+
+        if (!token) {
+            throw new Error('Authentication required');
+        }
+
+        const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
+
+        const faculty = Faculty.findById({ _id: verifyUser._id });
+
+        if (faculty) {
+            await faculty.updateOne({ $set: { token: null } }).exec();
+            next();
+        } else {
+            return res.status(401).json({ message: "Authorization required" })
+        }
+    } catch (error) {
+        return res.status(500).json({ error: error.message });
+    }
+};
+
+const authorization = async (req, res, next) => {
+    try {
+
+        const token = req.headers.authorization && req.headers.authorization.split(' ')[1];
+
+        if (!token) {
+            throw new Error('Authentication required');
+        }
+
+        const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
+        const faculty = await Faculty.findById({ _id: verifyUser._id });
+
+        if (faculty) {
+            next();
+        } else {
+            return res.status(401).json({ message: "Authorization required" })
+        }
+    } catch (error) {
+        return res.status(500).json({ error: error.message });
+    }
+};
 
 
 
@@ -19,8 +65,11 @@ router.post('/login', async (req, res) => {
         }
 
         if (req.body.password == faculty.password) {
-
-            return res.status(200).json(faculty);
+            const token = await faculty.generateAuthToken();
+            return res.status(200).json({
+                message: 'Login Sucessfull',
+                token: token
+            });
         } else {
             return res.status(404).json({ message: "wrong password" })
         }
@@ -33,11 +82,9 @@ router.post('/login', async (req, res) => {
 
 });
 
-router.post('/logout', async (req, res) => {
+router.post('/logout', deleteToken, async (req, res) => {
     try {
-        req.session.facultyAuthenticated = false;
-        req.session.facultyId = null;
-        // console.log(req.session)
+
         return res.status(200).json({ message: "User is logged out successfully" })
 
     } catch (error) {
@@ -45,7 +92,7 @@ router.post('/logout', async (req, res) => {
     }
 })
 
-router.post('/student-register', async (req, res) => {
+router.post('/student-register', authorization, async (req, res) => {
     try {
         const newStudent = new Student({
             studentId: req.body.studentId,
@@ -55,7 +102,7 @@ router.post('/student-register', async (req, res) => {
             semester: req.body.semester,
             password: req.body.password
         })
-        console.log("hi");
+
         await newStudent.save();
         return res.status(200).json(newStudent);
     } catch (error) {
@@ -64,7 +111,7 @@ router.post('/student-register', async (req, res) => {
 })
 
 
-router.post('/import-students/:path', async (req, res) => {
+router.post('/import-students/:path', authorization, async (req, res) => {
     try {
         const excelFilePath = req.params.path;
         const workBook = XLSX.readFile(excelFilePath);
@@ -95,9 +142,17 @@ router.post('/import-students/:path', async (req, res) => {
 
 })
 
-router.post('/getStudents', async (req, res) => {
+router.post('/getStudents', authorization, async (req, res) => {
     try {
-        const faculty = await Faculty.findOne({ facultyId: req.body.facultyId });
+
+        const token = req.headers.authorization && req.headers.authorization.split(' ')[1];
+        if (!token) {
+            throw new Error('Authentication required');
+        }
+
+        const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
+        const faculty = await Faculty.findById({ _id: verifyUser._id });
+
 
         if (!faculty) {
             return res.status(204).json({ message: "Faculty not registered" });

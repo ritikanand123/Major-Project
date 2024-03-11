@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const Admin = require('../models/Admin');
 
-const auth = async (req, res, next) => {
+const deleteToken = async (req, res, next) => {
     try {
 
         const token = req.headers.authorization && req.headers.authorization.split(' ')[1];
@@ -11,9 +11,11 @@ const auth = async (req, res, next) => {
         }
 
         const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
-        const admin = await Admin.findById({ _id: verifyUser._id });
+
+        const admin = Admin.findById({ _id: verifyUser._id });
 
         if (admin) {
+            await admin.updateOne({ $set: { token: null } }).exec();
             next();
         } else {
             return res.status(401).json({ message: "Authorization required" })
@@ -23,4 +25,4 @@ const auth = async (req, res, next) => {
     }
 };
 
-module.exports = auth;
+module.exports = deleteToken;

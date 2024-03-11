@@ -5,8 +5,53 @@ const router = express.Router();
 const Admin = require('../models/Admin');
 const Faculty = require('../models/Faculty');
 const Feedback = require('../models/Feedback');
-const authMiddleware = require('../middlewares/auth');
 const Course = require('../models/Course');
+
+const deleteToken = async (req, res, next) => {
+    try {
+
+        const token = req.headers.authorization && req.headers.authorization.split(' ')[1];
+
+        if (!token) {
+            throw new Error('Authentication required');
+        }
+
+        const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
+
+        const admin = Admin.findById({ _id: verifyUser._id });
+
+        if (admin) {
+            await admin.updateOne({ $set: { token: null } }).exec();
+            next();
+        } else {
+            return res.status(401).json({ message: "Authorization required" })
+        }
+    } catch (error) {
+        return res.status(500).json({ error: error.message });
+    }
+};
+
+const authorization = async (req, res, next) => {
+    try {
+
+        const token = req.headers.authorization && req.headers.authorization.split(' ')[1];
+
+        if (!token) {
+            throw new Error('Authentication required');
+        }
+
+        const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
+        const admin = await Admin.findById({ _id: verifyUser._id });
+
+        if (admin) {
+            next();
+        } else {
+            return res.status(401).json({ message: "Authorization required" })
+        }
+    } catch (error) {
+        return res.status(500).json({ error: error.message });
+    }
+};
 
 
 
@@ -39,24 +84,9 @@ router.post('/login', async (req, res) => {
         if (admin) {
             const token = await admin.generateAuthToken();
 
-
-
-            const options = {
-                expires: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
-                mode: 'cors',
-                httpOnly: true,
-                sameSite: 'None'
-            };
-
-            res.cookie("jwt", token, options);
-
-            res.set('Access-Control-Allow-Credentials', true);
-            res.set('Access-Control-Allow-Origin', req.headers.origin);
-
-
-
             return res.status(200).json({
-                message: 'Login Sucessfull'
+                message: 'Login Sucessfull',
+                token: token
             });
         } else {
             return res.status(401).json({ message: 'Invalid credentials' });
@@ -71,7 +101,7 @@ router.post('/login', async (req, res) => {
 
 
 // admin logout
-router.post('/logout', async (req, res) => {
+router.post('/logout', deleteToken, async (req, res) => {
     try {
 
         return res.status(200).json({ message: "User is logged out successfully" })
@@ -82,7 +112,7 @@ router.post('/logout', async (req, res) => {
 
 
 
-router.post('/register-faculty', authMiddleware, async (req, res) => {
+router.post('/register-faculty', authorization, async (req, res) => {
     try {
         const newFaculty = new Faculty({
             facultyId: req.body.facultyId,
@@ -93,6 +123,7 @@ router.post('/register-faculty', authMiddleware, async (req, res) => {
             branch: req.body.branch,
             semester: req.body.semester
         })
+        const token = await newFaculty.generateAuthToken();
         await newFaculty.save();
         return res.status(200).json(newFaculty);
 
@@ -101,7 +132,7 @@ router.post('/register-faculty', authMiddleware, async (req, res) => {
     }
 })
 
-router.post('/addCourse', async (req, res) => {
+router.post('/addCourse', authorization, async (req, res) => {
     try {
         const newCourse = new Course(req.body);
 
@@ -122,7 +153,7 @@ router.post('/addCourse', async (req, res) => {
     }
 });
 
-router.get('/faculty/courses-and-feedbacks', async (req, res) => {
+router.get('/faculty/courses-and-feedbacks', authorization, async (req, res) => {
     try {
 
 
@@ -151,100 +182,11 @@ router.get('/faculty/courses-and-feedbacks', async (req, res) => {
         return res.status(500).json({ message: error.message });
     }
 });
-// router.get('/faculty/:facultyId/average-ratings-and-comments', async (req, res) => {
-//     try {
-//         const faculty = await Faculty.findOne({ facultyId: req.params.facultyId }).populate('allCourses');
-
-//         if (!faculty) {
-//             return res.status(404).json({ message: "Faculty not found" });
-//         }
-
-//         // console.log(faculty);
-
-//         const courses = faculty.allCourses;
-
-//         const ratingsAndComments = await Promise.all(courses.map(async (course) => {
-//             const feedbacks = await Feedback.find({ courseId: course.CourseId });
-
-
-//             const totalRatings = feedbacks.reduce((total, feedback) => {
-//                 const feedbackValues = Object.values(feedback.ratings);
-//                 return total + feedbackValues.reduce((sum, value) => sum + value, 0);
-//             }, 0);
-
-//             const averageRating = feedbacks.length > 0 ? totalRatings / (feedbacks.length * 15) : 0;
-
-
-//             const comments = feedbacks.map(feedback => feedback.comments)
-//                 .filter(comment => comment !== undefined && comment !== null && comment.trim() !== '');
-
-//             return { course, averageRating, comments };
-//         }));
-
-//         return res.status(200).json(ratingsAndComments);
-
-//     } catch (error) {
-//         return res.status(500).json({ message: error.message });
-//     }
-// });
-
-// router.get('/faculty/:facultyId/questionwise-average-ratings', async (req, res) => {
-//     try {
-//         const faculty = await Faculty.findOne({ facultyId: req.params.facultyId }).populate('allCourses');
-
-//         if (!faculty) {
-//             return res.status(404).json({ message: "Faculty not found" });
-//         }
-
-//         // console.log(faculty);
-
-//         const courses = faculty.allCourses;
-
-//         const questionwiseAverageRatings = {};
-
-//         // Iterate over each course
-//         for (const course of courses) {
-//             const feedbacks = await Feedback.find({ courseId: course.CourseId });
-
-//             // Iterate over each feedback
-//             for (const feedback of feedbacks) {
-//                 const questionKeys = Object.keys(feedback.ratings);
-
-//                 // Iterate over each question in the feedback
-//                 for (const questionKey of questionKeys) {
-//                     const rating = feedback.ratings[questionKey];
-
-//                     // Initialize the question in the questionwiseAverageRatings object if not exists
-//                     if (!questionwiseAverageRatings[questionKey]) {
-//                         questionwiseAverageRatings[questionKey] = { totalRating: 0, count: 0 };
-//                     }
-
-//                     // Update the totalRating and count for the question
-//                     questionwiseAverageRatings[questionKey].totalRating += rating;
-//                     questionwiseAverageRatings[questionKey].count++;
-//                 }
-//             }
-//         }
-
-//         // Calculate the average rating for each question
-//         const result = {};
-//         const questionKeys = Object.keys(questionwiseAverageRatings);
-//         for (const questionKey of questionKeys) {
-//             const averageRating = questionwiseAverageRatings[questionKey].totalRating / questionwiseAverageRatings[questionKey].count;
-//             result[questionKey] = averageRating;
-//         }
-
-//         return res.status(200).json(result);
-
-//     } catch (error) {
-//         return res.status(500).json({ message: error.message });
-//     }
-// });
 
 
 
-// Add this route at the end of your existing routes
-router.get('/faculty/:facultyId/course/:courseId/average-ratings', async (req, res) => {
+
+router.get('/faculty/:facultyId/course/:courseId/average-ratings', authorization, async (req, res) => {
     try {
         const { facultyId, courseId } = req.params;
 
@@ -303,7 +245,7 @@ router.get('/faculty/:facultyId/course/:courseId/average-ratings', async (req, r
 
 
 
-router.get('/get_all_faculty', async (req, res) => {
+router.get('/get_all_faculty', authorization, async (req, res) => {
     try {
         // const allFaculty = await Faculty.find().select('-allCourses');
         const allFaculty = await Faculty.find().populate('allCourses')

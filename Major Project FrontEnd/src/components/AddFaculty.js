@@ -9,15 +9,18 @@ const AddFaculty = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const token = localStorage.getItem('token');
+
     const res = await fetch('http://localhost:8998/api/admin/register-faculty', {
       method: 'POST',
       body: JSON.stringify(form),
       headers: {
-        'Content-Type': 'application/json'
-      }
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+
     });
 
-    console.log(res);
 
     if (res.status === 200) {
       toast.success("Register Successful");
@@ -86,85 +89,85 @@ const AddFaculty = () => {
                 <option value="">Select Department</option>
                 <option value="Computer Application">Computer Application</option>
                 <option value="Btech">Btech</option>
-                
+
               </select>
 
               {form.department === "Btech" && (
                 <>
-                <label htmlFor="branch" className="block text-gray-600">
-                  Branch:
-                </label>
-                <select
-                  name="branch"
-                  onChange={handleForm}
-                  className="w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2"
-                >
-                  <option value="">Select Branch</option>
-                  <option value="CSE">CSE</option>
-                  <option value="ECE">ECE</option>
-                  <option value="AI/ML">AI/ML</option>
-                </select>
+                  <label htmlFor="branch" className="block text-gray-600">
+                    Branch:
+                  </label>
+                  <select
+                    name="branch"
+                    onChange={handleForm}
+                    className="w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2"
+                  >
+                    <option value="">Select Branch</option>
+                    <option value="CSE">CSE</option>
+                    <option value="ECE">ECE</option>
+                    <option value="AI/ML">AI/ML</option>
+                  </select>
 
-                <label htmlFor="semester" className="block text-gray-600">
-                  Semester:
-                </label>
-                <select
-                  name="semester"
-                  onChange={handleForm}
-                  className="w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2"
-                >
-                  <option value="">Select Semester</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                </select>
-              </>
+                  <label htmlFor="semester" className="block text-gray-600">
+                    Semester:
+                  </label>
+                  <select
+                    name="semester"
+                    onChange={handleForm}
+                    className="w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2"
+                  >
+                    <option value="">Select Semester</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                  </select>
+                </>
               )}
               {form.department === "Computer Application" && (
-              <>
-                
-                <label htmlFor="branch" className="block text-gray-600">
-                  Branch:
-                </label>
-                <select
-                  name="branch"
-                  onChange={handleForm}
-                  className="w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2"
-                >
-                  <option value="">Select Branch</option>
-                  <option value="BCA">BCA</option>
-                  <option value="MCA">MCA</option>
-                </select>
+                <>
 
-                {/* Semester dropdown */}
-                <label htmlFor="semester" className="block text-gray-600">
-                  Semester:
-                </label>
-                <select
-                  name="semester"
-                  onChange={handleForm}
-                  className="w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2"
-                >
-                  <option value="">Select Semester</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  {/* Display six semesters if the branch is BCA */}
-                  {form.branch === "BCA" && (
-                    <>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                    </>
-                  )}
-                </select>
-              </>
-            )}
+                  <label htmlFor="branch" className="block text-gray-600">
+                    Branch:
+                  </label>
+                  <select
+                    name="branch"
+                    onChange={handleForm}
+                    className="w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2"
+                  >
+                    <option value="">Select Branch</option>
+                    <option value="BCA">BCA</option>
+                    <option value="MCA">MCA</option>
+                  </select>
+
+                  {/* Semester dropdown */}
+                  <label htmlFor="semester" className="block text-gray-600">
+                    Semester:
+                  </label>
+                  <select
+                    name="semester"
+                    onChange={handleForm}
+                    className="w-full border p-2 rounded focus:outline-none focus:border-blue-500 mb-2"
+                  >
+                    <option value="">Select Semester</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    {/* Display six semesters if the branch is BCA */}
+                    {form.branch === "BCA" && (
+                      <>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                      </>
+                    )}
+                  </select>
+                </>
+              )}
               <label htmlFor="password" className="block text-gray-600">Password:</label>
               <input
                 type="password"

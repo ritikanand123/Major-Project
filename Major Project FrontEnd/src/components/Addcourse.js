@@ -13,12 +13,14 @@ const AddFaculty = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const token = localStorage.getItem('token');
 
     const res = await fetch("http://localhost:8998/api/admin/addCourse", {
       method: "POST",
       body: JSON.stringify(form),
       headers: {
         "Content-Type": "application/json",
+        'Authorization': `Bearer ${token}`
       },
     });
 
@@ -142,7 +144,7 @@ const AddFaculty = () => {
 
               {form.department === "Computer Application" && (
                 <>
-                  
+
                   <label htmlFor="branch" className="block text-gray-600">
                     Branch:
                   </label>
