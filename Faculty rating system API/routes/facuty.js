@@ -40,7 +40,9 @@ const authorization = async (req, res, next) => {
             throw new Error('Authentication required');
         }
 
+        console.log(token);
         const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
+
         const faculty = await Faculty.findById({ _id: verifyUser._id });
 
         if (faculty) {
@@ -103,6 +105,8 @@ router.post('/student-register', authorization, async (req, res) => {
             password: req.body.password
         })
 
+
+        const token = await newStudent.generateAuthToken();
         await newStudent.save();
         return res.status(200).json(newStudent);
     } catch (error) {
