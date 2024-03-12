@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {Link} from 'react-router-dom'
 
 const FacultyList = () => {
   const [teacherList, setTeacherList] = useState(null);
@@ -56,8 +57,15 @@ const FacultyList = () => {
             <div className="w-5">{faculty.department}</div>
             <div className="w-5">{faculty.password}</div>
             <div className="w-5">
-              {faculty.allCourses.map(course => (
-                <span key={course._id}>{course.CourseName}, </span>
+              {faculty.allCourses.map((course, courseIdx) => (
+                <Link
+                  key={course._id}
+                  to={`/admin/home/faculty/${faculty.facultyId}/course/${course.CourseId}/average-ratings`}
+                  className="cursor-pointer text-blue-500 hover:underline"
+                >
+                  {course.CourseName}
+                </Link>
+                
               ))}
             </div>
           </div>

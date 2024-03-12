@@ -37332,6 +37332,7 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
 const FacultyList = ()=>{
     _s();
@@ -37360,7 +37361,7 @@ const FacultyList = ()=>{
         children: " Loading "
     }, void 0, false, {
         fileName: "src/components/FacultyList.js",
-        lineNumber: 32,
+        lineNumber: 33,
         columnNumber: 12
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
@@ -37373,7 +37374,7 @@ const FacultyList = ()=>{
                         children: "Sr. No"
                     }, void 0, false, {
                         fileName: "src/components/FacultyList.js",
-                        lineNumber: 38,
+                        lineNumber: 39,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -37381,7 +37382,7 @@ const FacultyList = ()=>{
                         children: "Faculty Id"
                     }, void 0, false, {
                         fileName: "src/components/FacultyList.js",
-                        lineNumber: 39,
+                        lineNumber: 40,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -37389,7 +37390,7 @@ const FacultyList = ()=>{
                         children: "Faculty name"
                     }, void 0, false, {
                         fileName: "src/components/FacultyList.js",
-                        lineNumber: 40,
+                        lineNumber: 41,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -37397,7 +37398,7 @@ const FacultyList = ()=>{
                         children: "Faculty Email"
                     }, void 0, false, {
                         fileName: "src/components/FacultyList.js",
-                        lineNumber: 41,
+                        lineNumber: 42,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -37405,7 +37406,7 @@ const FacultyList = ()=>{
                         children: "Faculty Department"
                     }, void 0, false, {
                         fileName: "src/components/FacultyList.js",
-                        lineNumber: 42,
+                        lineNumber: 43,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -37413,7 +37414,7 @@ const FacultyList = ()=>{
                         children: "Faculty Password"
                     }, void 0, false, {
                         fileName: "src/components/FacultyList.js",
-                        lineNumber: 43,
+                        lineNumber: 44,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -37421,13 +37422,13 @@ const FacultyList = ()=>{
                         children: "Faculty Courses"
                     }, void 0, false, {
                         fileName: "src/components/FacultyList.js",
-                        lineNumber: 44,
+                        lineNumber: 45,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/FacultyList.js",
-                lineNumber: 37,
+                lineNumber: 38,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -37440,7 +37441,7 @@ const FacultyList = ()=>{
                                 children: idx + 1
                             }, void 0, false, {
                                 fileName: "src/components/FacultyList.js",
-                                lineNumber: 52,
+                                lineNumber: 53,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -37448,7 +37449,7 @@ const FacultyList = ()=>{
                                 children: faculty.facultyId
                             }, void 0, false, {
                                 fileName: "src/components/FacultyList.js",
-                                lineNumber: 53,
+                                lineNumber: 54,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -37456,7 +37457,7 @@ const FacultyList = ()=>{
                                 children: faculty.name
                             }, void 0, false, {
                                 fileName: "src/components/FacultyList.js",
-                                lineNumber: 54,
+                                lineNumber: 55,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -37464,7 +37465,7 @@ const FacultyList = ()=>{
                                 children: faculty.email
                             }, void 0, false, {
                                 fileName: "src/components/FacultyList.js",
-                                lineNumber: 55,
+                                lineNumber: 56,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -37472,7 +37473,7 @@ const FacultyList = ()=>{
                                 children: faculty.department
                             }, void 0, false, {
                                 fileName: "src/components/FacultyList.js",
-                                lineNumber: 56,
+                                lineNumber: 57,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -37480,35 +37481,34 @@ const FacultyList = ()=>{
                                 children: faculty.password
                             }, void 0, false, {
                                 fileName: "src/components/FacultyList.js",
-                                lineNumber: 57,
+                                lineNumber: 58,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                 className: "w-5",
-                                children: faculty.allCourses.map((course)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                        children: [
-                                            course.CourseName,
-                                            ", "
-                                        ]
-                                    }, course._id, true, {
+                                children: faculty.allCourses.map((course, courseIdx)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                        to: `/admin/home/faculty/${faculty.facultyId}/course/${course.CourseId}/average-ratings`,
+                                        className: "cursor-pointer text-blue-500 hover:underline",
+                                        children: course.CourseName
+                                    }, course._id, false, {
                                         fileName: "src/components/FacultyList.js",
-                                        lineNumber: 60,
+                                        lineNumber: 61,
                                         columnNumber: 17
                                     }, undefined))
                             }, void 0, false, {
                                 fileName: "src/components/FacultyList.js",
-                                lineNumber: 58,
+                                lineNumber: 59,
                                 columnNumber: 13
                             }, undefined)
                         ]
                     }, faculty.id, true, {
                         fileName: "src/components/FacultyList.js",
-                        lineNumber: 51,
+                        lineNumber: 52,
                         columnNumber: 11
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/components/FacultyList.js",
-                lineNumber: 49,
+                lineNumber: 50,
                 columnNumber: 7
             }, undefined)
         ]
@@ -37525,7 +37525,7 @@ $RefreshReg$(_c, "FacultyList");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"b5q7J":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe"}],"b5q7J":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$def3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -37818,7 +37818,7 @@ const StudentHeader = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex justify-end sticky mt-2 mx-5 mb-8 ",
+                className: "flex justify-end  mt-2 mx-5 mb-8 ",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
                     className: "flex w-2/4 justify-evenly ",
                     children: [
@@ -38066,30 +38066,150 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
-const CourseFeedBack = ()=>{
+const CourseFeedback = ()=>{
     _s();
     const { facultyId, courseId } = (0, _reactRouterDom.useParams)();
+    const [ratings, setRatings] = (0, _react.useState)({});
+    const [loading, setLoading] = (0, _react.useState)(true);
     (0, _react.useEffect)(()=>{
+        const getRatings = async ()=>{
+            try {
+                const token = localStorage.getItem("token");
+                const res = await fetch(`http://localhost:8998/api/admin/faculty/${facultyId}/course/${courseId}/average-ratings`, {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    }
+                });
+                const data = await res.json();
+                setRatings(data);
+                setLoading(false);
+            } catch (error) {
+                console.error("Error fetching ratings:", error);
+                setLoading(false);
+            }
+        };
         getRatings();
-    }, []);
-    const getRatings = async ()=>{
-        const res = await fetch(`http://localhost:8998/api/admin/faculty/${facultyId}/course/${courseId}/average-ratings`);
-        const data = await res.json();
-        console.log(data);
-    };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {}, void 0, false);
+    }, [
+        facultyId,
+        courseId
+    ]);
+    const questions = [
+        "The teacher had Thorough and comprehensive Knowledge of subjects?",
+        "Soft skill of the subject in-charge in handling of contents?",
+        "Online learning materials/notes provided by the subject in-charge in enhancing my understanding of the subject?",
+        "The teacher thoroughly answered the student's questions?",
+        "There was positive interaction between students and teacher?",
+        "Quality of work was emphasized more than quantity?",
+        "You were encouraged to do extra reading about the course material?",
+        "The teacher gave assignments that were useful for learning subject matter?",
+        "Students feel free to interrupt presentations if points needed clarification?",
+        "Video, sound quality and duration of video lectures prepared by subject in-charge?",
+        "Lectures were held regularly and on time?",
+        "Students were introduced with the relevant information iz. Registration & Certification for MOOCs based online course as a supplement activity to the course?",
+        "Students were introduced with the relevant information on 'Virtual Labs' for the course?",
+        "The online teaching technologies used by the subject in-charge in enhancing my understanding of the subject",
+        "Overall rating of online teaching activities in this subject?"
+    ];
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "container mx-auto mt-8 p-4 bg-white rounded-md shadow-md",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                className: "text-3xl font-bold mb-4 text-blue-600",
+                children: "Course Feedback"
+            }, void 0, false, {
+                fileName: "src/components/CourseFeedBack.js",
+                lineNumber: 53,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                className: "mb-2 text-lg text-gray-700",
+                children: [
+                    "Faculty ID: ",
+                    facultyId,
+                    " | Course ID: ",
+                    courseId
+                ]
+            }, void 0, true, {
+                fileName: "src/components/CourseFeedBack.js",
+                lineNumber: 54,
+                columnNumber: 7
+            }, undefined),
+            loading ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                className: "text-blue-500",
+                children: "Loading..."
+            }, void 0, false, {
+                fileName: "src/components/CourseFeedBack.js",
+                lineNumber: 59,
+                columnNumber: 9
+            }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                        className: "text-2xl font-semibold mb-2 text-blue-600",
+                        children: "Average Ratings"
+                    }, void 0, false, {
+                        fileName: "src/components/CourseFeedBack.js",
+                        lineNumber: 62,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "grid grid-cols-2 gap-4",
+                        children: Object.keys(ratings.questionwiseAverageRatings).map((question, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "mb-4 p-4 border border-blue-200 rounded-md",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        className: "font-medium text-gray-700",
+                                        children: questions[index]
+                                    }, void 0, false, {
+                                        fileName: "src/components/CourseFeedBack.js",
+                                        lineNumber: 66,
+                                        columnNumber: 17
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        className: "text-2xl font-bold text-blue-600",
+                                        children: ratings.questionwiseAverageRatings[question]
+                                    }, void 0, false, {
+                                        fileName: "src/components/CourseFeedBack.js",
+                                        lineNumber: 67,
+                                        columnNumber: 17
+                                    }, undefined)
+                                ]
+                            }, index, true, {
+                                fileName: "src/components/CourseFeedBack.js",
+                                lineNumber: 65,
+                                columnNumber: 15
+                            }, undefined))
+                    }, void 0, false, {
+                        fileName: "src/components/CourseFeedBack.js",
+                        lineNumber: 63,
+                        columnNumber: 11
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/CourseFeedBack.js",
+                lineNumber: 61,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/CourseFeedBack.js",
+        lineNumber: 52,
+        columnNumber: 5
+    }, undefined);
 };
-_s(CourseFeedBack, "yF5piqGoEM5CLl51rG/7I9kS0Lw=", false, function() {
+_s(CourseFeedback, "X+YIJD0RHrIpQKiiDt6kNcdKpaE=", false, function() {
     return [
         (0, _reactRouterDom.useParams)
     ];
 });
-_c = CourseFeedBack;
-exports.default = CourseFeedBack;
+_c = CourseFeedback;
+exports.default = CourseFeedback;
 var _c;
-$RefreshReg$(_c, "CourseFeedBack");
+$RefreshReg$(_c, "CourseFeedback");
 
   $parcel$ReactRefreshHelpers$c987.postlude(module);
 } finally {
