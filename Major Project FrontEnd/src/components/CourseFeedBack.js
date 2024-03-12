@@ -31,21 +31,21 @@ const CourseFeedback = () => {
   }, [facultyId, courseId]);
 
   const questions = [
-    "The teacher had Thorough and comprehensive Knowledge of subjects?",
-    "Soft skill of the subject in-charge in handling of contents?",
-    "Online learning materials/notes provided by the subject in-charge in enhancing my understanding of the subject?",
-    "The teacher thoroughly answered the student's questions?",
-    "There was positive interaction between students and teacher?",
-    "Quality of work was emphasized more than quantity?",
-    "You were encouraged to do extra reading about the course material?",
-    "The teacher gave assignments that were useful for learning subject matter?",
-    "Students feel free to interrupt presentations if points needed clarification?",
-    "Video, sound quality and duration of video lectures prepared by subject in-charge?",
-    "Lectures were held regularly and on time?",
-    "Students were introduced with the relevant information iz. Registration & Certification for MOOCs based online course as a supplement activity to the course?",
-    "Students were introduced with the relevant information on 'Virtual Labs' for the course?",
-    "The online teaching technologies used by the subject in-charge in enhancing my understanding of the subject",
-    "Overall rating of online teaching activities in this subject?"
+    "1. The teacher had Thorough and comprehensive Knowledge of subjects?",
+    "2. Soft skill of the subject in-charge in handling of contents?",
+    "3. Online learning materials/notes provided by the subject in-charge in enhancing my understanding of the subject?",
+    "4. The teacher thoroughly answered the student's questions?",
+    "5. There was positive interaction between students and teacher?",
+    "6. Quality of work was emphasized more than quantity?",
+    "7. You were encouraged to do extra reading about the course material?",
+    "8. The teacher gave assignments that were useful for learning subject matter?",
+    "9. Students feel free to interrupt presentations if points needed clarification?",
+    "10. Video, sound quality and duration of video lectures prepared by subject in-charge?",
+    "11. Lectures were held regularly and on time?",
+    "12. Students were introduced with the relevant information iz. Registration & Certification for MOOCs based online course as a supplement activity to the course?",
+    "13. Students were introduced with the relevant information on 'Virtual Labs' for the course?",
+    "14. The online teaching technologies used by the subject in-charge in enhancing my understanding of the subject",
+    "15. Overall rating of online teaching activities in this subject?"
   ];
 
   return (
