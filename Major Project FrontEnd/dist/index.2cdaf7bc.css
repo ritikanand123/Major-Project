@@ -278,6 +278,10 @@ img, video {
   }
 }
 
+.sticky {
+  position: sticky;
+}
+
 .m-2 {
   margin: .5rem;
 }

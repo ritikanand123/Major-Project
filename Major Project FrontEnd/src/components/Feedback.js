@@ -44,7 +44,7 @@ const Feedback = () =>{
           comments: e.target.value
         }));
       };
-    
+      const token = localStorage.getItem('token');
       const handleSubmit = async (e) => {
         e.preventDefault();
         
@@ -54,6 +54,8 @@ const Feedback = () =>{
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
+              'Authorization': `Bearer ${token}`
+
             },
             body: JSON.stringify(formData),
           });

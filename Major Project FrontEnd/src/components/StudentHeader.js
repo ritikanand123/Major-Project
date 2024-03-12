@@ -29,7 +29,7 @@ const StudentHeader = () => {
     }  
     return(
         <>
-        <div className="flex justify-end mt-2 mx-5 mb-8 ">
+        <div className="flex justify-end sticky mt-2 mx-5 mb-8 ">
 
 
         <ul className="flex w-2/4 justify-evenly ">

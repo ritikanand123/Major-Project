@@ -34869,6 +34869,7 @@ const Feedback = ()=>{
                 comments: e.target.value
             }));
     };
+    const token = localStorage.getItem("token");
     const handleSubmit = async (e)=>{
         e.preventDefault();
         try {
@@ -34876,7 +34877,8 @@ const Feedback = ()=>{
             const response = await fetch(`http://localhost:8998/api/student/submitFeedback/${courseid}`, {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
                 },
                 body: JSON.stringify(formData)
             });
@@ -34902,7 +34904,7 @@ const Feedback = ()=>{
                 children: "Form"
             }, void 0, false, {
                 fileName: "src/components/Feedback.js",
-                lineNumber: 81,
+                lineNumber: 83,
                 columnNumber: 11
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
@@ -34917,7 +34919,7 @@ const Feedback = ()=>{
                                     children: "Q" + (index + 1) + " " + question
                                 }, void 0, false, {
                                     fileName: "src/components/Feedback.js",
-                                    lineNumber: 85,
+                                    lineNumber: 87,
                                     columnNumber: 17
                                 }, undefined),
                                 [
@@ -34937,7 +34939,7 @@ const Feedback = ()=>{
                                                 onChange: ()=>handleRatingChange(index, rating)
                                             }, void 0, false, {
                                                 fileName: "src/components/Feedback.js",
-                                                lineNumber: 88,
+                                                lineNumber: 90,
                                                 columnNumber: 21
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -34945,19 +34947,19 @@ const Feedback = ()=>{
                                                 children: `${rating}.0`
                                             }, void 0, false, {
                                                 fileName: "src/components/Feedback.js",
-                                                lineNumber: 95,
+                                                lineNumber: 97,
                                                 columnNumber: 21
                                             }, undefined)
                                         ]
                                     }, rating, true, {
                                         fileName: "src/components/Feedback.js",
-                                        lineNumber: 87,
+                                        lineNumber: 89,
                                         columnNumber: 19
                                     }, undefined))
                             ]
                         }, index, true, {
                             fileName: "src/components/Feedback.js",
-                            lineNumber: 84,
+                            lineNumber: 86,
                             columnNumber: 15
                         }, undefined)),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34969,7 +34971,7 @@ const Feedback = ()=>{
                                 children: "Comments:"
                             }, void 0, false, {
                                 fileName: "src/components/Feedback.js",
-                                lineNumber: 101,
+                                lineNumber: 103,
                                 columnNumber: 15
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("textarea", {
@@ -34981,13 +34983,13 @@ const Feedback = ()=>{
                                 onChange: handleCommentsChange
                             }, void 0, false, {
                                 fileName: "src/components/Feedback.js",
-                                lineNumber: 102,
+                                lineNumber: 104,
                                 columnNumber: 15
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/Feedback.js",
-                        lineNumber: 100,
+                        lineNumber: 102,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34998,24 +35000,24 @@ const Feedback = ()=>{
                             children: "Submit"
                         }, void 0, false, {
                             fileName: "src/components/Feedback.js",
-                            lineNumber: 112,
+                            lineNumber: 114,
                             columnNumber: 15
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/Feedback.js",
-                        lineNumber: 111,
+                        lineNumber: 113,
                         columnNumber: 13
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Feedback.js",
-                lineNumber: 82,
+                lineNumber: 84,
                 columnNumber: 11
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/Feedback.js",
-        lineNumber: 80,
+        lineNumber: 82,
         columnNumber: 9
     }, undefined);
 };
@@ -37816,7 +37818,7 @@ const StudentHeader = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex justify-end mt-2 mx-5 mb-8 ",
+                className: "flex justify-end sticky mt-2 mx-5 mb-8 ",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
                     className: "flex w-2/4 justify-evenly ",
                     children: [
