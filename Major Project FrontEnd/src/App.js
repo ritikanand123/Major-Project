@@ -13,6 +13,11 @@ import statusprovider from "./context/AdminloginContext"
 import FacultyList from "./components/FacultyList"
 import StudentList from "./components/StudentList"
 import AddMultipleStudent from "./components/AddMultipleStudent"
+import StudentHeader from "./components/StudentHeader"
+import StudentCourses from "./components/StudentCourses"
+import Feedback from "./components/Feedback"
+import CourseFeedBack from "./components/CourseFeedBack"
+
 const Approuter = createBrowserRouter([
     
     {
@@ -52,7 +57,7 @@ const Approuter = createBrowserRouter([
             {
                 path : "/faculty/home/addmultiplestudent",
                 element : <AddMultipleStudent/>
-            }
+            },
         ],
     },
     {
@@ -70,6 +75,29 @@ const Approuter = createBrowserRouter([
             {
                 path : "/admin/home/teacherlist",
                 element : <FacultyList/>
+            },
+            {
+                path : "/admin/home/teacherlist",
+                element : <FacultyList/>
+            },
+            {
+                path : "/admin/home/faculty/:facultyId/course/:courseId/average-ratings",
+                element : <CourseFeedBack/>
+            }
+
+        ],
+    },
+    {
+        path : "/student/home" ,
+        element : <StudentHeader/>,
+        children : [
+            {
+                path : "/student/home/myCourses",
+                element : <StudentCourses/>
+            },
+            {
+                path : "/student/home/course/:courseid",
+                element : <Feedback/>
             }
         ],
     }

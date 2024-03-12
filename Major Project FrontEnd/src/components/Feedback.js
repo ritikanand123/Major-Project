@@ -1,3 +1,5 @@
+import {useState} from 'react'
+import {useParams} from 'react-router-dom'
 const Feedback = () =>{
 
     const questions = [
@@ -18,37 +20,105 @@ const Feedback = () =>{
         "Overall rating of online teaching activities in this subject?"
       ];
 
-    return (<div className="flex justify-center flex-col">
-        <h1 className="text-2xl font-semibold mb-4 text-center">Form</h1>
-        <ul className="max-w-md mx-auto p-4 bg-slate-100  rounded-md shadow-2xl">
-        {questions.map((question, index) => (
-          <li key={index} className="mb-8">
-            <p className="font-bold mb-2">{"Q" + (index+1) + " " + question}</p>
-            {[1, 2, 3, 4, 5].map((rating) => (
-              <div key={rating} className="flex items-center">
-                <input
-                  id={`rating${rating}`}
-                  name={`question${index + 1}`}
-                  type="radio"
-                  className="mr-2"
-                />
-                <label htmlFor={`rating${rating}`}>{`${rating}.0`}</label>
+      const { courseid} = useParams();
+      console.log(courseid)
+      const [formData, setFormData] = useState({
+        courseId: courseid,
+        ratings: {},
+        comments: ''
+      });
+    
+      const handleRatingChange = (questionIndex, rating) => {
+        setFormData(prevData => ({
+          ...prevData,
+          ratings: {
+            ...prevData.ratings,
+            [`question${questionIndex + 1}`]: rating
+          }
+        }));
+      };
+    
+      const handleCommentsChange = (e) => {
+        setFormData(prevData => ({
+          ...prevData,
+          comments: e.target.value
+        }));
+      };
+    
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+        
+        try {
+          // Send the feedback data to the server using fetch
+          const response = await fetch(`http://localhost:8998/api/student/submitFeedback/${courseid}`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+          });
+    
+          if (response.ok) {
+            console.log('Feedback submitted successfully:', response.data);
+    
+            // Reset the form data if needed
+            setFormData({
+              courseId: 'your_course_id', // Reset the course ID
+              studentId: 'your_student_id', // Reset the student ID
+              ratings: {},
+              comments: ''
+            });
+          } else {
+            console.error('Error submitting feedback:', response.statusText);
+          }
+        } catch (error) {
+          console.error('Error submitting feedback:', error.message);
+        }
+      };
+
+      return (
+        <div className="flex justify-center flex-col">
+          <h1 className="text-2xl font-semibold mb-4 text-center">Form</h1>
+          <form className="max-w-md mx-auto p-4 bg-slate-100 rounded-md shadow-2xl" onSubmit={handleSubmit}>
+            {questions.map((question, index) => (
+              <div key={index} className="mb-8">
+                <p className="font-bold mb-2">{"Q" + (index + 1) + " " + question}</p>
+                {[1, 2, 3, 4, 5].map((rating) => (
+                  <div key={rating} className="flex items-center">
+                    <input
+                      id={`rating${rating}`}
+                      name={`question${index + 1}`}
+                      type="radio"
+                      className="mr-2"
+                      onChange={() => handleRatingChange(index, rating)}
+                    />
+                    <label htmlFor={`rating${rating}`}>{`${rating}.0`}</label>
+                  </div>
+                ))}
               </div>
             ))}
-          </li>
-        ))}
-      </ul>
-      <div className="flex justify-center">
-      <button
-        type="submit"
-        className="w-20 my-4 bg-blue-500 text-white p-2 rounded hover:bg-blue-600 focus:outline-none"
-      >
-        Submit
-      </button>
-      </div>
-      
-        
-    </div>)
+            <div className="mb-4">
+              <label htmlFor="comments" className="font-bold">Comments:</label>
+              <textarea
+                id="comments"
+                name="comments"
+                rows="4"
+                className="w-full p-2 border rounded"
+                value={formData.comments}
+                onChange={handleCommentsChange}
+              />
+            </div>
+            <div className="flex justify-center">
+              <button
+                type="submit"
+                className="w-20 my-4 bg-blue-500 text-white p-2 rounded hover:bg-blue-600 focus:outline-none"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      )
 
 
 }

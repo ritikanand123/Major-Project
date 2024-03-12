@@ -6,6 +6,7 @@ const Student = require('../models/Student')
 const Course = require('../models/Course');
 const Feedback = require('../models/Feedback');
 const Facutly = require('../models/Faculty');
+const jwt = require("jsonwebtoken");
 
 const deleteToken = async (req, res, next) => {
     try {
@@ -35,7 +36,8 @@ const authorization = async (req, res, next) => {
     try {
 
         const token = req.headers.authorization && req.headers.authorization.split(' ')[1];
-
+        console.log(token)
+        // console.log(token)
         if (!token) {
             throw new Error('Authentication required');
         }
@@ -61,10 +63,11 @@ router.post('/login', async (req, res) => {
         if (!student) {
             return res.status(404).json({ message: "Student is not found" });
         } else {
-
+            // console.log("hi")
             if (req.body.password == student.password) {
-                const token = student.generateAuthToken();
-                return res.status(200).json({ message: "Student is logged in successfully" });
+                const token = await student.generateAuthToken();
+                console.log(token)
+                return res.status(200).json({ message: "Student is logged in successfully" , token : token });
             } else {
                 return res.status(401).json({ message: "Incorrect password" });
             }
@@ -109,15 +112,25 @@ router.get('/getCourses/', authorization, async (req, res) => {
     }
 });
 
-router.post('/submitFeedback/:courseId/:studentId', authorization, async (req, res) => {
+router.post('/submitFeedback/:courseId/', authorization, async (req, res) => {
     try {
-
+        // console.log(req.params.courseId)
         const newfeed = new Feedback({
             courseId: req.params.courseId,
-            studentId: req.params.studentId,
+            
             ratings: req.body.ratings,
             comments: req.body.comments
+
         })
+        const token = req.headers.authorization && req.headers.authorization.split(' ')[1];
+        console.log(token)
+        if (!token) {
+            throw new Error('Authentication required');
+        }
+
+        const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
+        const student = await Student.findById({ _id: verifyUser._id });
+        newfeed.studentId = studnet.studentId
         await newfeed.save();
         return res.status(200).json(newfeed);
 

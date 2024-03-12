@@ -35,7 +35,7 @@ const authorization = async (req, res, next) => {
     try {
 
         const token = req.headers.authorization && req.headers.authorization.split(' ')[1];
-
+        
         if (!token) {
             throw new Error('Authentication required');
         }
@@ -58,16 +58,18 @@ const authorization = async (req, res, next) => {
 
 
 // Faculty Login
-router.post('/login', async (req, res) => {
+router.post('/login',async (req, res) => {
     try {
-
+        // console.log("hi")
         const faculty = await Faculty.findOne({ facultyId: req.body.facultyId });
         if (!faculty) {
             return res.status(404).json({ message: "Faculty memeber is not registered" })
         }
-
+        
         if (req.body.password == faculty.password) {
             const token = await faculty.generateAuthToken();
+            console.log("hi")
+            console.log(token)
             return res.status(200).json({
                 message: 'Login Sucessfull',
                 token: token

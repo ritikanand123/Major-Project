@@ -2977,12 +2977,18 @@ var _studentList = require("./components/StudentList");
 var _studentListDefault = parcelHelpers.interopDefault(_studentList);
 var _addMultipleStudent = require("./components/AddMultipleStudent");
 var _addMultipleStudentDefault = parcelHelpers.interopDefault(_addMultipleStudent);
+var _studentHeader = require("./components/StudentHeader");
+var _studentHeaderDefault = parcelHelpers.interopDefault(_studentHeader);
+var _studentCourses = require("./components/StudentCourses");
+var _studentCoursesDefault = parcelHelpers.interopDefault(_studentCourses);
+var _courseFeedBack = require("./components/CourseFeedBack");
+var _courseFeedBackDefault = parcelHelpers.interopDefault(_courseFeedBack);
 const Approuter = (0, _reactRouterDom.createBrowserRouter)([
     {
         path: "/",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginStudentDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 20,
+            lineNumber: 25,
             columnNumber: 19
         }, undefined)
     },
@@ -2990,7 +2996,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/login",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginStudentDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 24,
+            lineNumber: 29,
             columnNumber: 19
         }, undefined)
     },
@@ -2998,7 +3004,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/feedback",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _feedbackDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 29,
+            lineNumber: 34,
             columnNumber: 19
         }, undefined)
     },
@@ -3006,7 +3012,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/loginAsAdmin",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginAdminDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 34,
+            lineNumber: 39,
             columnNumber: 19
         }, undefined)
     },
@@ -3014,7 +3020,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/loginAsTeacher",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginTeacherDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 38,
+            lineNumber: 43,
             columnNumber: 19
         }, undefined)
     },
@@ -3022,7 +3028,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/faculty/home",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _facultyHeaderDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 42,
+            lineNumber: 47,
             columnNumber: 19
         }, undefined),
         children: [
@@ -3030,7 +3036,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/faculty/home/addstudent",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _addStudentDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 46,
+                    lineNumber: 51,
                     columnNumber: 27
                 }, undefined)
             },
@@ -3038,7 +3044,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/faculty/home/studentlist",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _studentListDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 50,
+                    lineNumber: 55,
                     columnNumber: 27
                 }, undefined)
             },
@@ -3046,7 +3052,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/faculty/home/addmultiplestudent",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _addMultipleStudentDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 54,
+                    lineNumber: 59,
                     columnNumber: 27
                 }, undefined)
             }
@@ -3056,7 +3062,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/admin/home",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _adminHeaderDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 60,
+            lineNumber: 65,
             columnNumber: 19
         }, undefined),
         children: [
@@ -3064,7 +3070,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/admin/home/addfaculty",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _addFacultyDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 64,
+                    lineNumber: 69,
                     columnNumber: 27
                 }, undefined)
             },
@@ -3072,7 +3078,7 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/admin/home/addcourse",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _addcourseDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 68,
+                    lineNumber: 73,
                     columnNumber: 27
                 }, undefined)
             },
@@ -3080,7 +3086,49 @@ const Approuter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/admin/home/teacherlist",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _facultyListDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 72,
+                    lineNumber: 77,
+                    columnNumber: 27
+                }, undefined)
+            },
+            {
+                path: "/admin/home/teacherlist",
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _facultyListDefault.default), {}, void 0, false, {
+                    fileName: "src/App.js",
+                    lineNumber: 81,
+                    columnNumber: 27
+                }, undefined)
+            },
+            {
+                path: "/admin/home/faculty/:facultyId/course/:courseId/average-ratings",
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _courseFeedBackDefault.default), {}, void 0, false, {
+                    fileName: "src/App.js",
+                    lineNumber: 85,
+                    columnNumber: 27
+                }, undefined)
+            }
+        ]
+    },
+    {
+        path: "/student/home",
+        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _studentHeaderDefault.default), {}, void 0, false, {
+            fileName: "src/App.js",
+            lineNumber: 92,
+            columnNumber: 19
+        }, undefined),
+        children: [
+            {
+                path: "/student/home/myCourses",
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _studentCoursesDefault.default), {}, void 0, false, {
+                    fileName: "src/App.js",
+                    lineNumber: 96,
+                    columnNumber: 27
+                }, undefined)
+            },
+            {
+                path: "/student/home/course/:courseid",
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _feedbackDefault.default), {}, void 0, false, {
+                    fileName: "src/App.js",
+                    lineNumber: 100,
                     columnNumber: 27
                 }, undefined)
             }
@@ -3093,7 +3141,7 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment
         router: Approuter
     }, void 0, false, {
         fileName: "src/App.js",
-        lineNumber: 83,
+        lineNumber: 111,
         columnNumber: 9
     }, undefined)
 }, void 0, false));
@@ -3103,7 +3151,7 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","react-router-dom":"9xmpe","./components/Login/LoginStudent":"ellob","./components/Feedback":"2hBAZ","./components/Login/LoginAdmin":"b9IEN","./components/Login/LoginTeacher":"aqaip","./components/FacultyHeader":"2phQw","./components/AddStudent":"3QMK0","./components/AdminHeader":"jcoHB","./components/AddFaculty":"jdb5j","./components/Addcourse":"87iI7","./context/AdminloginContext":"ltJX8","./components/FacultyList":"dnKj3","./components/StudentList":"b5q7J","./components/AddMultipleStudent":"23rpZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","react-router-dom":"9xmpe","./components/Login/LoginStudent":"ellob","./components/Feedback":"2hBAZ","./components/Login/LoginAdmin":"b9IEN","./components/Login/LoginTeacher":"aqaip","./components/FacultyHeader":"2phQw","./components/AddStudent":"3QMK0","./components/AdminHeader":"jcoHB","./components/AddFaculty":"jdb5j","./components/Addcourse":"87iI7","./context/AdminloginContext":"ltJX8","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/FacultyList":"dnKj3","./components/StudentList":"b5q7J","./components/AddMultipleStudent":"23rpZ","./components/StudentHeader":"jOYB3","./components/StudentCourses":"eKxOe","./components/CourseFeedBack":"eQCFI"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -33809,10 +33857,12 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactRouterDom = require("react-router-dom");
+var _sonner = require("sonner");
 var _s = $RefreshSig$();
 const Login = ()=>{
     _s();
     const [form, setForm] = (0, _react.useState)({});
+    const navigate = (0, _reactRouterDom.useNavigate)();
     const handleSubmit = async (e)=>{
         e.preventDefault();
         const res = await fetch("http://localhost:8998/api/student/login", {
@@ -33823,8 +33873,15 @@ const Login = ()=>{
             }
         });
         const data = await res.json();
-        console.log(data);
+        console.log(data.token);
         localStorage.setItem("token", data.token);
+        if (res.status == 200) {
+            // localStorage.setItem('user' , JSON.stringify(json))
+            (0, _sonner.toast).success(data.message);
+            setTimeout(function() {
+                navigate("/student/home");
+            }, 700);
+        } else (0, _sonner.toast).error(data.message);
     };
     const handleForm = (e)=>{
         setForm({
@@ -33832,72 +33889,116 @@ const Login = ()=>{
             [e.target.name]: e.target.value
         });
     };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex h-screen justify-center align-middle",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "min-h-screen flex items-center justify-center",
-            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
-                onSubmit: handleSubmit,
-                className: "bg-white p-8 rounded shadow-2xl w-96",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                        className: "text-2xl font-semibold mb-4 text-center",
-                        children: " Student Login"
-                    }, void 0, false, {
-                        fileName: "src/components/Login/LoginStudent.js",
-                        lineNumber: 37,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "mb-4",
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "flex h-screen justify-center align-middle",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "min-h-screen flex items-center justify-center",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+                        onSubmit: handleSubmit,
+                        className: "bg-white p-8 rounded shadow-2xl w-96",
                         children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                htmlFor: "studentId",
-                                className: "block text-gray-600 mb-2",
-                                children: "Username:"
-                            }, void 0, false, {
-                                fileName: "src/components/Login/LoginStudent.js",
-                                lineNumber: 40,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                type: "text",
-                                name: "studentId",
-                                onChange: handleForm,
-                                className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500",
-                                placeholder: "Enter your username"
-                            }, void 0, false, {
-                                fileName: "src/components/Login/LoginStudent.js",
-                                lineNumber: 41,
-                                columnNumber: 13
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/Login/LoginStudent.js",
-                        lineNumber: 39,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "mb-6",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                htmlFor: "password",
-                                className: "block text-gray-600 mb-2",
-                                children: "Password:"
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                                className: "text-2xl font-semibold mb-4 text-center",
+                                children: " Student Login"
                             }, void 0, false, {
                                 fileName: "src/components/Login/LoginStudent.js",
                                 lineNumber: 51,
                                 columnNumber: 13
                             }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                type: "password",
-                                name: "password",
-                                onChange: handleForm,
-                                className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500",
-                                placeholder: "Enter your password"
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "mb-4",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                        htmlFor: "studentId",
+                                        className: "block text-gray-600 mb-2",
+                                        children: "Username:"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Login/LoginStudent.js",
+                                        lineNumber: 54,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                        type: "text",
+                                        name: "studentId",
+                                        onChange: handleForm,
+                                        className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500",
+                                        placeholder: "Enter your username"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Login/LoginStudent.js",
+                                        lineNumber: 55,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/Login/LoginStudent.js",
+                                lineNumber: 53,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "mb-6",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                        htmlFor: "password",
+                                        className: "block text-gray-600 mb-2",
+                                        children: "Password:"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Login/LoginStudent.js",
+                                        lineNumber: 65,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                        type: "password",
+                                        name: "password",
+                                        onChange: handleForm,
+                                        className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500",
+                                        placeholder: "Enter your password"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Login/LoginStudent.js",
+                                        lineNumber: 66,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/Login/LoginStudent.js",
+                                lineNumber: 64,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                type: "submit",
+                                className: "w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 focus:outline-none",
+                                children: "Log In"
                             }, void 0, false, {
                                 fileName: "src/components/Login/LoginStudent.js",
-                                lineNumber: 52,
+                                lineNumber: 75,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "mt-4 flex justify-between",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                        className: "text-blue-600",
+                                        to: "../loginAsTeacher",
+                                        children: "Login As Teacher"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Login/LoginStudent.js",
+                                        lineNumber: 79,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                        className: "text-blue-600",
+                                        to: "../loginAsAdmin",
+                                        children: "Login As Admin"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Login/LoginStudent.js",
+                                        lineNumber: 80,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/Login/LoginStudent.js",
+                                lineNumber: 78,
                                 columnNumber: 13
                             }, undefined)
                         ]
@@ -33905,61 +34006,33 @@ const Login = ()=>{
                         fileName: "src/components/Login/LoginStudent.js",
                         lineNumber: 50,
                         columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        type: "submit",
-                        className: "w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 focus:outline-none",
-                        children: "Log In"
-                    }, void 0, false, {
-                        fileName: "src/components/Login/LoginStudent.js",
-                        lineNumber: 61,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "mt-4 flex justify-between",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                className: "text-blue-600",
-                                to: "../loginAsTeacher",
-                                children: "Login As Teacher"
-                            }, void 0, false, {
-                                fileName: "src/components/Login/LoginStudent.js",
-                                lineNumber: 65,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                className: "text-blue-600",
-                                to: "../loginAsAdmin",
-                                children: "Login As Admin"
-                            }, void 0, false, {
-                                fileName: "src/components/Login/LoginStudent.js",
-                                lineNumber: 66,
-                                columnNumber: 13
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/Login/LoginStudent.js",
-                        lineNumber: 64,
-                        columnNumber: 11
                     }, undefined)
-                ]
-            }, void 0, true, {
+                }, void 0, false, {
+                    fileName: "src/components/Login/LoginStudent.js",
+                    lineNumber: 49,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
                 fileName: "src/components/Login/LoginStudent.js",
-                lineNumber: 36,
-                columnNumber: 9
+                lineNumber: 48,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sonner.Toaster), {
+                position: "top-right",
+                richColors: true
+            }, void 0, false, {
+                fileName: "src/components/Login/LoginStudent.js",
+                lineNumber: 85,
+                columnNumber: 7
             }, undefined)
-        }, void 0, false, {
-            fileName: "src/components/Login/LoginStudent.js",
-            lineNumber: 35,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/components/Login/LoginStudent.js",
-        lineNumber: 34,
-        columnNumber: 5
-    }, undefined);
+        ]
+    }, void 0, true);
 };
-_s(Login, "vOzvWZDsoCRExenMJTZow4WC08Q=");
+_s(Login, "jOSvTpfz8sRVmnId4pCCOKjRW94=", false, function() {
+    return [
+        (0, _reactRouterDom.useNavigate)
+    ];
+});
 _c = Login;
 exports.default = Login;
 var _c;
@@ -33970,7 +34043,7 @@ $RefreshReg$(_c, "Login");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"km3Ru":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","sonner":"4wQOs"}],"km3Ru":[function(require,module,exports) {
 "use strict";
 var Refresh = require("7422ead32dcc1e6b");
 function debounce(func, delay) {
@@ -34108,340 +34181,7 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"7422ead32dcc1e6b":"786KC"}],"2hBAZ":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$036f = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$036f.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Feedback = ()=>{
-    const questions = [
-        "The teacher had Thorough and comprehensive Knowledge of subjects?",
-        "Soft skill of the subject in-charge in handling of contents?",
-        "Online learning materials/notes provided by the subject in-charge in enhancing my understanding of the subject?",
-        "The teacher thoroughly answered the student's questions?",
-        "There was positive interaction between students and teacher?",
-        "Quality of work was emphasized more than quantity?",
-        "You were encouraged to do extra reading about the course material?",
-        "The teacher gave assignments that were useful for learning subject matter?",
-        "Students feel free to interrupt presentations if points needed clarification?",
-        "Video, sound quality and duration of video lectures prepared by subject in-charge?",
-        "Lectures were held regularly and on time?",
-        "Students were introduced with the relevant information iz. Registration & Certification for MOOCs based online course as a supplement activity to the course?",
-        "Students were introduced with the relevant information on 'Virtual Labs' for the course?",
-        "The online teaching technologies used by the subject in-charge in enhancing my understanding of the subject",
-        "Overall rating of online teaching activities in this subject?"
-    ];
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex justify-center flex-col",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                className: "text-2xl font-semibold mb-4 text-center",
-                children: "Form"
-            }, void 0, false, {
-                fileName: "src/components/Feedback.js",
-                lineNumber: 22,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                className: "max-w-md mx-auto p-4 bg-slate-100  rounded-md shadow-2xl",
-                children: questions.map((question, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                        className: "mb-8",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                className: "font-bold mb-2",
-                                children: "Q" + (index + 1) + " " + question
-                            }, void 0, false, {
-                                fileName: "src/components/Feedback.js",
-                                lineNumber: 26,
-                                columnNumber: 13
-                            }, undefined),
-                            [
-                                1,
-                                2,
-                                3,
-                                4,
-                                5
-                            ].map((rating)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                    className: "flex items-center",
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                            id: `rating${rating}`,
-                                            name: `question${index + 1}`,
-                                            type: "radio",
-                                            className: "mr-2"
-                                        }, void 0, false, {
-                                            fileName: "src/components/Feedback.js",
-                                            lineNumber: 29,
-                                            columnNumber: 17
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                            htmlFor: `rating${rating}`,
-                                            children: `${rating}.0`
-                                        }, void 0, false, {
-                                            fileName: "src/components/Feedback.js",
-                                            lineNumber: 35,
-                                            columnNumber: 17
-                                        }, undefined)
-                                    ]
-                                }, rating, true, {
-                                    fileName: "src/components/Feedback.js",
-                                    lineNumber: 28,
-                                    columnNumber: 15
-                                }, undefined))
-                        ]
-                    }, index, true, {
-                        fileName: "src/components/Feedback.js",
-                        lineNumber: 25,
-                        columnNumber: 11
-                    }, undefined))
-            }, void 0, false, {
-                fileName: "src/components/Feedback.js",
-                lineNumber: 23,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex justify-center",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                    type: "submit",
-                    className: "w-20 my-4 bg-blue-500 text-white p-2 rounded hover:bg-blue-600 focus:outline-none",
-                    children: "Submit"
-                }, void 0, false, {
-                    fileName: "src/components/Feedback.js",
-                    lineNumber: 42,
-                    columnNumber: 7
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/components/Feedback.js",
-                lineNumber: 41,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/components/Feedback.js",
-        lineNumber: 21,
-        columnNumber: 13
-    }, undefined);
-};
-_c = Feedback;
-exports.default = Feedback;
-var _c;
-$RefreshReg$(_c, "Feedback");
-
-  $parcel$ReactRefreshHelpers$036f.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"b9IEN":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$837d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$837d.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _reactRouterDom = require("react-router-dom");
-var _react = require("react");
-var _sonner = require("sonner");
-var _s = $RefreshSig$();
-// import {adminstatuscontext} from '../../context/AdminloginContext'
-const LoginAdmin = ()=>{
-    _s();
-    // const adminstatus = useContext(adminstatuscontext);
-    const [form, setForm] = (0, _react.useState)({});
-    const navigate = (0, _reactRouterDom.useNavigate)();
-    const handleSubmit = async (e)=>{
-        e.preventDefault();
-        // console.log(form)
-        setForm({
-            ...form
-        });
-        const res = await fetch("http://localhost:8998/api/admin/login", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(form)
-        });
-        const data = await res.json();
-        localStorage.setItem("token", data.token);
-        if (res.status == 200) {
-            (0, _sonner.toast).success("Login Successful");
-            setTimeout(function() {
-                navigate("/admin/home");
-            }, 500);
-        } else (0, _sonner.toast).error("Incorrect UserName or Password");
-    // const data = await res.json();
-    // console.log(res);
-    };
-    const handleForm = (e)=>{
-        setForm({
-            ...form,
-            [e.target.name]: e.target.value
-        });
-    };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex h-screen justify-center align-middle",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "min-h-screen flex items-center justify-center",
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
-                        onSubmit: handleSubmit,
-                        className: "bg-white p-8 rounded shadow-2xl w-96",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                                className: "text-2xl font-semibold mb-4 text-center",
-                                children: " Admin Login"
-                            }, void 0, false, {
-                                fileName: "src/components/Login/LoginAdmin.js",
-                                lineNumber: 58,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "mb-4",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                        htmlFor: "adminId",
-                                        className: "block text-gray-600 mb-2",
-                                        children: "Username:"
-                                    }, void 0, false, {
-                                        fileName: "src/components/Login/LoginAdmin.js",
-                                        lineNumber: 61,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                        type: "text",
-                                        name: "adminId",
-                                        onChange: handleForm,
-                                        className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500",
-                                        placeholder: "Enter your username"
-                                    }, void 0, false, {
-                                        fileName: "src/components/Login/LoginAdmin.js",
-                                        lineNumber: 62,
-                                        columnNumber: 15
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/components/Login/LoginAdmin.js",
-                                lineNumber: 60,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "mb-6",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                        htmlFor: "password",
-                                        className: "block text-gray-600 mb-2",
-                                        children: "Password:"
-                                    }, void 0, false, {
-                                        fileName: "src/components/Login/LoginAdmin.js",
-                                        lineNumber: 72,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                        type: "password",
-                                        name: "password",
-                                        onChange: handleForm,
-                                        className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500",
-                                        placeholder: "Enter your password"
-                                    }, void 0, false, {
-                                        fileName: "src/components/Login/LoginAdmin.js",
-                                        lineNumber: 73,
-                                        columnNumber: 15
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/components/Login/LoginAdmin.js",
-                                lineNumber: 71,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                type: "submit",
-                                className: "w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 focus:outline-none",
-                                children: "Log In"
-                            }, void 0, false, {
-                                fileName: "src/components/Login/LoginAdmin.js",
-                                lineNumber: 82,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "mt-4 flex justify-between",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                        className: "text-blue-600",
-                                        to: "../loginAsTeacher",
-                                        children: "Login As Teacher"
-                                    }, void 0, false, {
-                                        fileName: "src/components/Login/LoginAdmin.js",
-                                        lineNumber: 86,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                        className: "text-blue-600",
-                                        to: "../login",
-                                        children: "Login As Student"
-                                    }, void 0, false, {
-                                        fileName: "src/components/Login/LoginAdmin.js",
-                                        lineNumber: 87,
-                                        columnNumber: 15
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/components/Login/LoginAdmin.js",
-                                lineNumber: 85,
-                                columnNumber: 13
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/Login/LoginAdmin.js",
-                        lineNumber: 57,
-                        columnNumber: 11
-                    }, undefined)
-                }, void 0, false, {
-                    fileName: "src/components/Login/LoginAdmin.js",
-                    lineNumber: 56,
-                    columnNumber: 9
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/components/Login/LoginAdmin.js",
-                lineNumber: 55,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sonner.Toaster), {
-                position: "top-right",
-                richColors: true
-            }, void 0, false, {
-                fileName: "src/components/Login/LoginAdmin.js",
-                lineNumber: 94,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true);
-};
-_s(LoginAdmin, "PQUPng+owqEYBKKF/VmMagUZBrY=", false, function() {
-    return [
-        (0, _reactRouterDom.useNavigate)
-    ];
-});
-_c = LoginAdmin;
-exports.default = LoginAdmin;
-var _c;
-$RefreshReg$(_c, "LoginAdmin");
-
-  $parcel$ReactRefreshHelpers$837d.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","react":"21dqq","sonner":"4wQOs","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4wQOs":[function(require,module,exports) {
+},{"7422ead32dcc1e6b":"786KC"}],"4wQOs":[function(require,module,exports) {
 "use client";
 var Ft = Object.create;
 var Z = Object.defineProperty;
@@ -35075,7 +34815,430 @@ var ie = (s)=>{
 };
  //# sourceMappingURL=index.js.map
 
-},{"2f20c5afa2b5000a":"21dqq","22aaec186a25587f":"j6uA9"}],"aqaip":[function(require,module,exports) {
+},{"2f20c5afa2b5000a":"21dqq","22aaec186a25587f":"j6uA9"}],"2hBAZ":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$036f = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$036f.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactRouterDom = require("react-router-dom");
+var _s = $RefreshSig$();
+const Feedback = ()=>{
+    _s();
+    const questions = [
+        "The teacher had Thorough and comprehensive Knowledge of subjects?",
+        "Soft skill of the subject in-charge in handling of contents?",
+        "Online learning materials/notes provided by the subject in-charge in enhancing my understanding of the subject?",
+        "The teacher thoroughly answered the student's questions?",
+        "There was positive interaction between students and teacher?",
+        "Quality of work was emphasized more than quantity?",
+        "You were encouraged to do extra reading about the course material?",
+        "The teacher gave assignments that were useful for learning subject matter?",
+        "Students feel free to interrupt presentations if points needed clarification?",
+        "Video, sound quality and duration of video lectures prepared by subject in-charge?",
+        "Lectures were held regularly and on time?",
+        "Students were introduced with the relevant information iz. Registration & Certification for MOOCs based online course as a supplement activity to the course?",
+        "Students were introduced with the relevant information on 'Virtual Labs' for the course?",
+        "The online teaching technologies used by the subject in-charge in enhancing my understanding of the subject",
+        "Overall rating of online teaching activities in this subject?"
+    ];
+    const { courseid } = (0, _reactRouterDom.useParams)();
+    console.log(courseid);
+    const [formData, setFormData] = (0, _react.useState)({
+        courseId: courseid,
+        ratings: {},
+        comments: ""
+    });
+    const handleRatingChange = (questionIndex, rating)=>{
+        setFormData((prevData)=>({
+                ...prevData,
+                ratings: {
+                    ...prevData.ratings,
+                    [`question${questionIndex + 1}`]: rating
+                }
+            }));
+    };
+    const handleCommentsChange = (e)=>{
+        setFormData((prevData)=>({
+                ...prevData,
+                comments: e.target.value
+            }));
+    };
+    const handleSubmit = async (e)=>{
+        e.preventDefault();
+        try {
+            // Send the feedback data to the server using fetch
+            const response = await fetch(`http://localhost:8998/api/student/submitFeedback/${courseid}`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            });
+            if (response.ok) {
+                console.log("Feedback submitted successfully:", response.data);
+                // Reset the form data if needed
+                setFormData({
+                    courseId: "your_course_id",
+                    studentId: "your_student_id",
+                    ratings: {},
+                    comments: ""
+                });
+            } else console.error("Error submitting feedback:", response.statusText);
+        } catch (error) {
+            console.error("Error submitting feedback:", error.message);
+        }
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "flex justify-center flex-col",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                className: "text-2xl font-semibold mb-4 text-center",
+                children: "Form"
+            }, void 0, false, {
+                fileName: "src/components/Feedback.js",
+                lineNumber: 81,
+                columnNumber: 11
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+                className: "max-w-md mx-auto p-4 bg-slate-100 rounded-md shadow-2xl",
+                onSubmit: handleSubmit,
+                children: [
+                    questions.map((question, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "mb-8",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                    className: "font-bold mb-2",
+                                    children: "Q" + (index + 1) + " " + question
+                                }, void 0, false, {
+                                    fileName: "src/components/Feedback.js",
+                                    lineNumber: 85,
+                                    columnNumber: 17
+                                }, undefined),
+                                [
+                                    1,
+                                    2,
+                                    3,
+                                    4,
+                                    5
+                                ].map((rating)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "flex items-center",
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                                id: `rating${rating}`,
+                                                name: `question${index + 1}`,
+                                                type: "radio",
+                                                className: "mr-2",
+                                                onChange: ()=>handleRatingChange(index, rating)
+                                            }, void 0, false, {
+                                                fileName: "src/components/Feedback.js",
+                                                lineNumber: 88,
+                                                columnNumber: 21
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                                htmlFor: `rating${rating}`,
+                                                children: `${rating}.0`
+                                            }, void 0, false, {
+                                                fileName: "src/components/Feedback.js",
+                                                lineNumber: 95,
+                                                columnNumber: 21
+                                            }, undefined)
+                                        ]
+                                    }, rating, true, {
+                                        fileName: "src/components/Feedback.js",
+                                        lineNumber: 87,
+                                        columnNumber: 19
+                                    }, undefined))
+                            ]
+                        }, index, true, {
+                            fileName: "src/components/Feedback.js",
+                            lineNumber: 84,
+                            columnNumber: 15
+                        }, undefined)),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "mb-4",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                htmlFor: "comments",
+                                className: "font-bold",
+                                children: "Comments:"
+                            }, void 0, false, {
+                                fileName: "src/components/Feedback.js",
+                                lineNumber: 101,
+                                columnNumber: 15
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("textarea", {
+                                id: "comments",
+                                name: "comments",
+                                rows: "4",
+                                className: "w-full p-2 border rounded",
+                                value: formData.comments,
+                                onChange: handleCommentsChange
+                            }, void 0, false, {
+                                fileName: "src/components/Feedback.js",
+                                lineNumber: 102,
+                                columnNumber: 15
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/Feedback.js",
+                        lineNumber: 100,
+                        columnNumber: 13
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "flex justify-center",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                            type: "submit",
+                            className: "w-20 my-4 bg-blue-500 text-white p-2 rounded hover:bg-blue-600 focus:outline-none",
+                            children: "Submit"
+                        }, void 0, false, {
+                            fileName: "src/components/Feedback.js",
+                            lineNumber: 112,
+                            columnNumber: 15
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/components/Feedback.js",
+                        lineNumber: 111,
+                        columnNumber: 13
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/Feedback.js",
+                lineNumber: 82,
+                columnNumber: 11
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/Feedback.js",
+        lineNumber: 80,
+        columnNumber: 9
+    }, undefined);
+};
+_s(Feedback, "EhzA1UgX+hG7rE4Iy6smyp2waSc=", false, function() {
+    return [
+        (0, _reactRouterDom.useParams)
+    ];
+});
+_c = Feedback;
+exports.default = Feedback;
+var _c;
+$RefreshReg$(_c, "Feedback");
+
+  $parcel$ReactRefreshHelpers$036f.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq","react-router-dom":"9xmpe"}],"b9IEN":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$837d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$837d.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _reactRouterDom = require("react-router-dom");
+var _react = require("react");
+var _sonner = require("sonner");
+var _s = $RefreshSig$();
+// import {adminstatuscontext} from '../../context/AdminloginContext'
+const LoginAdmin = ()=>{
+    _s();
+    // const adminstatus = useContext(adminstatuscontext);
+    const [form, setForm] = (0, _react.useState)({});
+    const navigate = (0, _reactRouterDom.useNavigate)();
+    const handleSubmit = async (e)=>{
+        e.preventDefault();
+        // console.log(form)
+        setForm({
+            ...form
+        });
+        const res = await fetch("http://localhost:8998/api/admin/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(form)
+        });
+        const data = await res.json();
+        localStorage.setItem("token", data.token);
+        if (res.status == 200) {
+            (0, _sonner.toast).success("Login Successful");
+            setTimeout(function() {
+                navigate("/admin/home");
+            }, 500);
+        } else (0, _sonner.toast).error("Incorrect UserName or Password");
+    // const data = await res.json();
+    // console.log(res);
+    };
+    const handleForm = (e)=>{
+        setForm({
+            ...form,
+            [e.target.name]: e.target.value
+        });
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "flex h-screen justify-center align-middle",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "min-h-screen flex items-center justify-center",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+                        onSubmit: handleSubmit,
+                        className: "bg-white p-8 rounded shadow-2xl w-96",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                                className: "text-2xl font-semibold mb-4 text-center",
+                                children: " Admin Login"
+                            }, void 0, false, {
+                                fileName: "src/components/Login/LoginAdmin.js",
+                                lineNumber: 58,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "mb-4",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                        htmlFor: "adminId",
+                                        className: "block text-gray-600 mb-2",
+                                        children: "Username:"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Login/LoginAdmin.js",
+                                        lineNumber: 61,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                        type: "text",
+                                        name: "adminId",
+                                        onChange: handleForm,
+                                        className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500",
+                                        placeholder: "Enter your username"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Login/LoginAdmin.js",
+                                        lineNumber: 62,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/Login/LoginAdmin.js",
+                                lineNumber: 60,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "mb-6",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                        htmlFor: "password",
+                                        className: "block text-gray-600 mb-2",
+                                        children: "Password:"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Login/LoginAdmin.js",
+                                        lineNumber: 72,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                        type: "password",
+                                        name: "password",
+                                        onChange: handleForm,
+                                        className: "w-full border p-2 rounded focus:outline-none focus:border-blue-500",
+                                        placeholder: "Enter your password"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Login/LoginAdmin.js",
+                                        lineNumber: 73,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/Login/LoginAdmin.js",
+                                lineNumber: 71,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                type: "submit",
+                                className: "w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 focus:outline-none",
+                                children: "Log In"
+                            }, void 0, false, {
+                                fileName: "src/components/Login/LoginAdmin.js",
+                                lineNumber: 82,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "mt-4 flex justify-between",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                        className: "text-blue-600",
+                                        to: "../loginAsTeacher",
+                                        children: "Login As Teacher"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Login/LoginAdmin.js",
+                                        lineNumber: 86,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                        className: "text-blue-600",
+                                        to: "../login",
+                                        children: "Login As Student"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Login/LoginAdmin.js",
+                                        lineNumber: 87,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/Login/LoginAdmin.js",
+                                lineNumber: 85,
+                                columnNumber: 13
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/Login/LoginAdmin.js",
+                        lineNumber: 57,
+                        columnNumber: 11
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/components/Login/LoginAdmin.js",
+                    lineNumber: 56,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/components/Login/LoginAdmin.js",
+                lineNumber: 55,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sonner.Toaster), {
+                position: "top-right",
+                richColors: true
+            }, void 0, false, {
+                fileName: "src/components/Login/LoginAdmin.js",
+                lineNumber: 94,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true);
+};
+_s(LoginAdmin, "PQUPng+owqEYBKKF/VmMagUZBrY=", false, function() {
+    return [
+        (0, _reactRouterDom.useNavigate)
+    ];
+});
+_c = LoginAdmin;
+exports.default = LoginAdmin;
+var _c;
+$RefreshReg$(_c, "LoginAdmin");
+
+  $parcel$ReactRefreshHelpers$837d.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","react":"21dqq","sonner":"4wQOs","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aqaip":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$5af4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -35936,7 +36099,7 @@ $RefreshReg$(_c, "AddStudent");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","sonner":"4wQOs","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jcoHB":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","sonner":"4wQOs","react":"21dqq","react-router-dom":"9xmpe"}],"jcoHB":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$fe54 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -36610,7 +36773,7 @@ $RefreshReg$(_c, "AddFaculty");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","sonner":"4wQOs","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"87iI7":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","sonner":"4wQOs"}],"87iI7":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$caa8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -37107,7 +37270,7 @@ const AddFaculty = ()=>{
         ]
     }, void 0, true);
 };
-_s(AddFaculty, "pyFwq97rsZwyahLE19f+cx469ko=");
+_s(AddFaculty, "6xzLz0Z2v6jXY1ATaYpe9bWOSQ0=");
 _c = AddFaculty;
 exports.default = AddFaculty;
 var _c;
@@ -37118,7 +37281,7 @@ $RefreshReg$(_c, "AddFaculty");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","sonner":"4wQOs","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ltJX8":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","sonner":"4wQOs"}],"ltJX8":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$47c3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -37556,7 +37719,7 @@ $RefreshReg$(_c, "StudentList");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"23rpZ":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq"}],"23rpZ":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$f8e8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -37614,6 +37777,323 @@ $RefreshReg$(_c, "AddMultipleStudent");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["9A7zD","1xC6H","2kQhy"], "2kQhy", "parcelRequire6604")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jOYB3":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$244b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$244b.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
+var _sonner = require("sonner");
+var _s = $RefreshSig$();
+const StudentHeader = ()=>{
+    _s();
+    const navigate = (0, _reactRouterDom.useNavigate)();
+    async function handelLogout(e) {
+        e.preventDefault();
+        // console.log(form)
+        const res = await fetch("http://localhost:8998/api/student/logout", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+        // console.log(res);
+        const message = await res.json();
+        if (res.status == 200) {
+            (0, _sonner.toast).success(message.message);
+            setTimeout(function() {
+                navigate("/login");
+            }, 500);
+        } else (0, _sonner.toast).error(message.message);
+    }
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "flex justify-end mt-2 mx-5 mb-8 ",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                    className: "flex w-2/4 justify-evenly ",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                            to: "myCourses",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                className: "font-medium m-2",
+                                children: "Courses List"
+                            }, void 0, false, {
+                                fileName: "src/components/StudentHeader.js",
+                                lineNumber: 37,
+                                columnNumber: 32
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/components/StudentHeader.js",
+                            lineNumber: 37,
+                            columnNumber: 9
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                            className: "bg-blue-500 text-white font-bold py-2 px-4 rounded ",
+                            onClick: handelLogout,
+                            children: "Sign Out"
+                        }, void 0, false, {
+                            fileName: "src/components/StudentHeader.js",
+                            lineNumber: 38,
+                            columnNumber: 9
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/StudentHeader.js",
+                    lineNumber: 35,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/components/StudentHeader.js",
+                lineNumber: 32,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sonner.Toaster), {
+                position: "top-right",
+                richColors: true
+            }, void 0, false, {
+                fileName: "src/components/StudentHeader.js",
+                lineNumber: 42,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
+                fileName: "src/components/StudentHeader.js",
+                lineNumber: 43,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true);
+};
+_s(StudentHeader, "CzcTeTziyjMsSrAVmHuCCb6+Bfg=", false, function() {
+    return [
+        (0, _reactRouterDom.useNavigate)
+    ];
+});
+_c = StudentHeader;
+exports.default = StudentHeader;
+var _c;
+$RefreshReg$(_c, "StudentHeader");
+
+  $parcel$ReactRefreshHelpers$244b.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","sonner":"4wQOs","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"eKxOe":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$c9b5 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$c9b5.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactRouterDom = require("react-router-dom");
+var _jwtDecode = require("jwt-decode");
+var _s = $RefreshSig$();
+const StudentCourses = ()=>{
+    _s();
+    const [Courses, setCourses] = (0, _react.useState)(null);
+    const [studentId, setStudentId] = (0, _react.useState)(null);
+    (0, _react.useEffect)(()=>{
+        getCourses();
+    }, []);
+    const getCourses = async ()=>{
+        const token = localStorage.getItem("token");
+        try {
+            const response = await fetch("http://localhost:8998/api/student/getCourses", {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
+                }
+            });
+            const data = await response.json();
+            setCourses(data);
+            console.log(data);
+        } catch (error) {
+            console.error("Error fetching teacher list:", error);
+        }
+    };
+    if (Courses == null) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        children: " Loading "
+    }, void 0, false, {
+        fileName: "src/components/StudentCourses.js",
+        lineNumber: 36,
+        columnNumber: 12
+    }, undefined);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "container mx-auto p-4",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                className: "text-3xl font-bold mb-4",
+                children: "Courses"
+            }, void 0, false, {
+                fileName: "src/components/StudentCourses.js",
+                lineNumber: 42,
+                columnNumber: 7
+            }, undefined),
+            Courses.map((course)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                    to: `/student/home/course/${course.CourseId}`,
+                    className: "text-decoration-none",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "bg-gray-100 p-4 rounded shadow mb-4 cursor-pointer",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                                className: "text-xl font-semibold mb-2",
+                                children: [
+                                    "CourseId: ",
+                                    course.CourseId
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/StudentCourses.js",
+                                lineNumber: 50,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "text-gray-700",
+                                children: [
+                                    "CourseName: ",
+                                    course.CourseName
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/StudentCourses.js",
+                                lineNumber: 51,
+                                columnNumber: 13
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/StudentCourses.js",
+                        lineNumber: 49,
+                        columnNumber: 11
+                    }, undefined)
+                }, course._id, false, {
+                    fileName: "src/components/StudentCourses.js",
+                    lineNumber: 44,
+                    columnNumber: 9
+                }, undefined))
+        ]
+    }, void 0, true, {
+        fileName: "src/components/StudentCourses.js",
+        lineNumber: 41,
+        columnNumber: 5
+    }, undefined);
+};
+_s(StudentCourses, "OD0iFoGpeNakpcDzGR0cL9Bg1ko=");
+_c = StudentCourses;
+exports.default = StudentCourses;
+var _c;
+$RefreshReg$(_c, "StudentCourses");
+
+  $parcel$ReactRefreshHelpers$c9b5.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe","jwt-decode":"EeAxo"}],"EeAxo":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "InvalidTokenError", ()=>InvalidTokenError);
+parcelHelpers.export(exports, "jwtDecode", ()=>jwtDecode);
+class InvalidTokenError extends Error {
+}
+InvalidTokenError.prototype.name = "InvalidTokenError";
+function b64DecodeUnicode(str) {
+    return decodeURIComponent(atob(str).replace(/(.)/g, (m, p)=>{
+        let code = p.charCodeAt(0).toString(16).toUpperCase();
+        if (code.length < 2) code = "0" + code;
+        return "%" + code;
+    }));
+}
+function base64UrlDecode(str) {
+    let output = str.replace(/-/g, "+").replace(/_/g, "/");
+    switch(output.length % 4){
+        case 0:
+            break;
+        case 2:
+            output += "==";
+            break;
+        case 3:
+            output += "=";
+            break;
+        default:
+            throw new Error("base64 string is not of the correct length");
+    }
+    try {
+        return b64DecodeUnicode(output);
+    } catch (err) {
+        return atob(output);
+    }
+}
+function jwtDecode(token, options) {
+    if (typeof token !== "string") throw new InvalidTokenError("Invalid token specified: must be a string");
+    options || (options = {});
+    const pos = options.header === true ? 0 : 1;
+    const part = token.split(".")[pos];
+    if (typeof part !== "string") throw new InvalidTokenError(`Invalid token specified: missing part #${pos + 1}`);
+    let decoded;
+    try {
+        decoded = base64UrlDecode(part);
+    } catch (e) {
+        throw new InvalidTokenError(`Invalid token specified: invalid base64 for part #${pos + 1} (${e.message})`);
+    }
+    try {
+        return JSON.parse(decoded);
+    } catch (e) {
+        throw new InvalidTokenError(`Invalid token specified: invalid json for part #${pos + 1} (${e.message})`);
+    }
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eQCFI":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$c987 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$c987.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactRouterDom = require("react-router-dom");
+var _s = $RefreshSig$();
+const CourseFeedBack = ()=>{
+    _s();
+    const { facultyId, courseId } = (0, _reactRouterDom.useParams)();
+    (0, _react.useEffect)(()=>{
+        getRatings();
+    }, []);
+    const getRatings = async ()=>{
+        const res = await fetch(`http://localhost:8998/api/admin/faculty/${facultyId}/course/${courseId}/average-ratings`);
+        const data = await res.json();
+        console.log(data);
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {}, void 0, false);
+};
+_s(CourseFeedBack, "yF5piqGoEM5CLl51rG/7I9kS0Lw=", false, function() {
+    return [
+        (0, _reactRouterDom.useParams)
+    ];
+});
+_c = CourseFeedBack;
+exports.default = CourseFeedBack;
+var _c;
+$RefreshReg$(_c, "CourseFeedBack");
+
+  $parcel$ReactRefreshHelpers$c987.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["9A7zD","1xC6H","2kQhy"], "2kQhy", "parcelRequire6604")
 
 //# sourceMappingURL=index.7271efb6.js.map
