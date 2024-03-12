@@ -130,7 +130,7 @@ router.post('/submitFeedback/:courseId/', authorization, async (req, res) => {
 
         const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
         const student = await Student.findById({ _id: verifyUser._id });
-        newfeed.studentId = studnet.studentId
+        newfeed.studentId = student.studentId
         await newfeed.save();
         return res.status(200).json(newfeed);
 
