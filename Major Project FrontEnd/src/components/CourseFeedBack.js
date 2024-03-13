@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { Toaster, toast } from 'sonner'
 
 const CourseFeedback = () => {
   const { facultyId, courseId } = useParams();
@@ -21,6 +22,15 @@ const CourseFeedback = () => {
         const data = await res.json();
         setRatings(data);
         setLoading(false);
+
+        if(res.status == 200){
+          toast.success(data.message);
+         
+        }else{
+          toast.error(data.message);
+        }
+
+
       } catch (error) {
         console.error('Error fetching ratings:', error);
         setLoading(false);
@@ -49,6 +59,7 @@ const CourseFeedback = () => {
   ];
 
   return (
+    <>
     <div className="container mx-auto mt-8 p-4 bg-white rounded-md shadow-md">
       <h1 className="text-3xl font-bold mb-4 text-blue-600">Course Feedback</h1>
       <p className="mb-2 text-lg text-gray-700">
@@ -71,6 +82,8 @@ const CourseFeedback = () => {
         </div>
       )}
     </div>
+    <Toaster position="top-right" richColors />
+    </>
   );
 };
 

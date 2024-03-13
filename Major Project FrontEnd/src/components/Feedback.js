@@ -1,4 +1,6 @@
 import {useState} from 'react'
+import {useNavigate } from 'react-router-dom';
+import { Toaster, toast } from 'sonner'
 import {useParams} from 'react-router-dom'
 const Feedback = () =>{
 
@@ -19,7 +21,7 @@ const Feedback = () =>{
         "The online teaching technologies used by the subject in-charge in enhancing my understanding of the subject",
         "Overall rating of online teaching activities in this subject?"
       ];
-
+      const navigate = useNavigate();
       const { courseid} = useParams();
       console.log(courseid)
       const [formData, setFormData] = useState({
@@ -59,19 +61,15 @@ const Feedback = () =>{
             },
             body: JSON.stringify(formData),
           });
-    
+          const data = await response.json()  
           if (response.ok) {
-            console.log('Feedback submitted successfully:', response.data);
+            toast.success(data.message);
+            setTimeout(function () {
+              navigate("/student/home/myCourses");
+            }, 500);
     
-            // Reset the form data if needed
-            setFormData({
-              courseId: 'your_course_id', // Reset the course ID
-              studentId: 'your_student_id', // Reset the student ID
-              ratings: {},
-              comments: ''
-            });
           } else {
-            console.error('Error submitting feedback:', response.statusText);
+            toast.success(data.message);
           }
         } catch (error) {
           console.error('Error submitting feedback:', error.message);
@@ -79,6 +77,7 @@ const Feedback = () =>{
       };
 
       return (
+        <>
         <div className="flex justify-center flex-col">
           <h1 className="text-2xl font-semibold mb-4 text-center">Form</h1>
           <form className="max-w-md mx-auto p-4 bg-slate-100 rounded-md shadow-2xl" onSubmit={handleSubmit}>
@@ -92,6 +91,7 @@ const Feedback = () =>{
                       name={`question${index + 1}`}
                       type="radio"
                       className="mr-2"
+                      required
                       onChange={() => handleRatingChange(index, rating)}
                     />
                     <label htmlFor={`rating${rating}`}>{`${rating}.0`}</label>
@@ -107,6 +107,7 @@ const Feedback = () =>{
                 rows="4"
                 className="w-full p-2 border rounded"
                 value={formData.comments}
+                required
                 onChange={handleCommentsChange}
               />
             </div>
@@ -120,6 +121,8 @@ const Feedback = () =>{
             </div>
           </form>
         </div>
+        <Toaster position="top-right" richColors />
+        </>
       )
 
 

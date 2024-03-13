@@ -21,9 +21,9 @@ const AddFaculty = () => {
 
     });
 
-
+    const data = await res.json()
     if (res.status === 200) {
-      toast.success("Register Successful");
+      toast.success(data.message);
       // Clear the form after successful submission
       setForm({
         facultyId: "",

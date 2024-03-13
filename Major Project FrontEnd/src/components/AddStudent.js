@@ -21,9 +21,12 @@ const AddStudent = () => {
       }
     });
     // console.log(res);
+    const data = res.message
     if (res.status == 200) {
-      toast.success("Register Successful");
-    };
+      toast.success(data.message);
+    }else{
+      toast.error(data.message);
+    }
 
 
   };

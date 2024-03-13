@@ -8,10 +8,12 @@ const StudentHeader = () => {
 
       e.preventDefault();
       // console.log(form)
+      const token = localStorage.getItem('token');
       const res = await fetch('http://localhost:8998/api/student/logout' , {
         method:'POST',
         headers : {
-          'Content-Type':'application/json'
+          'Content-Type':'application/json',
+          'Authorization': `Bearer ${token}`
         }
       }); 
       // console.log(res);
@@ -29,7 +31,7 @@ const StudentHeader = () => {
     }  
     return(
         <>
-        <div className="flex justify-end  mt-2 mx-5 mb-8 ">
+        <div className="flex justify-end  mt-2 mx-5 mb-8 sticky top-5 ">
 
 
         <ul className="flex w-2/4 justify-evenly ">

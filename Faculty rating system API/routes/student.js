@@ -76,15 +76,13 @@ router.post('/login', async (req, res) => {
         return res.status(500).json({ message: error.message });
     }
 });
-router.post('/logout', authorization, async (req, res) => {
+router.post('/logout', deleteToken, async (req, res) => {
     try {
-        req.session.studentAuthenticated = false;
-        req.session.studentId = null;
-        // console.log(req.session)
+        
         return res.status(200).json({ message: "Student is logged out successfully" })
 
     } catch (error) {
-        return res.status(500).json({ message: { error } });
+        return res.status(500).json({ message:  error.message  });
     }
 })
 

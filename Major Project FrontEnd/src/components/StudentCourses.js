@@ -25,10 +25,10 @@ const StudentCourses = () => {
       });
       const data = await response.json();
       setCourses(data);
-      console.log(data)
+      // console.log(data)
       
     } catch (error) {
-      console.error('Error fetching teacher list:', error);
+      console.error('Error fetching teacher list:', data.message);
     }
   };
 

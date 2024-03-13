@@ -278,6 +278,34 @@ img, video {
   }
 }
 
+.absolute {
+  position: absolute;
+}
+
+.sticky {
+  position: sticky;
+}
+
+.top-0 {
+  top: 0;
+}
+
+.top-2 {
+  top: .5rem;
+}
+
+.top-3 {
+  top: .75rem;
+}
+
+.top-4 {
+  top: 1rem;
+}
+
+.top-5 {
+  top: 1.25rem;
+}
+
 .m-2 {
   margin: .5rem;
 }

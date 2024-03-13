@@ -34827,6 +34827,7 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactRouterDom = require("react-router-dom");
+var _sonner = require("sonner");
 var _s = $RefreshSig$();
 const Feedback = ()=>{
     _s();
@@ -34847,6 +34848,7 @@ const Feedback = ()=>{
         "The online teaching technologies used by the subject in-charge in enhancing my understanding of the subject",
         "Overall rating of online teaching activities in this subject?"
     ];
+    const navigate = (0, _reactRouterDom.useNavigate)();
     const { courseid } = (0, _reactRouterDom.useParams)();
     console.log(courseid);
     const [formData, setFormData] = (0, _react.useState)({
@@ -34882,147 +34884,159 @@ const Feedback = ()=>{
                 },
                 body: JSON.stringify(formData)
             });
+            const data = await response.json();
             if (response.ok) {
-                console.log("Feedback submitted successfully:", response.data);
-                // Reset the form data if needed
-                setFormData({
-                    courseId: "your_course_id",
-                    studentId: "your_student_id",
-                    ratings: {},
-                    comments: ""
-                });
-            } else console.error("Error submitting feedback:", response.statusText);
+                (0, _sonner.toast).success(data.message);
+                setTimeout(function() {
+                    navigate("/student/home/myCourses");
+                }, 500);
+            } else (0, _sonner.toast).success(data.message);
         } catch (error) {
             console.error("Error submitting feedback:", error.message);
         }
     };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex justify-center flex-col",
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                className: "text-2xl font-semibold mb-4 text-center",
-                children: "Form"
-            }, void 0, false, {
-                fileName: "src/components/Feedback.js",
-                lineNumber: 83,
-                columnNumber: 11
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
-                className: "max-w-md mx-auto p-4 bg-slate-100 rounded-md shadow-2xl",
-                onSubmit: handleSubmit,
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "flex justify-center flex-col",
                 children: [
-                    questions.map((question, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "mb-8",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                    className: "font-bold mb-2",
-                                    children: "Q" + (index + 1) + " " + question
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                        className: "text-2xl font-semibold mb-4 text-center",
+                        children: "Form"
+                    }, void 0, false, {
+                        fileName: "src/components/Feedback.js",
+                        lineNumber: 82,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+                        className: "max-w-md mx-auto p-4 bg-slate-100 rounded-md shadow-2xl",
+                        onSubmit: handleSubmit,
+                        children: [
+                            questions.map((question, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: "mb-8",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                            className: "font-bold mb-2",
+                                            children: "Q" + (index + 1) + " " + question
+                                        }, void 0, false, {
+                                            fileName: "src/components/Feedback.js",
+                                            lineNumber: 86,
+                                            columnNumber: 17
+                                        }, undefined),
+                                        [
+                                            1,
+                                            2,
+                                            3,
+                                            4,
+                                            5
+                                        ].map((rating)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                className: "flex items-center",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                                        id: `rating${rating}`,
+                                                        name: `question${index + 1}`,
+                                                        type: "radio",
+                                                        className: "mr-2",
+                                                        required: true,
+                                                        onChange: ()=>handleRatingChange(index, rating)
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/Feedback.js",
+                                                        lineNumber: 89,
+                                                        columnNumber: 21
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                                        htmlFor: `rating${rating}`,
+                                                        children: `${rating}.0`
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/Feedback.js",
+                                                        lineNumber: 97,
+                                                        columnNumber: 21
+                                                    }, undefined)
+                                                ]
+                                            }, rating, true, {
+                                                fileName: "src/components/Feedback.js",
+                                                lineNumber: 88,
+                                                columnNumber: 19
+                                            }, undefined))
+                                    ]
+                                }, index, true, {
+                                    fileName: "src/components/Feedback.js",
+                                    lineNumber: 85,
+                                    columnNumber: 15
+                                }, undefined)),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "mb-4",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                        htmlFor: "comments",
+                                        className: "font-bold",
+                                        children: "Comments:"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Feedback.js",
+                                        lineNumber: 103,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("textarea", {
+                                        id: "comments",
+                                        name: "comments",
+                                        rows: "4",
+                                        className: "w-full p-2 border rounded",
+                                        value: formData.comments,
+                                        required: true,
+                                        onChange: handleCommentsChange
+                                    }, void 0, false, {
+                                        fileName: "src/components/Feedback.js",
+                                        lineNumber: 104,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/Feedback.js",
+                                lineNumber: 102,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "flex justify-center",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                    type: "submit",
+                                    className: "w-20 my-4 bg-blue-500 text-white p-2 rounded hover:bg-blue-600 focus:outline-none",
+                                    children: "Submit"
                                 }, void 0, false, {
                                     fileName: "src/components/Feedback.js",
-                                    lineNumber: 87,
-                                    columnNumber: 17
-                                }, undefined),
-                                [
-                                    1,
-                                    2,
-                                    3,
-                                    4,
-                                    5
-                                ].map((rating)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "flex items-center",
-                                        children: [
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                                id: `rating${rating}`,
-                                                name: `question${index + 1}`,
-                                                type: "radio",
-                                                className: "mr-2",
-                                                onChange: ()=>handleRatingChange(index, rating)
-                                            }, void 0, false, {
-                                                fileName: "src/components/Feedback.js",
-                                                lineNumber: 90,
-                                                columnNumber: 21
-                                            }, undefined),
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                                htmlFor: `rating${rating}`,
-                                                children: `${rating}.0`
-                                            }, void 0, false, {
-                                                fileName: "src/components/Feedback.js",
-                                                lineNumber: 97,
-                                                columnNumber: 21
-                                            }, undefined)
-                                        ]
-                                    }, rating, true, {
-                                        fileName: "src/components/Feedback.js",
-                                        lineNumber: 89,
-                                        columnNumber: 19
-                                    }, undefined))
-                            ]
-                        }, index, true, {
-                            fileName: "src/components/Feedback.js",
-                            lineNumber: 86,
-                            columnNumber: 15
-                        }, undefined)),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "mb-4",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                htmlFor: "comments",
-                                className: "font-bold",
-                                children: "Comments:"
+                                    lineNumber: 115,
+                                    columnNumber: 15
+                                }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/Feedback.js",
-                                lineNumber: 103,
-                                columnNumber: 15
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("textarea", {
-                                id: "comments",
-                                name: "comments",
-                                rows: "4",
-                                className: "w-full p-2 border rounded",
-                                value: formData.comments,
-                                onChange: handleCommentsChange
-                            }, void 0, false, {
-                                fileName: "src/components/Feedback.js",
-                                lineNumber: 104,
-                                columnNumber: 15
+                                lineNumber: 114,
+                                columnNumber: 13
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/Feedback.js",
-                        lineNumber: 102,
-                        columnNumber: 13
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "flex justify-center",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                            type: "submit",
-                            className: "w-20 my-4 bg-blue-500 text-white p-2 rounded hover:bg-blue-600 focus:outline-none",
-                            children: "Submit"
-                        }, void 0, false, {
-                            fileName: "src/components/Feedback.js",
-                            lineNumber: 114,
-                            columnNumber: 15
-                        }, undefined)
-                    }, void 0, false, {
-                        fileName: "src/components/Feedback.js",
-                        lineNumber: 113,
-                        columnNumber: 13
+                        lineNumber: 83,
+                        columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Feedback.js",
-                lineNumber: 84,
-                columnNumber: 11
+                lineNumber: 81,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sonner.Toaster), {
+                position: "top-right",
+                richColors: true
+            }, void 0, false, {
+                fileName: "src/components/Feedback.js",
+                lineNumber: 124,
+                columnNumber: 9
             }, undefined)
         ]
-    }, void 0, true, {
-        fileName: "src/components/Feedback.js",
-        lineNumber: 82,
-        columnNumber: 9
-    }, undefined);
+    }, void 0, true);
 };
-_s(Feedback, "EhzA1UgX+hG7rE4Iy6smyp2waSc=", false, function() {
+_s(Feedback, "J7HGakBYDQdhcGit3l6Era0On/A=", false, function() {
     return [
+        (0, _reactRouterDom.useNavigate),
         (0, _reactRouterDom.useParams)
     ];
 });
@@ -35036,7 +35050,7 @@ $RefreshReg$(_c, "Feedback");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq","react-router-dom":"9xmpe"}],"b9IEN":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq","react-router-dom":"9xmpe","sonner":"4wQOs"}],"b9IEN":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$837d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -35072,11 +35086,11 @@ const LoginAdmin = ()=>{
         const data = await res.json();
         localStorage.setItem("token", data.token);
         if (res.status == 200) {
-            (0, _sonner.toast).success("Login Successful");
+            (0, _sonner.toast).success(data.message);
             setTimeout(function() {
                 navigate("/admin/home");
             }, 500);
-        } else (0, _sonner.toast).error("Incorrect UserName or Password");
+        } else (0, _sonner.toast).error(data.message);
     // const data = await res.json();
     // console.log(res);
     };
@@ -35270,12 +35284,12 @@ const Login = ()=>{
         const data = await res.json();
         localStorage.setItem("token", data.token);
         if (res.status == 200) {
-            (0, _sonner.toast).success("Login Successful");
+            (0, _sonner.toast).success(data.message);
             setTimeout(function() {
                 navigate("/faculty/home");
             }, 500);
             console.log(res.status);
-        } else (0, _sonner.toast).error("Incorrect UserName or Password");
+        } else (0, _sonner.toast).error(data.message);
     };
     const handleForm = (e)=>{
         setForm({
@@ -35465,8 +35479,9 @@ const Header = ()=>{
             }
         });
         // console.log(res);
+        const data = res.json();
         if (res.status == 200) {
-            (0, _sonner.toast).success("Logout Successful");
+            (0, _sonner.toast).success(data.message);
             setTimeout(function() {
                 navigate("/");
             }, 500);
@@ -35475,14 +35490,14 @@ const Header = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex justify-between m-5 align-middle",
+                className: "flex justify-between m-5 align-middle sticky top-5",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                         src: "../../utils/image.avif",
                         alt: "logo"
                     }, void 0, false, {
                         fileName: "src/components/FacultyHeader.js",
-                        lineNumber: 36,
+                        lineNumber: 37,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
@@ -35495,12 +35510,12 @@ const Header = ()=>{
                                     children: "Add a Student"
                                 }, void 0, false, {
                                     fileName: "src/components/FacultyHeader.js",
-                                    lineNumber: 40,
+                                    lineNumber: 41,
                                     columnNumber: 33
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/FacultyHeader.js",
-                                lineNumber: 40,
+                                lineNumber: 41,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -35510,12 +35525,12 @@ const Header = ()=>{
                                     children: "Students List"
                                 }, void 0, false, {
                                     fileName: "src/components/FacultyHeader.js",
-                                    lineNumber: 41,
+                                    lineNumber: 42,
                                     columnNumber: 34
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/FacultyHeader.js",
-                                lineNumber: 41,
+                                lineNumber: 42,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -35525,12 +35540,12 @@ const Header = ()=>{
                                     children: "Add Multiple Students"
                                 }, void 0, false, {
                                     fileName: "src/components/FacultyHeader.js",
-                                    lineNumber: 42,
+                                    lineNumber: 43,
                                     columnNumber: 41
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/FacultyHeader.js",
-                                lineNumber: 42,
+                                lineNumber: 43,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -35539,19 +35554,19 @@ const Header = ()=>{
                                 children: "Sign Out"
                             }, void 0, false, {
                                 fileName: "src/components/FacultyHeader.js",
-                                lineNumber: 44,
+                                lineNumber: 45,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/FacultyHeader.js",
-                        lineNumber: 38,
+                        lineNumber: 39,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/FacultyHeader.js",
-                lineNumber: 34,
+                lineNumber: 35,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sonner.Toaster), {
@@ -35559,12 +35574,12 @@ const Header = ()=>{
                 richColors: true
             }, void 0, false, {
                 fileName: "src/components/FacultyHeader.js",
-                lineNumber: 48,
+                lineNumber: 49,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
                 fileName: "src/components/FacultyHeader.js",
-                lineNumber: 49,
+                lineNumber: 50,
                 columnNumber: 7
             }, undefined)
         ]
@@ -35615,7 +35630,9 @@ const AddStudent = ()=>{
             }
         });
         // console.log(res);
-        if (res.status == 200) (0, _sonner.toast).success("Register Successful");
+        const data = res.message;
+        if (res.status == 200) (0, _sonner.toast).success(data.message);
+        else (0, _sonner.toast).error(data.message);
     };
     const handleForm = (e)=>{
         setForm({
@@ -35638,7 +35655,7 @@ const AddStudent = ()=>{
                                 children: " Add a Student"
                             }, void 0, false, {
                                 fileName: "src/components/AddStudent.js",
-                                lineNumber: 44,
+                                lineNumber: 47,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35650,7 +35667,7 @@ const AddStudent = ()=>{
                                         children: "Student Id:"
                                     }, void 0, false, {
                                         fileName: "src/components/AddStudent.js",
-                                        lineNumber: 47,
+                                        lineNumber: 50,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -35661,7 +35678,7 @@ const AddStudent = ()=>{
                                         placeholder: "Enter Student id"
                                     }, void 0, false, {
                                         fileName: "src/components/AddStudent.js",
-                                        lineNumber: 48,
+                                        lineNumber: 51,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -35670,7 +35687,7 @@ const AddStudent = ()=>{
                                         children: "Student Name:"
                                     }, void 0, false, {
                                         fileName: "src/components/AddStudent.js",
-                                        lineNumber: 57,
+                                        lineNumber: 60,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -35681,7 +35698,7 @@ const AddStudent = ()=>{
                                         placeholder: "Enter Student Name"
                                     }, void 0, false, {
                                         fileName: "src/components/AddStudent.js",
-                                        lineNumber: 58,
+                                        lineNumber: 61,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -35690,7 +35707,7 @@ const AddStudent = ()=>{
                                         children: "Student Email:"
                                     }, void 0, false, {
                                         fileName: "src/components/AddStudent.js",
-                                        lineNumber: 66,
+                                        lineNumber: 69,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -35701,7 +35718,7 @@ const AddStudent = ()=>{
                                         placeholder: "Enter Student Email id"
                                     }, void 0, false, {
                                         fileName: "src/components/AddStudent.js",
-                                        lineNumber: 67,
+                                        lineNumber: 70,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -35710,7 +35727,7 @@ const AddStudent = ()=>{
                                         children: "Department:"
                                     }, void 0, false, {
                                         fileName: "src/components/AddStudent.js",
-                                        lineNumber: 75,
+                                        lineNumber: 78,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("select", {
@@ -35723,7 +35740,7 @@ const AddStudent = ()=>{
                                                 children: "Select Department"
                                             }, void 0, false, {
                                                 fileName: "src/components/AddStudent.js",
-                                                lineNumber: 81,
+                                                lineNumber: 84,
                                                 columnNumber: 17
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -35731,7 +35748,7 @@ const AddStudent = ()=>{
                                                 children: "Computer Application"
                                             }, void 0, false, {
                                                 fileName: "src/components/AddStudent.js",
-                                                lineNumber: 82,
+                                                lineNumber: 85,
                                                 columnNumber: 17
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -35739,13 +35756,13 @@ const AddStudent = ()=>{
                                                 children: "Btech"
                                             }, void 0, false, {
                                                 fileName: "src/components/AddStudent.js",
-                                                lineNumber: 83,
+                                                lineNumber: 86,
                                                 columnNumber: 17
                                             }, undefined)
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/components/AddStudent.js",
-                                        lineNumber: 76,
+                                        lineNumber: 79,
                                         columnNumber: 15
                                     }, undefined),
                                     form.department === "Btech" && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
@@ -35756,7 +35773,7 @@ const AddStudent = ()=>{
                                                 children: "Branch:"
                                             }, void 0, false, {
                                                 fileName: "src/components/AddStudent.js",
-                                                lineNumber: 89,
+                                                lineNumber: 92,
                                                 columnNumber: 19
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("select", {
@@ -35769,7 +35786,7 @@ const AddStudent = ()=>{
                                                         children: "Select Branch"
                                                     }, void 0, false, {
                                                         fileName: "src/components/AddStudent.js",
-                                                        lineNumber: 97,
+                                                        lineNumber: 100,
                                                         columnNumber: 21
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -35777,7 +35794,7 @@ const AddStudent = ()=>{
                                                         children: "CSE"
                                                     }, void 0, false, {
                                                         fileName: "src/components/AddStudent.js",
-                                                        lineNumber: 98,
+                                                        lineNumber: 101,
                                                         columnNumber: 21
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -35785,7 +35802,7 @@ const AddStudent = ()=>{
                                                         children: "ECE"
                                                     }, void 0, false, {
                                                         fileName: "src/components/AddStudent.js",
-                                                        lineNumber: 99,
+                                                        lineNumber: 102,
                                                         columnNumber: 21
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -35793,13 +35810,13 @@ const AddStudent = ()=>{
                                                         children: "AI/ML"
                                                     }, void 0, false, {
                                                         fileName: "src/components/AddStudent.js",
-                                                        lineNumber: 100,
+                                                        lineNumber: 103,
                                                         columnNumber: 21
                                                     }, undefined)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "src/components/AddStudent.js",
-                                                lineNumber: 92,
+                                                lineNumber: 95,
                                                 columnNumber: 19
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -35808,7 +35825,7 @@ const AddStudent = ()=>{
                                                 children: "Semester:"
                                             }, void 0, false, {
                                                 fileName: "src/components/AddStudent.js",
-                                                lineNumber: 103,
+                                                lineNumber: 106,
                                                 columnNumber: 19
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("select", {
@@ -35821,7 +35838,7 @@ const AddStudent = ()=>{
                                                         children: "Select Semester"
                                                     }, void 0, false, {
                                                         fileName: "src/components/AddStudent.js",
-                                                        lineNumber: 111,
+                                                        lineNumber: 114,
                                                         columnNumber: 21
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -35829,7 +35846,7 @@ const AddStudent = ()=>{
                                                         children: "1"
                                                     }, void 0, false, {
                                                         fileName: "src/components/AddStudent.js",
-                                                        lineNumber: 112,
+                                                        lineNumber: 115,
                                                         columnNumber: 21
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -35837,7 +35854,7 @@ const AddStudent = ()=>{
                                                         children: "2"
                                                     }, void 0, false, {
                                                         fileName: "src/components/AddStudent.js",
-                                                        lineNumber: 113,
+                                                        lineNumber: 116,
                                                         columnNumber: 21
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -35845,7 +35862,7 @@ const AddStudent = ()=>{
                                                         children: "3"
                                                     }, void 0, false, {
                                                         fileName: "src/components/AddStudent.js",
-                                                        lineNumber: 114,
+                                                        lineNumber: 117,
                                                         columnNumber: 21
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -35853,7 +35870,7 @@ const AddStudent = ()=>{
                                                         children: "4"
                                                     }, void 0, false, {
                                                         fileName: "src/components/AddStudent.js",
-                                                        lineNumber: 115,
+                                                        lineNumber: 118,
                                                         columnNumber: 21
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -35861,7 +35878,7 @@ const AddStudent = ()=>{
                                                         children: "5"
                                                     }, void 0, false, {
                                                         fileName: "src/components/AddStudent.js",
-                                                        lineNumber: 116,
+                                                        lineNumber: 119,
                                                         columnNumber: 21
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -35869,7 +35886,7 @@ const AddStudent = ()=>{
                                                         children: "6"
                                                     }, void 0, false, {
                                                         fileName: "src/components/AddStudent.js",
-                                                        lineNumber: 117,
+                                                        lineNumber: 120,
                                                         columnNumber: 21
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -35877,7 +35894,7 @@ const AddStudent = ()=>{
                                                         children: "7"
                                                     }, void 0, false, {
                                                         fileName: "src/components/AddStudent.js",
-                                                        lineNumber: 118,
+                                                        lineNumber: 121,
                                                         columnNumber: 21
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -35885,13 +35902,13 @@ const AddStudent = ()=>{
                                                         children: "8"
                                                     }, void 0, false, {
                                                         fileName: "src/components/AddStudent.js",
-                                                        lineNumber: 119,
+                                                        lineNumber: 122,
                                                         columnNumber: 21
                                                     }, undefined)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "src/components/AddStudent.js",
-                                                lineNumber: 106,
+                                                lineNumber: 109,
                                                 columnNumber: 19
                                             }, undefined)
                                         ]
@@ -35904,7 +35921,7 @@ const AddStudent = ()=>{
                                                 children: "Branch:"
                                             }, void 0, false, {
                                                 fileName: "src/components/AddStudent.js",
-                                                lineNumber: 126,
+                                                lineNumber: 129,
                                                 columnNumber: 19
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("select", {
@@ -35917,7 +35934,7 @@ const AddStudent = ()=>{
                                                         children: "Select Branch"
                                                     }, void 0, false, {
                                                         fileName: "src/components/AddStudent.js",
-                                                        lineNumber: 134,
+                                                        lineNumber: 137,
                                                         columnNumber: 21
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -35925,7 +35942,7 @@ const AddStudent = ()=>{
                                                         children: "BCA"
                                                     }, void 0, false, {
                                                         fileName: "src/components/AddStudent.js",
-                                                        lineNumber: 135,
+                                                        lineNumber: 138,
                                                         columnNumber: 21
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -35933,13 +35950,13 @@ const AddStudent = ()=>{
                                                         children: "MCA"
                                                     }, void 0, false, {
                                                         fileName: "src/components/AddStudent.js",
-                                                        lineNumber: 136,
+                                                        lineNumber: 139,
                                                         columnNumber: 21
                                                     }, undefined)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "src/components/AddStudent.js",
-                                                lineNumber: 129,
+                                                lineNumber: 132,
                                                 columnNumber: 19
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -35948,7 +35965,7 @@ const AddStudent = ()=>{
                                                 children: "Semester:"
                                             }, void 0, false, {
                                                 fileName: "src/components/AddStudent.js",
-                                                lineNumber: 140,
+                                                lineNumber: 143,
                                                 columnNumber: 19
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("select", {
@@ -35961,7 +35978,7 @@ const AddStudent = ()=>{
                                                         children: "Select Semester"
                                                     }, void 0, false, {
                                                         fileName: "src/components/AddStudent.js",
-                                                        lineNumber: 148,
+                                                        lineNumber: 151,
                                                         columnNumber: 21
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -35969,7 +35986,7 @@ const AddStudent = ()=>{
                                                         children: "1"
                                                     }, void 0, false, {
                                                         fileName: "src/components/AddStudent.js",
-                                                        lineNumber: 149,
+                                                        lineNumber: 152,
                                                         columnNumber: 21
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -35977,7 +35994,7 @@ const AddStudent = ()=>{
                                                         children: "2"
                                                     }, void 0, false, {
                                                         fileName: "src/components/AddStudent.js",
-                                                        lineNumber: 150,
+                                                        lineNumber: 153,
                                                         columnNumber: 21
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -35985,7 +36002,7 @@ const AddStudent = ()=>{
                                                         children: "3"
                                                     }, void 0, false, {
                                                         fileName: "src/components/AddStudent.js",
-                                                        lineNumber: 151,
+                                                        lineNumber: 154,
                                                         columnNumber: 21
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -35993,7 +36010,7 @@ const AddStudent = ()=>{
                                                         children: "4"
                                                     }, void 0, false, {
                                                         fileName: "src/components/AddStudent.js",
-                                                        lineNumber: 152,
+                                                        lineNumber: 155,
                                                         columnNumber: 21
                                                     }, undefined),
                                                     form.branch === "BCA" && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
@@ -36003,7 +36020,7 @@ const AddStudent = ()=>{
                                                                 children: "5"
                                                             }, void 0, false, {
                                                                 fileName: "src/components/AddStudent.js",
-                                                                lineNumber: 156,
+                                                                lineNumber: 159,
                                                                 columnNumber: 25
                                                             }, undefined),
                                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -36011,7 +36028,7 @@ const AddStudent = ()=>{
                                                                 children: "6"
                                                             }, void 0, false, {
                                                                 fileName: "src/components/AddStudent.js",
-                                                                lineNumber: 157,
+                                                                lineNumber: 160,
                                                                 columnNumber: 25
                                                             }, undefined)
                                                         ]
@@ -36019,7 +36036,7 @@ const AddStudent = ()=>{
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "src/components/AddStudent.js",
-                                                lineNumber: 143,
+                                                lineNumber: 146,
                                                 columnNumber: 19
                                             }, undefined)
                                         ]
@@ -36030,7 +36047,7 @@ const AddStudent = ()=>{
                                         children: "Password:"
                                     }, void 0, false, {
                                         fileName: "src/components/AddStudent.js",
-                                        lineNumber: 163,
+                                        lineNumber: 166,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -36041,13 +36058,13 @@ const AddStudent = ()=>{
                                         placeholder: "Enter your password"
                                     }, void 0, false, {
                                         fileName: "src/components/AddStudent.js",
-                                        lineNumber: 164,
+                                        lineNumber: 167,
                                         columnNumber: 15
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/AddStudent.js",
-                                lineNumber: 46,
+                                lineNumber: 49,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -36056,23 +36073,23 @@ const AddStudent = ()=>{
                                 children: "Add Student"
                             }, void 0, false, {
                                 fileName: "src/components/AddStudent.js",
-                                lineNumber: 174,
+                                lineNumber: 177,
                                 columnNumber: 13
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/AddStudent.js",
-                        lineNumber: 43,
+                        lineNumber: 46,
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/AddStudent.js",
-                    lineNumber: 42,
+                    lineNumber: 45,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/AddStudent.js",
-                lineNumber: 41,
+                lineNumber: 44,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sonner.Toaster), {
@@ -36080,7 +36097,7 @@ const AddStudent = ()=>{
                 richColors: true
             }, void 0, false, {
                 fileName: "src/components/AddStudent.js",
-                lineNumber: 180,
+                lineNumber: 183,
                 columnNumber: 7
             }, undefined)
         ]
@@ -36129,8 +36146,9 @@ const Header = ()=>{
             }
         });
         // console.log(res);
+        const data = await res.json();
         if (res.status == 200) {
-            (0, _sonner.toast).success("Logout Successful");
+            (0, _sonner.toast).success(data.message);
             setTimeout(function() {
                 navigate("/");
             }, 500);
@@ -36139,14 +36157,14 @@ const Header = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex justify-between m-5 align-middle",
+                className: "flex justify-between m-5 align-middle sticky top-5",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                         src: "../../utils/image.avif",
                         alt: "logo"
                     }, void 0, false, {
                         fileName: "src/components/AdminHeader.js",
-                        lineNumber: 35,
+                        lineNumber: 36,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
@@ -36159,12 +36177,12 @@ const Header = ()=>{
                                     children: "Add Courses"
                                 }, void 0, false, {
                                     fileName: "src/components/AdminHeader.js",
-                                    lineNumber: 39,
+                                    lineNumber: 40,
                                     columnNumber: 32
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/AdminHeader.js",
-                                lineNumber: 39,
+                                lineNumber: 40,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -36174,12 +36192,12 @@ const Header = ()=>{
                                     children: "Teachers List"
                                 }, void 0, false, {
                                     fileName: "src/components/AdminHeader.js",
-                                    lineNumber: 40,
+                                    lineNumber: 41,
                                     columnNumber: 34
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/AdminHeader.js",
-                                lineNumber: 40,
+                                lineNumber: 41,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -36189,12 +36207,12 @@ const Header = ()=>{
                                     children: "Add Faculty"
                                 }, void 0, false, {
                                     fileName: "src/components/AdminHeader.js",
-                                    lineNumber: 41,
+                                    lineNumber: 42,
                                     columnNumber: 33
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/AdminHeader.js",
-                                lineNumber: 41,
+                                lineNumber: 42,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -36203,19 +36221,19 @@ const Header = ()=>{
                                 children: "Sign Out"
                             }, void 0, false, {
                                 fileName: "src/components/AdminHeader.js",
-                                lineNumber: 43,
+                                lineNumber: 44,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/AdminHeader.js",
-                        lineNumber: 37,
+                        lineNumber: 38,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/AdminHeader.js",
-                lineNumber: 33,
+                lineNumber: 34,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sonner.Toaster), {
@@ -36223,12 +36241,12 @@ const Header = ()=>{
                 richColors: true
             }, void 0, false, {
                 fileName: "src/components/AdminHeader.js",
-                lineNumber: 47,
+                lineNumber: 48,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
                 fileName: "src/components/AdminHeader.js",
-                lineNumber: 48,
+                lineNumber: 49,
                 columnNumber: 7
             }, undefined)
         ]
@@ -36278,8 +36296,9 @@ const AddFaculty = ()=>{
                 "Authorization": `Bearer ${token}`
             }
         });
+        const data = await res.json();
         if (res.status === 200) {
-            (0, _sonner.toast).success("Register Successful");
+            (0, _sonner.toast).success(data.message);
             // Clear the form after successful submission
             setForm({
                 facultyId: "",
@@ -36810,9 +36829,9 @@ const AddFaculty = ()=>{
                 "Authorization": `Bearer ${token}`
             }
         });
-        console.log(res);
+        const data = await res.json();
         if (res.status === 200) {
-            (0, _sonner.toast).success("Course Added Successfully");
+            (0, _sonner.toast).success(data.message);
             setForm({
                 CourseId: "",
                 CourseName: "",
@@ -37800,10 +37819,12 @@ const StudentHeader = ()=>{
     async function handelLogout(e) {
         e.preventDefault();
         // console.log(form)
+        const token = localStorage.getItem("token");
         const res = await fetch("http://localhost:8998/api/student/logout", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
             }
         });
         // console.log(res);
@@ -37818,7 +37839,7 @@ const StudentHeader = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex justify-end  mt-2 mx-5 mb-8 ",
+                className: "flex justify-end  mt-2 mx-5 mb-8 sticky top-5 ",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
                     className: "flex w-2/4 justify-evenly ",
                     children: [
@@ -37829,12 +37850,12 @@ const StudentHeader = ()=>{
                                 children: "Courses List"
                             }, void 0, false, {
                                 fileName: "src/components/StudentHeader.js",
-                                lineNumber: 37,
+                                lineNumber: 39,
                                 columnNumber: 32
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/StudentHeader.js",
-                            lineNumber: 37,
+                            lineNumber: 39,
                             columnNumber: 9
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -37843,18 +37864,18 @@ const StudentHeader = ()=>{
                             children: "Sign Out"
                         }, void 0, false, {
                             fileName: "src/components/StudentHeader.js",
-                            lineNumber: 38,
+                            lineNumber: 40,
                             columnNumber: 9
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/StudentHeader.js",
-                    lineNumber: 35,
+                    lineNumber: 37,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/StudentHeader.js",
-                lineNumber: 32,
+                lineNumber: 34,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sonner.Toaster), {
@@ -37862,12 +37883,12 @@ const StudentHeader = ()=>{
                 richColors: true
             }, void 0, false, {
                 fileName: "src/components/StudentHeader.js",
-                lineNumber: 42,
+                lineNumber: 44,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
                 fileName: "src/components/StudentHeader.js",
-                lineNumber: 43,
+                lineNumber: 45,
                 columnNumber: 9
             }, undefined)
         ]
@@ -37919,11 +37940,11 @@ const StudentCourses = ()=>{
                     "Authorization": `Bearer ${token}`
                 }
             });
-            const data = await response.json();
-            setCourses(data);
-            console.log(data);
+            const data1 = await response.json();
+            setCourses(data1);
+        // console.log(data)
         } catch (error) {
-            console.error("Error fetching teacher list:", error);
+            console.error("Error fetching teacher list:", data.message);
         }
     };
     if (Courses == null) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
@@ -38068,6 +38089,7 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRouterDom = require("react-router-dom");
+var _sonner = require("sonner");
 var _s = $RefreshSig$();
 const CourseFeedback = ()=>{
     _s();
@@ -38088,6 +38110,8 @@ const CourseFeedback = ()=>{
                 const data = await res.json();
                 setRatings(data);
                 setLoading(false);
+                if (res.status == 200) (0, _sonner.toast).success(data.message);
+                else (0, _sonner.toast).error(data.message);
             } catch (error) {
                 console.error("Error fetching ratings:", error);
                 setLoading(false);
@@ -38115,91 +38139,103 @@ const CourseFeedback = ()=>{
         "14. The online teaching technologies used by the subject in-charge in enhancing my understanding of the subject",
         "15. Overall rating of online teaching activities in this subject?"
     ];
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "container mx-auto mt-8 p-4 bg-white rounded-md shadow-md",
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                className: "text-3xl font-bold mb-4 text-blue-600",
-                children: "Course Feedback"
-            }, void 0, false, {
-                fileName: "src/components/CourseFeedBack.js",
-                lineNumber: 53,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                className: "mb-2 text-lg text-gray-700",
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "container mx-auto mt-8 p-4 bg-white rounded-md shadow-md",
                 children: [
-                    "Faculty ID: ",
-                    facultyId,
-                    " | Course ID: ",
-                    courseId
-                ]
-            }, void 0, true, {
-                fileName: "src/components/CourseFeedBack.js",
-                lineNumber: 54,
-                columnNumber: 7
-            }, undefined),
-            loading ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                className: "text-blue-500",
-                children: "Loading..."
-            }, void 0, false, {
-                fileName: "src/components/CourseFeedBack.js",
-                lineNumber: 59,
-                columnNumber: 9
-            }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                        className: "text-2xl font-semibold mb-2 text-blue-600",
-                        children: "Average Ratings"
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                        className: "text-3xl font-bold mb-4 text-blue-600",
+                        children: "Course Feedback"
                     }, void 0, false, {
                         fileName: "src/components/CourseFeedBack.js",
-                        lineNumber: 62,
-                        columnNumber: 11
+                        lineNumber: 64,
+                        columnNumber: 7
                     }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "grid grid-cols-2 gap-4",
-                        children: Object.keys(ratings.questionwiseAverageRatings).map((question, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "mb-4 p-4 border border-blue-200 rounded-md",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                        className: "font-medium text-gray-700",
-                                        children: questions[index]
-                                    }, void 0, false, {
-                                        fileName: "src/components/CourseFeedBack.js",
-                                        lineNumber: 66,
-                                        columnNumber: 17
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                        className: "text-2xl font-bold text-blue-600",
-                                        children: ratings.questionwiseAverageRatings[question]
-                                    }, void 0, false, {
-                                        fileName: "src/components/CourseFeedBack.js",
-                                        lineNumber: 67,
-                                        columnNumber: 17
-                                    }, undefined)
-                                ]
-                            }, index, true, {
-                                fileName: "src/components/CourseFeedBack.js",
-                                lineNumber: 65,
-                                columnNumber: 15
-                            }, undefined))
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "mb-2 text-lg text-gray-700",
+                        children: [
+                            "Faculty ID: ",
+                            facultyId,
+                            " | Course ID: ",
+                            courseId
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/CourseFeedBack.js",
+                        lineNumber: 65,
+                        columnNumber: 7
+                    }, undefined),
+                    loading ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "text-blue-500",
+                        children: "Loading..."
                     }, void 0, false, {
                         fileName: "src/components/CourseFeedBack.js",
-                        lineNumber: 63,
-                        columnNumber: 11
+                        lineNumber: 70,
+                        columnNumber: 9
+                    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                                className: "text-2xl font-semibold mb-2 text-blue-600",
+                                children: "Average Ratings"
+                            }, void 0, false, {
+                                fileName: "src/components/CourseFeedBack.js",
+                                lineNumber: 73,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "grid grid-cols-2 gap-4",
+                                children: Object.keys(ratings.questionwiseAverageRatings).map((question, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "mb-4 p-4 border border-blue-200 rounded-md",
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                className: "font-medium text-gray-700",
+                                                children: questions[index]
+                                            }, void 0, false, {
+                                                fileName: "src/components/CourseFeedBack.js",
+                                                lineNumber: 77,
+                                                columnNumber: 17
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                className: "text-2xl font-bold text-blue-600",
+                                                children: ratings.questionwiseAverageRatings[question]
+                                            }, void 0, false, {
+                                                fileName: "src/components/CourseFeedBack.js",
+                                                lineNumber: 78,
+                                                columnNumber: 17
+                                            }, undefined)
+                                        ]
+                                    }, index, true, {
+                                        fileName: "src/components/CourseFeedBack.js",
+                                        lineNumber: 76,
+                                        columnNumber: 15
+                                    }, undefined))
+                            }, void 0, false, {
+                                fileName: "src/components/CourseFeedBack.js",
+                                lineNumber: 74,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/CourseFeedBack.js",
+                        lineNumber: 72,
+                        columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/CourseFeedBack.js",
-                lineNumber: 61,
-                columnNumber: 9
+                lineNumber: 63,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sonner.Toaster), {
+                position: "top-right",
+                richColors: true
+            }, void 0, false, {
+                fileName: "src/components/CourseFeedBack.js",
+                lineNumber: 85,
+                columnNumber: 5
             }, undefined)
         ]
-    }, void 0, true, {
-        fileName: "src/components/CourseFeedBack.js",
-        lineNumber: 52,
-        columnNumber: 5
-    }, undefined);
+    }, void 0, true);
 };
 _s(CourseFeedback, "X+YIJD0RHrIpQKiiDt6kNcdKpaE=", false, function() {
     return [
@@ -38216,6 +38252,6 @@ $RefreshReg$(_c, "CourseFeedback");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["9A7zD","1xC6H","2kQhy"], "2kQhy", "parcelRequire6604")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","sonner":"4wQOs"}]},["9A7zD","1xC6H","2kQhy"], "2kQhy", "parcelRequire6604")
 
 //# sourceMappingURL=index.7271efb6.js.map

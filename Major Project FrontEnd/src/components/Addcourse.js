@@ -24,10 +24,10 @@ const AddFaculty = () => {
       },
     });
 
-    console.log(res);
+    const data = await res.json();
 
     if (res.status === 200) {
-      toast.success("Course Added Successfully");
+      toast.success(data.message);
       setForm({
         CourseId: "",
         CourseName: "",

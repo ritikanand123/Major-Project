@@ -19,9 +19,10 @@ const Header = () => {
       }
     });
     // console.log(res);
+    const data = res.json();
 
     if (res.status == 200) {
-      toast.success("Logout Successful");
+      toast.success(data.message);
       setTimeout(function () {
         navigate("/");
       }, 500);
@@ -31,7 +32,7 @@ const Header = () => {
   }
   return (
     <>
-      <div className="flex justify-between m-5 align-middle">
+      <div className="flex justify-between m-5 align-middle sticky top-5">
 
         <img src="../../utils/image.avif" alt="logo"></img>
 

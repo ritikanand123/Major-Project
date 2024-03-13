@@ -28,14 +28,14 @@ const LoginAdmin = () => {
 
     if (res.status == 200) {
 
-      toast.success("Login Successful");
+      toast.success(data.message);
 
       setTimeout(function () {
         navigate("/admin/home");
       }, 500);
 
     } else {
-      toast.error("Incorrect UserName or Password")
+      toast.error(data.message)
     }
     // const data = await res.json();
     // console.log(res);

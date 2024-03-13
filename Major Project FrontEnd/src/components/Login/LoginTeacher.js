@@ -19,14 +19,14 @@ const Login = () => {
     const data = await res.json();
     localStorage.setItem('token', data.token);
     if (res.status == 200) {
-      toast.success("Login Successful");
+      toast.success(data.message);
       setTimeout(function () {
         navigate("/faculty/home");
       }, 500);
       console.log(res.status)
 
     } else {
-      toast.error("Incorrect UserName or Password")
+      toast.error(data.message)
     }
 
   };
