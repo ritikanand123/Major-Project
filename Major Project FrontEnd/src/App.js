@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter  , RouterProvider} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./components/Login/LoginStudent";
 import Feedback from "./components/Feedback"
 import LoginAdmin from "./components/Login/LoginAdmin";
@@ -19,85 +19,85 @@ import Feedback from "./components/Feedback"
 import CourseFeedBack from "./components/CourseFeedBack"
 
 const Approuter = createBrowserRouter([
-    
+
     {
-        path : "/",
-        element : <Login/>
+        path: "/",
+        element: <Login />
     },
     {
-        path : "/login",
-        element : <Login />
+        path: "/login",
+        element: <Login />
     },
     {
 
-        path:"/feedback",
-        element : <Feedback />,
+        path: "/feedback",
+        element: <Feedback />,
 
     },
     {
-        path : "/loginAsAdmin",
-        element : <LoginAdmin />
+        path: "/loginAsAdmin",
+        element: <LoginAdmin />
     },
     {
-        path : "/loginAsTeacher",
-        element : <LoginTeacher />
+        path: "/loginAsTeacher",
+        element: <LoginTeacher />
     },
     {
-        path : "/faculty/home" , 
-        element : <FacultyHome/>,
-        children : [
+        path: "/faculty/home",
+        element: <FacultyHome />,
+        children: [
             {
-                path : "/faculty/home/addstudent",
-                element : <AddStudent/>
+                path: "/faculty/home/addstudent",
+                element: <AddStudent />
             },
             {
-                path : "/faculty/home/studentlist",
-                element : <StudentList/>
+                path: "/faculty/home/studentlist",
+                element: <StudentList />
             },
             {
-                path : "/faculty/home/addmultiplestudent",
-                element : <AddMultipleStudent/>
+                path: "/faculty/home/addmultiplestudent",
+                element: <AddMultipleStudent />
             },
         ],
     },
     {
-        path : "/admin/home" , 
-        element : <Header/>,
-        children : [
+        path: "/admin/home",
+        element: <Header />,
+        children: [
             {
-                path : "/admin/home/addfaculty",
-                element : <AddFaculty/>
+                path: "/admin/home/addfaculty",
+                element: <AddFaculty />
             },
             {
-                path : "/admin/home/addcourse",
-                element : <Addcourses />
+                path: "/admin/home/addcourse",
+                element: <Addcourses />
             },
             {
-                path : "/admin/home/teacherlist",
-                element : <FacultyList/>
+                path: "/admin/home/teacherlist",
+                element: <FacultyList />
             },
             {
-                path : "/admin/home/teacherlist",
-                element : <FacultyList/>
+                path: "/admin/home/teacherlist",
+                element: <FacultyList />
             },
             {
-                path : "/admin/home/faculty/:facultyId/course/:courseId/average-ratings",
-                element : <CourseFeedBack/>
+                path: "/admin/home/faculty/:facultyId/course/:courseId/average-ratings",
+                element: <CourseFeedBack />
             }
 
         ],
     },
     {
-        path : "/student/home" ,
-        element : <StudentHeader/>,
-        children : [
+        path: "/student/home",
+        element: <StudentHeader />,
+        children: [
             {
-                path : "/student/home/myCourses",
-                element : <StudentCourses/>
+                path: "/student/home/myCourses",
+                element: <StudentCourses />
             },
             {
-                path : "/student/home/course/:courseid",
-                element : <Feedback/>
+                path: "/student/home/course/:courseid",
+                element: <Feedback />
             }
         ],
     }
@@ -107,9 +107,9 @@ const Approuter = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <>
-        
-        <RouterProvider router = {Approuter} />
-        
+
+        <RouterProvider router={Approuter} />
+
     </>
 );
 

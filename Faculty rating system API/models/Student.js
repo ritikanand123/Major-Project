@@ -30,7 +30,7 @@ const StudentSchema = new mongoose.Schema({
     },
     token: {
         type: String,
-        required: true
+
     }
 })
 StudentSchema.methods.generateAuthToken = async function () {

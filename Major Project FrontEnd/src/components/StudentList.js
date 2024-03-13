@@ -21,8 +21,8 @@ const StudentList = () => {
 
       });
       const data = await response.json();
-      const sortedstudetnList = data.sort((a, b) => a.department.localeCompare(b.department));
-      setstudetnList(sortedstudetnList);
+      // const sortedstudetnList = data.sort((a, b) => a.department.localeCompare(b.department));
+      setstudetnList(data);
 
     } catch (error) {
       console.error('Error fetching teacher list:', error);

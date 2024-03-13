@@ -21,10 +21,10 @@ const AddStudent = () => {
       }
     });
     // console.log(res);
-    const data = res.message
+    const data = await res.json();
     if (res.status == 200) {
       toast.success(data.message);
-    }else{
+    } else {
       toast.error(data.message);
     }
 
