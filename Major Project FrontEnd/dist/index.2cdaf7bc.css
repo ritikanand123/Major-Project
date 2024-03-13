@@ -294,6 +294,22 @@ img, video {
   margin: 1.25rem;
 }
 
+.m-8 {
+  margin: 2rem;
+}
+
+.m-4 {
+  margin: 1rem;
+}
+
+.m-32 {
+  margin: 8rem;
+}
+
+.m-10 {
+  margin: 2.5rem;
+}
+
 .mx-5 {
   margin-left: 1.25rem;
   margin-right: 1.25rem;
@@ -377,6 +393,10 @@ img, video {
   min-height: 100vh;
 }
 
+.w-10 {
+  width: 2.5rem;
+}
+
 .w-2\/4 {
   width: 50%;
 }
@@ -395,6 +415,18 @@ img, video {
 
 .w-full {
   width: 100%;
+}
+
+.w-24 {
+  width: 6rem;
+}
+
+.w-16 {
+  width: 4rem;
+}
+
+.w-14 {
+  width: 3.5rem;
 }
 
 .max-w-md {
@@ -439,6 +471,22 @@ img, video {
 
 .gap-4 {
   gap: 1rem;
+}
+
+.gap-2 {
+  gap: .5rem;
+}
+
+.gap-10 {
+  gap: 2.5rem;
+}
+
+.gap-24 {
+  gap: 6rem;
+}
+
+.gap-32 {
+  gap: 8rem;
 }
 
 .rounded {
@@ -494,6 +542,10 @@ img, video {
   padding: 2rem;
 }
 
+.p-6 {
+  padding: 1.5rem;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -512,6 +564,11 @@ img, video {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .text-center {

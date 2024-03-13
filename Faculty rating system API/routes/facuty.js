@@ -117,10 +117,10 @@ router.post('/student-register', authorization, async (req, res) => {
 })
 
 
-router.post('/import-students/:path', authorization, async (req, res) => {
+router.post('/import-students', authorization, async (req, res) => {
     try {
-        const excelFilePath = req.params.path;
-        const workBook = XLSX.readFile(excelFilePath);
+        // const excelFilePath = req.params.path;
+        const workBook = req.body.formData;
         const sheetName = workBook.SheetNames[0];
         const workSheet = workBook.Sheets[sheetName];
 
