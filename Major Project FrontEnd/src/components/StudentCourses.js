@@ -48,7 +48,7 @@ const StudentCourses = () => {
         >
           <div className="bg-gray-100 p-4 rounded shadow mb-4 cursor-pointer">
             <h1 className="text-xl font-semibold mb-2">CourseId: {course.CourseId}</h1>
-            <p className="text-gray-700">CourseName: {course.CourseName}</p>
+            <p className="text-gray-700 rounded-2xl">CourseName: {course.CourseName}</p>
           </div>
         </Link>
       ))}

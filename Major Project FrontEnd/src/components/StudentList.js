@@ -31,31 +31,34 @@ const StudentList = () => {
   }
 
   return (
-    <>
-      <div className="flex justify-evenly w-full shadow-xl py-8">
-        <div className="w-5">Sr. No</div>
-        <div className="w-20">Student Id</div>
-        <div className="w-20">Student Name</div>
-        <div className="w-20">Student Email</div>
-        <div className="w-20">Student Branch</div>
-        <div className="w-10">Student Semester</div>
-        <div className="w-10">Student Password</div>
-      </div>
-
-      <div className="justify-start mt-8">
-        {studentList.map((student, idx) => (
-          <div key={student.id} className="flex align-left justify-evenly w-full py-4">
-            <div className="w-5">{idx + 1}</div>
-            <div className="w-20">{student.studentId}</div>
-            <div className="w-20">{student.name}</div>
-            <div className="w-20" style={{ wordWrap: 'break-word' }}>{student.email}</div>
-            <div className="w-20">{student.branch}</div>
-            <div className="w-10">{student.semester}</div>
-            <div className="w-10">{student.password}</div>
-          </div>
-        ))}
-      </div>
-    </>
+    <div>
+      <table className="border-collapse w-full">
+        <thead>
+          <tr className="bg-gray-200">
+            <th className="border border-gray-400 px-4 py-2">Sr. No</th>
+            <th className="border border-gray-400 px-4 py-2">Student Id</th>
+            <th className="border border-gray-400 px-4 py-2">Student Name</th>
+            <th className="border border-gray-400 px-4 py-2">Student Email</th>
+            <th className="border border-gray-400 px-4 py-2">Student Branch</th>
+            <th className="border border-gray-400 px-4 py-2">Student Semester</th>
+            <th className="border border-gray-400 px-4 py-2">Student Password</th>
+          </tr>
+        </thead>
+        <tbody>
+          {studentList.map((student, idx) => (
+            <tr key={student.id} className={idx % 2 === 0 ? 'bg-gray-100' : ''}>
+              <td className="border border-gray-400 px-4 py-2">{idx + 1}</td>
+              <td className="border border-gray-400 px-4 py-2">{student.studentId}</td>
+              <td className="border border-gray-400 px-4 py-2">{student.name}</td>
+              <td className="border border-gray-400 px-4 py-2" style={{ wordWrap: 'break-word' }}>{student.email}</td>
+              <td className="border border-gray-400 px-4 py-2">{student.branch}</td>
+              <td className="border border-gray-400 px-4 py-2">{student.semester}</td>
+              <td className="border border-gray-400 px-4 py-2">{student.password}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
 

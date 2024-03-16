@@ -52,9 +52,9 @@ const LoginAdmin = () => {
 
   return (
     <>
-      <div className="flex h-screen justify-center align-middle">
+      <div className="flex h-screen justify-center align-middle bg-gradient-to-r from-indigo-500 to-purple-600">
         <div className="min-h-screen flex items-center justify-center">
-          <form onSubmit={handleSubmit} className="bg-white p-8 rounded shadow-2xl w-96">
+          <form onSubmit={handleSubmit} className="bg-white p-8 rounded shadow-2xl w-96 rounded-3xl">
             <h2 className="text-2xl font-semibold mb-4 text-center"> Admin Login</h2>
 
             <div className="mb-4">

@@ -1,6 +1,7 @@
 // routes/adminRoutes.js
 
 const express = require('express');
+
 const router = express.Router();
 const Faculty = require('../models/Faculty');
 const Student = require('../models/Student');

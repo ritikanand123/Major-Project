@@ -1,6 +1,7 @@
 import React from 'react';
+import { Toaster, toast } from 'sonner';
 
-const AddMultipleStudent = async () => {
+const AddMultipleStudent = () => {
   const token = localStorage.getItem('token');
 
   // Define a function to handle form submission
@@ -24,12 +25,11 @@ const AddMultipleStudent = async () => {
         body: formData // Set the FormData object as the request body
       });
 
+      const data = await res.json();
       if (res.ok) {
-        console.log('File uploaded successfully');
-        // Handle success, e.g., show a success message to the user
+        toast.success(data.message);
       } else {
-        console.error('Failed to upload file');
-        // Handle failure, e.g., show an error message to the user
+        toast.error(data.message);
       }
     } catch (error) {
       console.error('Error uploading file:', error);
@@ -38,13 +38,17 @@ const AddMultipleStudent = async () => {
   };
 
   return (
-    <>
-      <form onSubmit={handleSubmit}> {/* Call the handleSubmit function on form submission */}
-        <label htmlFor="excelFile">Select an Excel file:</label>
-        <input type="file" id="excelFile" />
-        <button type="submit">Upload</button>
+    <div className="container mx-auto mt-10">
+      <h1 className="text-3xl font-bold mb-4 text-center">Upload Multiple Students</h1>
+      <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
+        <div className="mb-4">
+          <label htmlFor="excelFile" className="block text-gray-700">Select an Excel file:</label>
+          <input type="file" id="excelFile" className="mt-2 p-2 border border-gray-300 rounded-md" />
+        </div>
+        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors duration-300">Upload</button>
       </form>
-    </>
+      <Toaster position="top-right" richColors />
+    </div>
   );
 };
 

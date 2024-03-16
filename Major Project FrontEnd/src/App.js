@@ -47,6 +47,10 @@ const Approuter = createBrowserRouter([
         element: <FacultyHome />,
         children: [
             {
+                path: "/faculty/home/",
+                element : <StudentList />
+            },
+            {
                 path: "/faculty/home/addstudent",
                 element: <AddStudent />
             },
@@ -65,6 +69,10 @@ const Approuter = createBrowserRouter([
         element: <Header />,
         children: [
             {
+                path: "/admin/home",
+                element: <FacultyList />
+            },
+            {
                 path: "/admin/home/addfaculty",
                 element: <AddFaculty />
             },
@@ -76,10 +84,7 @@ const Approuter = createBrowserRouter([
                 path: "/admin/home/teacherlist",
                 element: <FacultyList />
             },
-            {
-                path: "/admin/home/teacherlist",
-                element: <FacultyList />
-            },
+            
             {
                 path: "/admin/home/faculty/:facultyId/course/:courseId/average-ratings",
                 element: <CourseFeedBack />
@@ -91,6 +96,10 @@ const Approuter = createBrowserRouter([
         path: "/student/home",
         element: <StudentHeader />,
         children: [
+            {
+                path: "/student/home/",
+                element: <StudentCourses />
+            },
             {
                 path: "/student/home/myCourses",
                 element: <StudentCourses />
